@@ -3,15 +3,15 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Navbar from '../components/Navbar'
-import Hero from '../components/Hero'
+import Footer from '../components/Footer'
 import './all.sass'
 
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet title="Student Hotels Italia: hotels a misura di studente" />
     <Navbar />
-    <Hero />
     <div>{children()}</div>
+    <Footer />
   </div>
 )
 

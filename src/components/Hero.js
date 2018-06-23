@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Hero = ({ data }) => (
-  <section className="hero is-info is-large">
+  <section className="hero is-primary is-fullheight">
     <div className="hero-body">
       <div className="container">
         <h1 className="title">

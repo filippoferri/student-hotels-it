@@ -1,11 +1,10 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
 
 const Navbar = () => (
-  <nav className="navbar is-transparent">
+  <nav className="navbar is-transparent is-fixed-top">
     <div className="container">
       <div className="navbar-brand">
         <Link to="/" className="navbar-item">
