@@ -5,10 +5,10 @@ function getYear() {
 }
 
 const Footer = () => (
-  <footer className="footer">
+  <footer className="footer is-dark">
     <div className="content has-text-centered">
       <div>
-        &copy; { getYear() } Student Hotels Italia. Tutti i diritti riservati.
+        Copyright &copy; { getYear() } Student Hotels. Tutti i diritti riservati.
       </div>
     </div>
   </footer>

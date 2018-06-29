@@ -1,16 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Hero = ({ data }) => (
+const Hero = () => (
   <section className="hero is-primary is-fullheight">
     <div className="hero-body">
-      <div className="container">
-        <h1 className="title">
-          Large title
+      <div className="container is-centered">
+        <h1 className="title is-uppercase">
+          Hotels a misura di studente
         </h1>
-        <h2 className="subtitle">
-          Large subtitle
-        </h2>
       </div>
     </div>
   </section>

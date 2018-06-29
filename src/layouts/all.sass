@@ -2,6 +2,15 @@
 
 @import "utils/variables"
 @import "components/navbar"
+@import "components/home-mosaic"
+@import "components/latest-news"
+@import "components/join-community"
+@import "components/newsletter"
+@import "components/ante-footer"
+@import "components/footer"
+
+a
+  transition: all .2s ease-in-out
 
 .content .taglist
   list-style: none
@@ -19,6 +28,22 @@
     margin-top: 0
 
 // Helper Classes
+.is-centered
+  text-align: center
+
+.has-margin-bottom
+  margin-bottom: 3rem
+
+
+.has-background
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-size: cover
+  background-position: center
+
 .full-width-image-container
   width: 100vw
   height: 400px
@@ -31,6 +56,7 @@
   display: flex
   justify-content: center
   align-items: center
+
 
 .margin-top-0
   margin-top: 0 !important

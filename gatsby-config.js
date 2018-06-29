@@ -1,6 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
+    title: 'Student Hotels',
+    instagramAPI: {
+      userId: '8081412028',
+      clientId: 'bb37bade18f94c70a7262cbc3ac1b1df',
+      accessToken: '8081412028.1677ed0.67ec7515ba554315bbb619f0a7af1c07'
+    },
   },
   plugins: [
     'gatsby-plugin-react-helmet',
