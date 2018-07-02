@@ -1,0 +1,59 @@
+.hero
+  position: relative
+  overflow: hidden
+
+  &:after
+    content: ''
+    display: block
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background: rgba(0,0,0,.3)
+    z-index: 1
+
+
+  .hero-slides
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 1
+
+    > div
+      width: 100%
+      height: 100%
+      background-size: cover
+      background-position: center center
+
+
+  .hero-body
+    z-index: 2
+
+    .button.is-link.is-inverted.is-outlined:hover
+      border-color: $primary
+      background: $primary
+      color: white
+
+  .hero-bottom
+    height: 100px
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 3
+
+
+    .hero-bottom-grunge
+      display: block
+      width: 100%
+      height: 0
+      padding-top: 8.68%
+      position: absolute
+      bottom: 1.4%
+      left: 50%
+      background: no-repeat 50%/100% auto
+      background-size: cover
+      transform: translateY(50%) translateX(-50%)

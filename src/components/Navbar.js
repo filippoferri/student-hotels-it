@@ -19,7 +19,7 @@ const Navbar = () => (
           Località
         </Link>
         <Link className="navbar-item" to="/products">
-          Concetto
+          Mission
         </Link>
       </div>
     </div>

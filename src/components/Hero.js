@@ -1,25 +1,27 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+
+import bgFirenze from "../img/firenze.jpg";
+import bgGrunge from "../img/grunge.png";
 
 const Hero = () => (
   <section className="hero is-primary is-fullheight">
+    <div className="hero-slides">
+      <div style={{ backgroundImage: `url(${bgFirenze})` }}></div>
+    </div>
     <div className="hero-body">
       <div className="container is-centered">
         <h1 className="title is-uppercase">
-          Hotels a misura di studente
+          Hotel a misura di studente
         </h1>
+        <p><span className="button is-link is-outlined is-inverted is-medium">Cerca a Firenze</span></p>
       </div>
+    </div>
+    
+    <div className="hero-bottom">
+      <div className="hero-bottom-grunge"
+           style={{ backgroundImage: `url(${bgGrunge})` }}></div>
     </div>
   </section>
 )
-
-Hero.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string,
-      subtitle: PropTypes.string,
-    })
-  ),
-}
 
 export default Hero

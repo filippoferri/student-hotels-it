@@ -6,8 +6,7 @@ import PropTypes from "prop-types";
 const instafeedTarget = "instafeed"
 
 
-const JoinCommunity = ( {api}) => {
-  console.log(api)
+const JoinCommunity = ( {api} ) => {
   return (
     <section className="section has-margin-bottom">
       <div className="container is-centered">
@@ -39,8 +38,6 @@ JoinCommunity.propTypes = {
     accessToken: PropTypes.string.isRequired
   })
 };
-
-
 
 export default JoinCommunity;
 

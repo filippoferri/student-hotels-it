@@ -2,6 +2,7 @@
 
 @import "utils/variables"
 @import "components/navbar"
+@import "components/hero"
 @import "components/home-mosaic"
 @import "components/latest-news"
 @import "components/join-community"
@@ -9,7 +10,8 @@
 @import "components/ante-footer"
 @import "components/footer"
 
-a
+a,
+.button
   transition: all .2s ease-in-out
 
 .content .taglist
@@ -26,6 +28,16 @@ a
     padding: 0 2rem 1rem 0
     margin-bottom: 1.5rem
     margin-top: 0
+
+.menu-list
+
+  li
+    position: relative
+
+    .li-icon
+      position: absolute
+      top: 0
+      left: 0
 
 // Helper Classes
 .is-centered
