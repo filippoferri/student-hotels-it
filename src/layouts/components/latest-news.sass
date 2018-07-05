@@ -1,55 +1,40 @@
 #latest-news
 
-  .tile.is-parent
+  .tile-solo-link
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
 
-  .is-preview
-    background: white
-    position: relative
-
-    figure
-      margin-bottom: 1rem
-      overflow: hidden
-      border-radius: 4px
-
-      img
-        transition: all 2s ease-out
-
-
-    .tile-date
-      text-transform: capitalize
-
-    .tile-title
-      margin-top: 5px
-      font-size: 1.2rem
-      line-height: 1.8rem
-      padding: 0 2.5rem
-
-    a
-      color: $primary
-
-    .button
+    span
+      display: block
+      width: 90%
       position: absolute
-      bottom: -37px
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      text-align: center
+
+  .is-animated
+    position: relative
+    overflow: hidden
+
+    &:before
+      content: ''
+      position: absolute
+      top: 0
       right: 0
-      border: 0
-      background: $primary
-      color: white
-      border-radius: 0
+      bottom: 0
+      left: 0
+      width: 0
+      height: 100%
+      background: $black
+      transition: width .4s cubic-bezier(.77,0,.175,1),opacity 50ms linear .4s
 
+    &:hover:before
+      width: 100%
 
-    &:hover
-      color: darken($primary, 30%)
-      border-color: darken($primary, 30%)
-
-      figure img
-        transform: scale(1.2)
-
-      a
-        color: darken($primary, 30%)
-
-      .button
-        background: darken($primary, 30%)
-        color: white
 
 
 

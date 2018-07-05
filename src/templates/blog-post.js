@@ -5,6 +5,8 @@ import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import Content, { HTMLContent } from '../components/Content'
 
+import bgTileThird from "../img/tile-hotels.jpg";
+
 export const BlogPostTemplate = ({
   content,
   contentComponent,
@@ -16,23 +18,31 @@ export const BlogPostTemplate = ({
   const PostContent = contentComponent || Content
 
   return (
-    <section className="section">
+    <section className="blog-post">
       {helmet || ''}
+
+      <div className="hero is-medium is-primary background-image">
+        <div className="hero-body"
+             style={{ backgroundImage: `url(${bgTileThird})` }}></div>
+      </div>
+
       <div className="container content">
         <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+          <div className="column is-6 is-offset-3">
+
+            <h1 className="title is-size-huge has-text-weight-bold is-uppercase">
               {title}
             </h1>
+
             <p>{description}</p>
+
             <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
                 <ul className="taglist">
                   {tags.map(tag => (
                     <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      <Link className="tag is-primary" to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
                     </li>
                   ))}
                 </ul>

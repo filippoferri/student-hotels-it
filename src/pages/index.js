@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 import Hero from "../components/Hero";
 import HomeMosaic from "../components/HomeMosaic";
+import FeaturedHotels from "../components/FeaturedHotels";
 import JoinCommunity from "../components/JoinCommunity";
 import LatestNews from "../components/LatestNews";
 
@@ -12,12 +13,12 @@ export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
-    //const { instagramAPI: api } = data.site.siteMetadata;
 
     return (
       <main>
         <Hero/>
         <HomeMosaic/>
+        <FeaturedHotels/>
         <LatestNews posts={posts}/>
       </main>
     );
@@ -44,7 +45,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      limit: 3
+      limit: 4
       sort: { order: DESC, fields: [frontmatter___date] },
       filter: { frontmatter: { templateKey: { eq: "blog-post" } },
       }

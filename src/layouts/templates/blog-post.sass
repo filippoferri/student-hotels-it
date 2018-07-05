@@ -1,0 +1,52 @@
+.blog-post
+
+  .title.is-size-huge,
+  .title:not(:last-child).is-size-huge
+    font-size: 3rem
+    margin: 3rem 0
+
+
+.background-image
+
+  &:after
+    content: ''
+    display: block
+    width: 100%
+    height: 100%
+    position: absolute
+    left: 0
+    top: 0
+    background: rgba(0,0,0,.5)
+    z-index: 2
+
+  .hero-body
+    background-position: center
+    background-size: cover
+
+.blog-post .content
+  font-size: 1.2rem
+  line-height: 1.6
+
+  h2:not(:first-child)
+    margin-top: 3rem
+    font-size: 1.5rem
+
+  p:not(:last-child)
+    margin-top: 1.5em
+
+  .taglist
+    list-style: none
+    margin: 1.5rem 1.5rem 0 0
+    display: flex
+    flex-wrap: wrap
+    justify-content: left
+    align-items: center
+
+    li
+      padding: 0 .5rem 1rem 0
+      margin-bottom: 1.5rem
+      margin-top: 0
+
+      a:hover
+        text-decoration: none
+        background-color: darken($primary, 10%)

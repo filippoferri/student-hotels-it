@@ -1,14 +1,11 @@
 import React from "react";
+import Link from "gatsby-link";
 
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import FaCheckSquare from "@fortawesome/fontawesome-free-regular/faCheckSquare";
+import FaInstagram from "@fortawesome/fontawesome-free-brands/faInstagram";
 
-import bgTileFirst from "../img/tile-room.jpg";
-import bgTileSecond from "../img/tile-coworking.jpg";
-//import bgTileThird from "../img/tile-riunioni.jpg";
-import bgTileFourth from "../img/tile-riunioni.jpg";
-import bgTileFifth from "../img/tile-open-space.jpg";
-import bgTileSixth from "../img/tile-ristorante.jpg";
+import bgTileThird from "../img/tile-hotels.jpg";
+import bgLogo from "../img/bg-logo.svg"
 
 const HomeMosaic = () => (
   <section className="section is-home-mosaic">
@@ -17,58 +14,48 @@ const HomeMosaic = () => (
         <div className="tile is-vertical is-8">
           <div className="tile">
             <div className="tile is-parent is-vertical">
-              <article className="tile is-child notification is-primary has-min-height has-background"
-                       style={{ backgroundImage: `url(${bgTileFirst})` }}>
-                <div className="is-over is-from-bottom is-blue">
-                  <h3 className="title is-6">Camere</h3>
+              <article className="tile is-child notification is-black has-min-height">
+                <div className="is-over is-block-centered">
+                  <h1 className="title is-5 is-uppercase has-text-weight-bold">"Una nuova concezione di Hotel:
+                    assolutamente fantastico!"</h1>
+                  <span>_Paola</span>
                 </div>
               </article>
-              <article className="tile is-child notification is-primary has-min-height has-background"
-                       style={{ backgroundImage: `url(${bgTileSecond})` }}>
-                <div className="is-over is-from-top is-violet">
-                  <h3 className="title is-6">Co-working</h3>
+              <article className="tile is-child notification is-primary has-min-height is-animated">
+                <div className="is-over is-block-centered">
+                  <h2 className="title is-3 is-uppercase has-text-weight-bold is-centered">Spazi innovativi di
+                    coworking</h2>
                 </div>
               </article>
             </div>
             <div className="tile is-parent">
-              <article className="tile is-child notification is-primary">
 
-                <h3 className="title is-4">Perché Student Hotel?</h3>
-                <div className="">
-                  <ul className="menu-list">
-                    <li><FontAwesomeIcon className="li-icon" icon={FaCheckSquare} stack={'1x'}/> <strong className="is-uppercase">Alloggi</strong> - Design moderno con tutti i comfort</li>
-                    <li><FontAwesomeIcon className="li-icon" icon={FaCheckSquare} stack={'1x'}/> <strong className="is-uppercase">Community</strong> - Sale dedicate e aree lounge per socializzare</li>
-                    <li><FontAwesomeIcon className="li-icon" icon={FaCheckSquare} stack={'1x'}/> <strong className="is-uppercase">Servizi</strong> - Wi-Fi super veloce, Netflix, bagno privato</li>
-                    <li><FontAwesomeIcon className="li-icon" icon={FaCheckSquare} stack={'1x'}/> <strong className="is-uppercase">Posizione</strong> - Sempre sicura e centrale</li>
-                  </ul>
+              <article className="tile is-child notification is-gray-light has-min-height is-animated has-content">
+                <div className="is-over">
+                  <h3 className="title is-4 is-uppercase has-text-weight-bold">Perché scegliere Student Hotels?</h3>
+                  <p>Per tantissime ragioni! Soprattutto perché proponiamo solo strutture che offrono non solo alloggi per dormire, ma anche spazi per studiare, divertirsi e conoscere nuovi amici.</p>
                 </div>
+                <div className="bg-logo" style={{ backgroundImage: `url(${bgLogo})` }}></div>
               </article>
+
             </div>
-          </div>
-          <div className="tile is-parent">
-            <article className="tile is-child notification is-primary has-min-height has-background"
-                     style={{ backgroundImage: `url(${bgTileFourth})` }}>
-
-              <div className="is-over is-from-top is-violet">
-                <h3 className="title is-6">Sale riunioni</h3>
-              </div>
-
-            </article>
           </div>
         </div>
         <div className="tile is-parent is-vertical">
-          <article className="tile is-child notification is-primary has-min-height has-background"
-                   style={{ backgroundImage: `url(${bgTileFifth})` }}>
-            <div className="is-over is-from-bottom is-violet">
-              <h3 className="title is-6">Open Space</h3>
+
+          <article className="tile is-child notification is-black has-background"
+                   style={{ backgroundImage: `url(${bgTileThird})` }}>
+
+            <div className="is-over is-block-top">
+              <h3 className="title is-5 is-uppercase has-text-weight-bold">#studentspirit</h3>
             </div>
+
+            <Link className="icon-social" to="/">
+              <FontAwesomeIcon className="icon-social" icon={FaInstagram} />
+            </Link>
+
           </article>
-          <article className="tile is-child notification is-primary has-min-height has-background"
-                   style={{ backgroundImage: `url(${bgTileSixth})` }}>
-            <div className="is-over is-from-top is-blue">
-              <h3 className="title is-6">Ristorante e bar</h3>
-            </div>
-          </article>
+
         </div>
       </div>
     </div>

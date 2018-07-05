@@ -1,5 +1,19 @@
 .is-home-mosaic
 
+  .tile
+    color: white
+
+    &.has-content
+      padding: 2rem
+      color: $black
+      font-size: 18px
+
+      .is-over
+        padding: 2rem
+
+    &:hover.has-content
+      color: $white
+
   .has-min-height
     min-height: 15rem
 
@@ -12,18 +26,56 @@
     &:before
       content: ''
       display: block
-
       background: rgba(0,0,0, .6)
 
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background: rgba(0,0,0,.3)
+
+
+  .is-animated
+    position: relative
+    overflow: hidden
+
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      width: 0
+      height: 100%
+      background: $black
+      transition: width .4s cubic-bezier(.77,0,.175,1),opacity 50ms linear .4s
+
+    &:hover:before
+      width: 100%
+
+
   .is-over
+    width: 95%
     z-index: 1
-    color: $white-ter
     position: absolute
     left: 0
     right: 0
     padding: 1rem
 
     $blue: rgba(28, 42, 126, 1.000)
+
+    &.is-block-top
+      top: 2rem
+      left: 2rem
+
+    &.is-block-centered
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
 
     &.is-from-bottom
       bottom: 0
@@ -40,6 +92,23 @@
         background: linear-gradient(to bottom, rgba(58, 18, 41, 1) 0%, rgba(58, 18, 41, 0) 100%)
       &.is-blue
         background: linear-gradient(to bottom, rgba(28, 42, 126, 1) 0%, rgba(28, 42, 126, 0) 100%)
+
+
+  .icon-social
+    position: absolute
+    right: 1rem
+    bottom: 1rem
+    z-index: 2
+    font-size: 2rem
+
+
+  .bg-logo
+    width: 200px
+    height: 180px
+    position: absolute
+    bottom: 0
+    right: 0
+    background-size: cover
 
   ul
     li

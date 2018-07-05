@@ -4,30 +4,19 @@
 @import "components/navbar"
 @import "components/hero"
 @import "components/home-mosaic"
+@import "components/featured-hotels"
 @import "components/latest-news"
+@import "components/tile"
 @import "components/join-community"
 @import "components/newsletter"
 @import "components/ante-footer"
 @import "components/footer"
 
+@import "templates/blog-post"
+
 a,
 .button
   transition: all .2s ease-in-out
-
-.content .taglist
-  list-style: none
-  margin-bottom: 0
-  margin-left: 0
-  margin-right: 1.5rem
-  margin-top: 1.5rem
-  display: flex
-  flex-wrap: wrap
-  justify-content: left
-  align-items: center
-  li
-    padding: 0 2rem 1rem 0
-    margin-bottom: 1.5rem
-    margin-top: 0
 
 .menu-list
 
@@ -46,6 +35,8 @@ a,
 .has-margin-bottom
   margin-bottom: 3rem
 
+.is-primary-gradient
+  background: linear-gradient(-45deg, #C53364 0%, #622774 100%)
 
 .has-background
   position: absolute
@@ -69,6 +60,8 @@ a,
   justify-content: center
   align-items: center
 
+.title.is-light
+  font-weight: 300
 
 .margin-top-0
   margin-top: 0 !important
