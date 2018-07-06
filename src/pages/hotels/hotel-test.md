@@ -10,9 +10,7 @@ tags:
   - Firenze
   - Toscana
 featured: false
-galleryImages:
-  - null
-  - null
+galleryImages: []
 ---
 
 ![flavor wheel](/img/flavor_wheel.jpg)
