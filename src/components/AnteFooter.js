@@ -44,7 +44,7 @@ const AnteFooter = () => (
             <ul className="menu-list">
               <li><Link to="/">Termini di utilizzo</Link></li>
               <li><Link to="/">Condizioni generali</Link></li>
-              <li><Link to="/">Privacy Policy & Cookies</Link></li>
+              <li><Link to="/informativa-privacy">PInformativa Privacy</Link></li>
               <li><Link to="/">Informativa newsletter</Link></li>
             </ul>
           </nav>
