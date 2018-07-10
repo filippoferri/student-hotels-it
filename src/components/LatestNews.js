@@ -28,7 +28,7 @@ const LatestNews = ({ posts }) => {
 
                   <div className="tile is-parent">
                     <article className="tile is-child notification is-primary is-animated">
-                      <Link className="tile-solo-link title is-3 is-uppercase has-text-weight-bold" to="blog"><span>Tutte le notizie</span></Link>
+                      <Link className="tile-solo-link title is-3 is-uppercase has-text-weight-bold" to="/blog"><span>Tutte le notizie</span></Link>
                     </article>
                   </div>
 

@@ -3,28 +3,31 @@ import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 
+import blogBg from "../../img/blog-bg.jpg";
+
 const TagsPage = ({
   data: { allMarkdownRemark: { group }, site: { siteMetadata: { title } } },
 }) => (
-  <section className="section">
+  <section id="blog">
     <Helmet title={`Tags | ${title}`} />
-    <div className="container content">
-      <div className="columns">
-        <div
-          className="column is-10 is-offset-1"
-          style={{ marginBottom: '6rem' }}
-        >
-          <h1 className="title is-size-2 is-bold-light">Tags</h1>
-          <ul className="taglist">
+
+    <div className="hero is-medium is-primary is-bold"
+         style={{ backgroundImage: `url(${blogBg})` }}>
+      <div className="hero-body">
+        <div className="container is-centered"></div>
+      </div>
+    </div>
+
+    <div className="container has-margin-bottom has-margin-top">
+      <div className="columns is-multiline">
             {group.map(tag => (
-              <li key={tag.fieldValue}>
+              <div className="column is-one-third"
+                   key={tag.fieldValue}>
                 <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
                   {tag.fieldValue} ({tag.totalCount})
                 </Link>
-              </li>
+              </div>
             ))}
-          </ul>
-        </div>
       </div>
     </div>
   </section>

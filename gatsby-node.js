@@ -28,10 +28,38 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       return Promise.reject(result.errors)
     }
 
-    const posts = result.data.allMarkdownRemark.edges
+    const pages = result.data.allMarkdownRemark.edges
 
-    posts.forEach(edge => {
+    // Pages except posts
+    pages
+      .filter((edge)  => edge.node.frontmatter.templateKey !== 'blog-post')
+      .forEach((edge) => {
+
+        const id = edge.node.id
+
+        createPage({
+          path: edge.node.fields.slug,
+          tags: edge.node.frontmatter.tags,
+          component: path.resolve(
+            `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+          ),
+          // additional data can be passed via context
+          context: {
+            id,
+          },
+      })
+    })
+
+    const posts = pages.filter((edge)  => edge.node.frontmatter.templateKey === 'blog-post')
+
+    posts
+      .forEach((edge, index) => {
+
       const id = edge.node.id
+
+      const prev = index === 0 ? false : posts[index - 1].node.id
+      const next = index === posts.length - 1 ? false : posts[index + 1].node.id
+
       createPage({
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
@@ -41,6 +69,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         // additional data can be passed via context
         context: {
           id,
+          prev,
+          next,
         },
       })
     })

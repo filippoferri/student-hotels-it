@@ -1,22 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { BlogPostTemplate } from '../../templates/blog-post'
+import { HotelPageTemplate } from '../../templates/hotel-page'
 
-const BlogPostPreview = ({ entry, widgetFor }) => (
-  <BlogPostTemplate
-    content={widgetFor('body')}
+const HotelTemplate = ({ entry, widgetFor }) => (
+  <HotelPageTemplate
+    content={widgetFor('info')}
     description={entry.getIn(['data', 'description'])}
     tags={entry.getIn(['data', 'tags'])}
     title={entry.getIn(['data', 'title'])}
-    thumbnail={entry.getIn(['data', 'thumbnail'])}
+    featured={entry.getIn(['data', 'thumbnail'])}
   />
 )
 
-BlogPostPreview.propTypes = {
+HotelTemplate.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   widgetFor: PropTypes.func,
 }
 
-export default BlogPostPreview
+export default HotelTemplate

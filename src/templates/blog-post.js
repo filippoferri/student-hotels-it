@@ -1,29 +1,32 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
-import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
-import Content, { HTMLContent } from '../components/Content'
-
-import bgTileThird from "../img/tile-hotels.jpg";
+import React from "react";
+import PropTypes from "prop-types";
+import { kebabCase } from "lodash";
+import Helmet from "react-helmet";
+import Link from "gatsby-link";
+import Content, { HTMLContent } from "../components/Content";
 
 export const BlogPostTemplate = ({
-  content,
-  contentComponent,
-  description,
-  tags,
-  title,
-  helmet,
-}) => {
-  const PostContent = contentComponent || Content
+                                   content,
+                                   contentComponent,
+                                   description,
+                                   tags,
+                                   title,
+                                   thumbnail,
+                                   nextTitle,
+                                   nextSlug,
+                                   prevTitle,
+                                   prevSlug,
+                                   helmet
+                                 }) => {
+  const PostContent = contentComponent || Content;
 
   return (
     <section className="blog-post">
-      {helmet || ''}
+      {helmet || ""}
 
       <div className="hero is-medium is-primary background-image">
         <div className="hero-body"
-             style={{ backgroundImage: `url(${bgTileThird})` }}></div>
+             style={{ backgroundImage: `url(${thumbnail})` }}></div>
       </div>
 
       <div className="container content">
@@ -36,7 +39,8 @@ export const BlogPostTemplate = ({
 
             <p>{description}</p>
 
-            <PostContent content={content} />
+            <PostContent content={content}/>
+
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <ul className="taglist">
@@ -48,47 +52,93 @@ export const BlogPostTemplate = ({
                 </ul>
               </div>
             ) : null}
+
           </div>
         </div>
       </div>
+
+      <div className="next-post">
+        <div className="container">
+          <div className="columns">
+            {nextTitle ? (
+              <div className="column is-6 is-offset-3 is-centered">
+                <div className="is-uppercase">Ti potrebbe interessare</div>
+
+                <Link to={nextSlug} className="title is-4 is-uppercase">{nextTitle}</Link>
+              </div>
+            ) : (
+              <div className="column is-6 is-offset-3 is-centered">
+                <div className="is-uppercase">Ti potrebbe interessare</div>
+                <Link to={prevSlug} className="title is-4 is-uppercase">{prevTitle}</Link>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
     </section>
-  )
-}
+  );
+};
 
 BlogPostTemplate.propTypes = {
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  helmet: PropTypes.instanceOf(Helmet),
-}
+  thumbnail: PropTypes.string,
+  helmet: PropTypes.object,
+  nextTitle: PropTypes.string,
+  nextSlug: PropTypes.string,
+  prevTitle: PropTypes.string,
+  prevSlug: PropTypes.string
+};
 
 const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data
+
+  const { current: post } = data;
+  const { next: nextPost } = data;
+  const { prev: prevPost } = data;
+
+  if (nextPost !== null) {
+    var nextTitle = nextPost.frontmatter.title;
+    var nextSlug = nextPost.fields.slug;
+  }
+
+  if (prevPost !== null) {
+    var prevTitle = prevPost.frontmatter.title;
+    var prevSlug = prevPost.fields.slug;
+  }
 
   return (
     <BlogPostTemplate
       content={post.html}
       contentComponent={HTMLContent}
       description={post.frontmatter.description}
-      helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
+      helmet={<Helmet title={`${post.frontmatter.title} | Blog`}/>}
       tags={post.frontmatter.tags}
       title={post.frontmatter.title}
+      thumbnail={post.frontmatter.thumbnail}
+      nextTitle={nextTitle}
+      nextSlug={nextSlug}
+      prevTitle={prevTitle}
+      prevSlug={prevSlug}
     />
-  )
-}
+  );
+};
 
 BlogPost.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
-  }),
-}
+    current: PropTypes.object,
+    prev: PropTypes.object,
+    next: PropTypes.object
+  })
+};
 
-export default BlogPost
+export default BlogPost;
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+  query BlogPostByID($id: String!, $next: String!, $prev: String!) {
+    current: markdownRemark(id: { eq: $id }) {
       id
       html
       frontmatter {
@@ -96,7 +146,24 @@ export const pageQuery = graphql`
         title
         description
         tags
+        thumbnail
+      }
+    }
+    next: markdownRemark(id: { eq: $next }) {
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+      }
+    }
+    prev: markdownRemark(id: { eq: $prev }) {
+      fields {
+        slug
+      }
+      frontmatter {
+        title
       }
     }
   }
-`
+`;
