@@ -54,9 +54,9 @@ collections:
           - {label: Heading, name: heading, widget: string}
           - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text} ]}
           - {label: Block With Image, name: block1, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image, name: image, widget: image} ]}
-          - {label: Block With Image, name: block1, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image, name: image, widget: image} ]}
+          - {label: Block With Image, name: block2, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image, name: image, widget: image} ]}
           - {label: Board, name: board, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text} ]}
-          - {label: Block With Image, name: block1, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image, name: image, widget: image} ]}
+          - {label: Block With Image, name: block3, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image, name: image, widget: image} ]}
 
   - name: "hotels"
     label: "Hotels"
