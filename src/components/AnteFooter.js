@@ -21,7 +21,7 @@ const AnteFooter = () => (
           <nav>
             <ul className="menu-list">
               <li><Link to="/">Chi siamo</Link></li>
-              <li><Link to="/">Concetto</Link></li>
+              <li><Link to="/mission">Mission</Link></li>
               <li><Link to="/blog">Blog</Link></li>
               <li><Link to="/">Eventi</Link></li>
             </ul>

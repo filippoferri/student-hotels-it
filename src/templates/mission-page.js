@@ -1,32 +1,51 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Content, { HTMLContent } from '../components/Content'
 
-export const MissionPageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content
+import BlockText from "../components/blockText"
+import BlockTextImage from "../components/blockTextImage"
+import BlockTextBoard from "../components/blockTextBoard"
+
+export const MissionPageTemplate = ({
+  title,
+  image,
+  heading
+}) => {
 
   return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
+    <div>
+
+      <section className="hero is-large is-primary background-image"
+               style={{ backgroundImage: `url(${image})` }}>
+        <div className="hero-body">
+          <div className="container has-text-centered">
+            <div className="columns">
+              <div className="column is-6 is-offset-3">
+                <h1 className="title">
+                  {heading}
+                </h1>
+              </div>
             </div>
+
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <BlockText />
+
+      <BlockTextImage dir={"is-right"} style={"black"} />
+
+      <BlockTextImage dir={"is-left"} style={"white"} />
+
+      <BlockTextBoard style={"primary"}/>
+
+      <BlockTextImage dir={"is-right"} style={"white-ter"} />
+
+    </div>
   )
 }
 
 MissionPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
-  content: PropTypes.string,
-  contentComponent: PropTypes.func,
 }
 
 const MissionPage = ({ data }) => {
@@ -34,9 +53,9 @@ const MissionPage = ({ data }) => {
 
   return (
     <MissionPageTemplate
-      contentComponent={HTMLContent}
       title={post.frontmatter.title}
-      content={post.html}
+      image={frontmatter.image}
+      heading={frontmatter.heading}
     />
   )
 }
@@ -50,9 +69,10 @@ export default MissionPage
 export const missionPageQuery = graphql`
   query MissionPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      html
       frontmatter {
         title
+        image
+        heading
       }
     }
   }

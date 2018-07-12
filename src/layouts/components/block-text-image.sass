@@ -1,0 +1,50 @@
+.block-text-image
+
+  &.is-left
+    margin-bottom: 3rem
+
+  &.is-right
+    margin-top: 3rem
+
+  .block-image
+    background: center
+    background-size: cover
+
+  &.has-background-black,
+  &.has-background-primary
+    color: white
+
+    h3.title
+      color: white
+
+    .block-image
+      height: 100%
+      width: 100%
+      background-color: $primary
+
+  &.has-background-white-ter,
+  &.has-background-white
+    color: $black
+
+    h3.title
+      color: $black
+
+    .block-image
+      height: 100%
+      width: 100%
+      background-color: $black
+
+
+
+  &.is-right .block-image
+    margin-top: -6rem
+    border-radius: 4px 0 0 4px
+
+  &.is-left .block-image
+    margin-top: 6rem
+    border-radius: 0 4px 4px 0
+
+  article
+    padding: 6rem 0
+    font-size: 1.1rem
+    line-height: 1.6
