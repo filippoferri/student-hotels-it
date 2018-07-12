@@ -4,18 +4,27 @@ path: /mission
 title: La mission di Student Hotels
 image: /img/jumbotron.jpg
 heading: La mission di Student Hotels
+intro:
+  heading: We're unlocking the world's greatest cities for the creative and ambitious
+  description: >
+    Our mission is simple: we want to build a world that's more alive, more together and more collaborative. Our buildings are so much more than just bricks and mortar: they redefine the way people choose to live, work and play by providing unique and collaborative environments that unlock inspiration and make every single day extraordinary. We create places where you can meet new people, try new things, and learn something new every day.
+block1:
+  heading: We work tirelessly to build world-class board and executive leadership teams for companies around the globe
+  description: >
+    Incomparable Candidate Experience Game-Changing Leaders Innovative and Flexible Your Brand Ambassadors Partners With A Shared Goal
+  image: /img/chemex.jpg
+block2:
+  heading: We work tirelessly to build world-class board and executive leadership teams for companies around the globe
+  description: >
+    Incomparable Candidate Experience Game-Changing Leaders Innovative and Flexible Your Brand Ambassadors Partners With A Shared Goal
+  image: /img/chemex.jpg
+block3:
+  heading: We work tirelessly to build world-class board and executive leadership teams for companies around the globe
+  description: >
+    Incomparable Candidate Experience Game-Changing Leaders Innovative and Flexible Your Brand Ambassadors Partners With A Shared Goal
+  image: /img/chemex.jpg
+board:
+  heading: Tell us more
+  description: >
+    So now you know a bit about us, we’re probably going to wonder why we haven’t spoken to you before; we’d love to see you. We may be knee-deep in finding the team to build a new life-changing app or plotting our clients’ plan of global domination, but feel free to pop by the office anytime and say hello. And if you can’t contain yourself until then, give us a call, or an email and let it all out. It’s going to be amazing.
 ---
-### Shade-grown coffee
-Coffee is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of shade coffee farms provides habitat for a great number of migratory and resident species.
-
-### Single origin
-Single-origin coffee is coffee grown within a single known geographic origin. Sometimes, this is a single farm or a specific collection of beans from a single country. The name of the coffee is then usually the place it was grown to whatever degree available.
-
-### Sustainable farming
-Sustainable agriculture is farming in sustainable ways based on an understanding of ecosystem services, the study of relationships between organisms and their environment. What grows where and how it is grown are a matter of choice and careful consideration for nature and communities.
-
-### Direct sourcing
-Direct trade is a form of sourcing practiced by some coffee roasters. Advocates of direct trade practices promote direct communication and price negotiation between buyer and farmer, along with systems that encourage and incentivize quality.
-
-### Reinvest profits
-We want to truly empower the communities that bring amazing coffee to you. That’s why we reinvest 20% of our profits into farms, local businesses and schools everywhere our coffee is grown. You can see the communities grow and learn more about coffee farming on our blog.

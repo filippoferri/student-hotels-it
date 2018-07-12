@@ -8,7 +8,12 @@ import BlockTextBoard from "../components/blockTextBoard"
 export const MissionPageTemplate = ({
   title,
   image,
-  heading
+  heading,
+  intro,
+  block1,
+  block2,
+  block3,
+  board
 }) => {
 
   return (
@@ -30,15 +35,15 @@ export const MissionPageTemplate = ({
         </div>
       </section>
 
-      <BlockText />
+      <BlockText content={intro} />
 
-      <BlockTextImage dir={"is-right"} style={"black"} />
+      <BlockTextImage content={block1} dir={"is-right"} style={"black"} />
 
-      <BlockTextImage dir={"is-left"} style={"white"} />
+      <BlockTextImage content={block2} dir={"is-left"} style={"white"} />
 
-      <BlockTextBoard style={"primary"}/>
+      <BlockTextBoard content={board} style={"primary"}/>
 
-      <BlockTextImage dir={"is-right"} style={"white-ter"} />
+      <BlockTextImage content={block3} cont={block1} dir={"is-right"} style={"white-ter"} />
 
     </div>
   )
@@ -46,16 +51,46 @@ export const MissionPageTemplate = ({
 
 MissionPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  heading: PropTypes.string,
+  intro: PropTypes.shape({
+    heading: PropTypes.string,
+    description: PropTypes.string,
+  }),
+  block1: PropTypes.shape({
+    heading: PropTypes.string,
+    description: PropTypes.string,
+    image: PropTypes.string
+  }),
+  block2: PropTypes.shape({
+    heading: PropTypes.string,
+    description: PropTypes.string,
+    image: PropTypes.string
+  }),
+  block3: PropTypes.shape({
+    heading: PropTypes.string,
+    description: PropTypes.string,
+    image: PropTypes.string
+  }),
+  board: PropTypes.shape({
+    heading: PropTypes.string,
+    description: PropTypes.string
+  })
 }
 
 const MissionPage = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { frontmatter } = data.markdownRemark
 
   return (
     <MissionPageTemplate
-      title={post.frontmatter.title}
+      title={frontmatter.title}
       image={frontmatter.image}
       heading={frontmatter.heading}
+      intro={frontmatter.intro}
+      block1={frontmatter.block1}
+      block2={frontmatter.block2}
+      block3={frontmatter.block3}
+      board={frontmatter.board}
     />
   )
 }
@@ -73,6 +108,29 @@ export const missionPageQuery = graphql`
         title
         image
         heading
+        intro {
+          heading
+          description
+        }
+        block1 {
+          heading
+          description
+          image
+        }
+        block2 {
+          heading
+          description
+          image
+        }
+        block3 {
+          heading
+          description
+          image
+        }
+        board {
+          heading
+          description
+        }
       }
     }
   }
