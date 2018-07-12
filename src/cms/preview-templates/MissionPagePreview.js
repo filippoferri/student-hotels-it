@@ -14,12 +14,12 @@ const MissionPagePreview = ({ entry }) => (
     block1={{
       heading: entry.getIn(['data', 'block1', 'heading']),
       description: entry.getIn(['data', 'block1', 'description']),
-      image: getAsset(entry.getIn(['data', 'block1', 'image'])),
+      image: entry.getIn(['data', 'block1', 'image']),
     }}
     block2={{
       heading: entry.getIn(['data', 'block2', 'heading']),
       description: entry.getIn(['data', 'block2', 'description']),
-      image: getAsset(entry.getIn(['data', 'block2', 'image'])),
+      image: entry.getIn(['data', 'block2', 'image']),
     }}
     board={{
       heading: entry.getIn(['data', 'board', 'heading']),
@@ -28,7 +28,7 @@ const MissionPagePreview = ({ entry }) => (
     block3={{
       heading: entry.getIn(['data', 'block3', 'heading']),
       description: entry.getIn(['data', 'block3', 'description']),
-      image: getAsset(entry.getIn(['data', 'block3', 'image'])),
+      image: entry.getIn(['data', 'block3', 'image']),
     }}
   />
 )
