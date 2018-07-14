@@ -17,7 +17,7 @@ export const MissionPageTemplate = ({
 }) => {
 
   return (
-    <div>
+    <mission-page>
 
       <section className="hero is-large is-primary background-image"
                style={{ backgroundImage: `url(${image})` }}>
@@ -45,7 +45,7 @@ export const MissionPageTemplate = ({
 
       <BlockTextImage content={block3} cont={block1} dir={"is-right"} style={"white-ter"} />
 
-    </div>
+    </mission-page>
   )
 }
 
