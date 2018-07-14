@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { FaqPageTemplate } from "../../templates/faq-page";
 
 
-const FaqPagePreview = ({ entry, getAsset }) => {
+const FaqPagePreview = ({ entry }) => {
 
   const entryFaq = entry.getIn(["data", "faq"]);
   const faq = entryFaq ? entryFaq.toJS() : [];

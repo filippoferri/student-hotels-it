@@ -11,7 +11,7 @@ export const FaqPageTemplate = ({
   return (
     <faqPage>
 
-      <section className="hero is-medium is-primary">
+      <section className="hero is-medium is-primary background-image">
         <div className="hero-body"
              style={{ backgroundImage: `url(${image})` }}>
           <div className="container has-text-centered">
@@ -37,8 +37,8 @@ export const FaqPageTemplate = ({
               </div>
 
               <div className="faq-list">
-                {faq.map(item => (
-                  <dl key={item} className="faq-item">
+                {faq.map( (item, index ) => (
+                  <dl key={index} className="faq-item">
                     <dt className="faq-question">{item.question}</dt>
                     <dd className="faq-answer">
                       <blockquote>{item.answer}</blockquote>
@@ -51,7 +51,6 @@ export const FaqPageTemplate = ({
           </div>
         </div>
       </section>
-
 
     </faqPage>
   );
@@ -66,6 +65,7 @@ FaqPageTemplate.propTypes = {
 
 
 const FaqPage = ({ data }) => {
+
   const { frontmatter } = data.markdownRemark;
 
   return (
