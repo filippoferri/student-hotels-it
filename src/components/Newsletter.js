@@ -17,9 +17,9 @@ const Newsletter = () => (
         <h3 className="title is-3 is-spaced has-text-centered">Rimani in contatto</h3>
         <div className="field">
           <div className="control has-icons-left has-button-right">
-            <input className="input is-large is-rounded" type="text" placeholder="Indirizzo email"/>
+            <input className="input is-large" type="text" placeholder="Indirizzo email"/>
             <span className="icon is-left">@</span>
-            <button type="button" className="button is-primary is-rounded is-medium">Iscriviti</button>
+            <button type="button" className="button is-primary is-medium">Iscriviti</button>
           </div>
         </div>
         <div className="is-centered is-spaced">

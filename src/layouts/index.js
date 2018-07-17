@@ -9,14 +9,14 @@ import Footer from '../components/Footer'
 import './all.sass'
 
 const TemplateWrapper = ({ children }) => (
-  <div>
+  <mainWrapper>
     <Helmet title="Student Hotels Italia: hotels a misura di studente" />
     <Navbar />
     {children()}
     <Newsletter />
     <AnteFooter />
     <Footer />
-  </div>
+  </mainWrapper>
 )
 
 TemplateWrapper.propTypes = {

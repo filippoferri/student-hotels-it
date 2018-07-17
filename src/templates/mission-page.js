@@ -19,12 +19,12 @@ export const MissionPageTemplate = ({
   return (
     <mission-page>
 
-      <section className="hero is-large is-primary background-image"
+      <section className="hero is-medium is-primary background-image"
                style={{ backgroundImage: `url(${image})` }}>
         <div className="hero-body">
           <div className="container has-text-centered">
             <div className="columns">
-              <div className="column is-6 is-offset-3">
+              <div className="column is-8 is-offset-2">
                 <h1 className="title">
                   {heading}
                 </h1>

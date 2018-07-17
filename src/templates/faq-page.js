@@ -11,12 +11,12 @@ export const FaqPageTemplate = ({
   return (
     <faqPage>
 
-      <section className="hero is-medium is-primary background-image">
-        <div className="hero-body"
-             style={{ backgroundImage: `url(${image})` }}>
+      <section className="hero is-medium is-primary background-image"
+               style={{ backgroundImage: `url(${image})` }}>
+        <div className="hero-body">
           <div className="container has-text-centered">
             <div className="columns">
-              <div className="column is-6 is-offset-3">
+              <div className="column is-8 is-offset-2">
                 <h1 className="title">
                   {heading}
                 </h1>
@@ -67,6 +67,8 @@ FaqPageTemplate.propTypes = {
 const FaqPage = ({ data }) => {
 
   const { frontmatter } = data.markdownRemark;
+
+  console.log(frontmatter)
 
   return (
     <FaqPageTemplate

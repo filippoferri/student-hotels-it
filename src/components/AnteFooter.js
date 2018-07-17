@@ -20,10 +20,9 @@ const AnteFooter = () => (
           <h5 className="menu-label">Student Hotels</h5>
           <nav>
             <ul className="menu-list">
-              <li><Link to="/">Chi siamo</Link></li>
+              <li><Link to="/chi-siamo">Chi siamo</Link></li>
               <li><Link to="/mission">Mission</Link></li>
               <li><Link to="/blog">Blog</Link></li>
-              <li><Link to="/">Eventi</Link></li>
             </ul>
           </nav>
         </div>
@@ -31,9 +30,8 @@ const AnteFooter = () => (
           <h5 className="menu-label">Informazioni</h5>
           <nav>
             <ul className="menu-list">
-              <li><Link to="/">FAQ</Link></li>
-              <li><Link to="/">Lavora con noi</Link></li>
-              <li><Link to="/">Area Stampa</Link></li>
+              <li><Link to="/faq">FAQ</Link></li>
+              <li><Link to="/lavora-con-noi">Lavora con noi</Link></li>
               <li><Link to="/">Contatti</Link></li>
             </ul>
           </nav>
@@ -44,7 +42,7 @@ const AnteFooter = () => (
             <ul className="menu-list">
               <li><Link to="/">Termini di utilizzo</Link></li>
               <li><Link to="/">Condizioni generali</Link></li>
-              <li><Link to="/informativa-privacy">PInformativa Privacy</Link></li>
+              <li><Link to="/informativa-privacy">Informativa Privacy</Link></li>
               <li><Link to="/">Informativa newsletter</Link></li>
             </ul>
           </nav>

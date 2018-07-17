@@ -1,6 +1,6 @@
 ---
 templateKey: 'about-page'
-path: /about
+path: /chi-siamo
 title: Chi siamo
 image: /img/jumbotron.jpg
 heading: Un punto di riferimento di hotel per studenti

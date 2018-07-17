@@ -1,59 +1,87 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Content, { HTMLContent } from '../components/Content'
+import React from "react";
+import PropTypes from "prop-types";
+import Content, { HTMLContent } from "../components/Content";
 
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content
+export const AboutPageTemplate = ({
+                                    title,
+                                    image,
+                                    heading,
+                                    content,
+                                    contentComponent
+                                  }) => {
+  const PageContent = contentComponent || Content;
 
   return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
+    <aboutPage>
+
+      <section className="hero is-medium is-primary background-image"
+               style={{ backgroundImage: `url(${image})` }}>
+        <div className="hero-body">
+          <div className="container has-text-centered">
+            <div className="columns">
+              <div className="column is-8 is-offset-2">
+                <h1 className="title">
+                  {heading}
+                </h1>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container">
+          <div className="columns">
+            <div className="column is-6 is-offset-3">
+              <div className="section">
+                <PageContent className="content" content={content}/>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  )
-}
+      </section>
+    </aboutPage>
+  );
+};
 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
+  heading: PropTypes.string.isRequired,
+  image: PropTypes.string,
   content: PropTypes.string,
-  contentComponent: PropTypes.func,
-}
+  contentComponent: PropTypes.func
+};
 
 const AboutPage = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
 
   return (
     <AboutPageTemplate
       contentComponent={HTMLContent}
       title={post.frontmatter.title}
+      image={post.frontmatter.image}
+      heading={post.frontmatter.heading}
       content={post.html}
     />
-  )
-}
+  );
+};
 
 AboutPage.propTypes = {
-  data: PropTypes.object.isRequired,
-}
+  data: PropTypes.object.isRequired
+};
 
-export default AboutPage
+export default AboutPage;
 
-export const aboutPageQuery = graphql`
+export const pageQuery = graphql`
   query AboutPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
         title
+        image
+        heading
       }
     }
   }
-`
+`;

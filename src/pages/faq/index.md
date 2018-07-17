@@ -1,7 +1,7 @@
 ---
 templateKey: 'faq-page'
 path: /faq
-title: Domande Frequenti
+title: FAQ
 image: /img/jumbotron.jpg
 heading: Domande Frequenti
 faq:
