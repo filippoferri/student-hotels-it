@@ -32,7 +32,7 @@ const AnteFooter = () => (
             <ul className="menu-list">
               <li><Link to="/faq">FAQ</Link></li>
               <li><Link to="/lavora-con-noi">Lavora con noi</Link></li>
-              <li><Link to="/">Contatti</Link></li>
+              <li><Link to="/contatti">Contatti</Link></li>
             </ul>
           </nav>
         </div>
@@ -40,10 +40,10 @@ const AnteFooter = () => (
           <h5 className="menu-label">Note legali</h5>
           <nav>
             <ul className="menu-list">
-              <li><Link to="/">Termini di utilizzo</Link></li>
-              <li><Link to="/">Condizioni generali</Link></li>
+              <li><Link to="/termini-utilizzo">Termini di utilizzo</Link></li>
+              <li><Link to="/condizioni-generali">Condizioni generali</Link></li>
               <li><Link to="/informativa-privacy">Informativa Privacy</Link></li>
-              <li><Link to="/">Informativa newsletter</Link></li>
+              <li><Link to="/informativa-newsletter">Informativa newsletter</Link></li>
             </ul>
           </nav>
         </div>

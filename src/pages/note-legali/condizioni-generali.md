@@ -1,6 +1,6 @@
 ---
 templateKey: default
-title: Termini e condizioni
+title: Condizioni Generali
 hero: /img/flavor_wheel.jpg
 ---
 
