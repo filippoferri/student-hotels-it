@@ -36,7 +36,7 @@ export const ContactPageTemplate = ({
 
             <div className="column is-6 is-offset-3">
 
-              <form name="contact" netlify>
+              <form name="contact" method="POST" netlify>
 
                 <div className="field-body">
                   <div className="field">
@@ -75,6 +75,8 @@ export const ContactPageTemplate = ({
                     <textarea className="textarea is-large" name="message" placeholder="Come possiamo aiutarti?"></textarea>
                   </div>
                 </div>
+
+                <div data-netlify-recaptcha></div>
 
                 <div className="control is-grouped-right">
                   <button type="submit" className="button is-primary is-large">Invia</button>
