@@ -3,7 +3,7 @@ templateKey: hotel-page
 title: Hotel test
 date: 2016-12-17T15:04:10.000Z
 hero: /img/flavor_wheel.jpg
-heading: Firenze: un palazzo da sogno diventato hotel
+heading: Firenze - un palazzo da sogno diventato hotel
 tags:
   - Firenze
   - Toscana
