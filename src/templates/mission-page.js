@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import BlockText from "../components/blockText"
-import BlockTextImage from "../components/blockTextImage"
-import BlockTextBoard from "../components/blockTextBoard"
+import BlockText from '../components/blockText'
+import BlockTextImage from '../components/blockTextImage'
+import BlockTextBoard from '../components/blockTextBoard'
 
 export const MissionPageTemplate = ({
   title,
@@ -43,7 +43,7 @@ export const MissionPageTemplate = ({
 
       <BlockTextBoard content={board} style={"primary"}/>
 
-      <BlockTextImage content={block3} cont={block1} dir={"is-right"} style={"white-ter"} />
+      <BlockTextImage content={block3} dir={"is-right"} style={"white-ter"} />
 
     </mission-page>
   )

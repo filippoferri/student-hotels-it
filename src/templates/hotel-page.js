@@ -8,7 +8,6 @@ import Content, { HTMLContent } from '../components/Content'
 export const HotelPageTemplate = ({
   content,
   contentComponent,
-  description,
   tags,
   title,
   helmet,
@@ -48,7 +47,6 @@ export const HotelPageTemplate = ({
 HotelPageTemplate.propTypes = {
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.func,
-  description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.instanceOf(Helmet),
 }
@@ -60,7 +58,6 @@ const HotelDetails = ({ data }) => {
     <HotelPageTemplate
       content={post.html}
       contentComponent={HTMLContent}
-      description={post.frontmatter.description}
       helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
       tags={post.frontmatter.tags}
       title={post.frontmatter.title}
@@ -84,7 +81,6 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
-        description
         tags
       }
     }

@@ -68,8 +68,6 @@ const FaqPage = ({ data }) => {
 
   const { frontmatter } = data.markdownRemark;
 
-  console.log(frontmatter)
-
   return (
     <FaqPageTemplate
       title={frontmatter.title}
