@@ -17,7 +17,7 @@ const FeaturedHotels = () => (
                    style={{ backgroundImage: `url(${bgHotel})` }}>
             <p className="tile-title title is-4 is-uppercase">Firenze</p>
             <p className="tile-price title is-4 is-uppercase has-text-weight-bold"><span>Da:</span> 300€</p>
-            <Link className="tile-link" to={"/"}></Link>
+            <Link className="tile-link" to="/hotels/hotel-test"></Link>
           </article>
         </div>
 

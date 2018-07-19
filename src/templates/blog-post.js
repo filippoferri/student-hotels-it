@@ -6,18 +6,18 @@ import Link from "gatsby-link";
 import Content, { HTMLContent } from "../components/Content";
 
 export const BlogPostTemplate = ({
-                                   content,
-                                   contentComponent,
-                                   description,
-                                   tags,
-                                   title,
-                                   thumbnail,
-                                   nextTitle,
-                                   nextSlug,
-                                   prevTitle,
-                                   prevSlug,
-                                   helmet
-                                 }) => {
+ content,
+ contentComponent,
+ description,
+ tags,
+ title,
+ thumbnail,
+ nextTitle,
+ nextSlug,
+ prevTitle,
+ prevSlug,
+ helmet
+}) => {
   const PostContent = contentComponent || Content;
 
   return (

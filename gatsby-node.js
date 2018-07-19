@@ -57,8 +57,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
       const id = edge.node.id
 
-      const prev = index === 0 ? false : posts[index - 1].node.id
-      const next = index === posts.length - 1 ? false : posts[index + 1].node.id
+      const prev = index === 0 ? "" : posts[index - 1].node.id
+      const next = index === posts.length - 1 ? "" : posts[index + 1].node.id
 
       createPage({
         path: edge.node.fields.slug,

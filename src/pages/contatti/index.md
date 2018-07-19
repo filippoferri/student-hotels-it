@@ -1,7 +1,7 @@
 ---
 templateKey: 'contact-page'
 path: /contatti
-title: Contatti
+title: Contattaci
 image: /img/jumbotron.jpg
-heading: Contattaci
+heading: Domande? Feedback?
 ---
