@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import BlockText from '../components/blockText'
-import BlockTextImage from '../components/blockTextImage'
-import BlockTextBoard from '../components/blockTextBoard'
+import BlockText from '../components/BlockText'
+import BlockTextImage from '../components/BlockTextImage'
+import BlockTextBoard from '../components/BlockTextBoard'
 
 export const MissionPageTemplate = ({
   title,
