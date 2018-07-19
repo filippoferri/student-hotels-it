@@ -14,6 +14,7 @@ const BlockText = ({ content }) => {
       </div>
     </section>
   );
+  
 };
 
 export default BlockText;
