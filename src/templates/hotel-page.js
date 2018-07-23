@@ -6,14 +6,14 @@ import Link from "gatsby-link";
 import Content, { HTMLContent } from "../components/Content";
 
 export const HotelPageTemplate = ({
-    content,
-    contentComponent,
-    tags,
-    title,
-    image,
-    heading,
-    helmet
-  }) => {
+                                    content,
+                                    contentComponent,
+                                    tags,
+                                    title,
+                                    image,
+                                    heading,
+                                    helmet
+                                  }) => {
 
   const PostContent = contentComponent || Content;
 
@@ -43,13 +43,14 @@ export const HotelPageTemplate = ({
 
               <div className="sh-hotel-header">
                 <h2 className="title is-size-4">{title}</h2>
-                <span>Via Da qualche parte</span> <a href="/">Mappa</a>
+                <span>Via Da qualche parte</span>
+                <Link to="#map"><span>Mappa</span></Link>
                 <div>Stelle</div>
               </div>
 
               <div className="sh-hotel-gallery">
                 <img
-                  style={{ borderRadius: '4px' }}
+                  style={{ borderRadius: "4px" }}
                   src={image}
                   alt={title}
                 />
@@ -87,7 +88,6 @@ export const HotelPageTemplate = ({
               </div>
 
 
-
             </div>
             <div className="column is-3 is-offset-1 has-border-left is-centered">
 
@@ -102,7 +102,9 @@ export const HotelPageTemplate = ({
       <section>
         <div className="columns">
           <div className="column is-8 is-offset-2">
-            <div className="sh-hotel-map has-background-black">Qui va la mappa</div>
+            <div className="sh-hotel-map has-background-black">
+
+            </div>
           </div>
         </div>
 

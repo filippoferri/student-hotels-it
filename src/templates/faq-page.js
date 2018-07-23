@@ -1,68 +1,81 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { createFilter } from "react-search-input";
 
-export const FaqPageTemplate = ({
-  title,
-  image,
-  heading,
-  faq
-}) => {
+const KEYS_TO_FILTERS = ['question', 'answer'];
 
-  return (
-    <faqPage>
+class FaqPageTemplate extends React.Component {
 
-      <section className="hero is-medium is-primary background-image"
-               style={{ backgroundImage: `url(${image})` }}>
-        <div className="hero-body">
-          <div className="container has-text-centered">
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchTerm: ""
+    };
+    this.searchUpdated = this.searchUpdated.bind(this);
+  }
+
+  searchUpdated(event) {
+    this.setState({ searchTerm: event.target.value });
+  }
+
+  render() {
+
+    const filteredFaq = this.props.faq.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS));
+
+    return (
+      <faqPage>
+
+        <section className="hero is-medium is-primary background-image"
+                 style={{ backgroundImage: `url(${this.props.image})` }}>
+          <div className="hero-body">
+            <div className="container has-text-centered">
+              <div className="columns">
+                <div className="column is-8 is-offset-2">
+                  <h1 className="title">
+                    {this.props.heading}
+                  </h1>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section className="section is-small">
+          <div className="container">
             <div className="columns">
-              <div className="column is-8 is-offset-2">
-                <h1 className="title">
-                  {heading}
-                </h1>
+              <div className="column is-6 is-offset-3">
+
+                <div className="search-filter">
+                  <input type="text" className="input" placeholder="Cerca" onChange={this.searchUpdated} />
+                </div>
+
+                <div className="faq-list">
+                {filteredFaq.map((item, index) => {
+                  return (
+                    <dl className="faq-item" key={index}>
+                      <dt className="faq-question">{item.question}</dt>
+                      <dd className="faq-answer">
+                        <blockquote>{item.answer}</blockquote>
+                        </dd>
+                    </dl>
+                  );
+                })}
+                </div>
+
               </div>
             </div>
-
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="section is-small">
-        <div className="container">
-          <div className="columns">
-            <div className="column is-6 is-offset-3">
-
-              <div className="search-filter">
-                <input type="text" className="input is-large" placeholder="Cerca"/>
-              </div>
-
-              <div className="faq-list">
-                {faq.map( (item, index ) => (
-                  <dl key={index} className="faq-item">
-                    <dt className="faq-question">{item.question}</dt>
-                    <dd className="faq-answer">
-                      <blockquote>{item.answer}</blockquote>
-                    </dd>
-                  </dl>
-                ))}
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </faqPage>
-  );
-};
+      </faqPage>
+    );
+  }
+}
 
 FaqPageTemplate.propTypes = {
-  title: PropTypes.string,
-  image: PropTypes.string,
-  heading: PropTypes.string,
-  faq: PropTypes.array
+  searchTerm: PropTypes.string,
 };
-
 
 const FaqPage = ({ data }) => {
 
