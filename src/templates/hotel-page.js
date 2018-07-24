@@ -1,19 +1,21 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { kebabCase } from "lodash";
-import Helmet from "react-helmet";
-import Link from "gatsby-link";
-import Content, { HTMLContent } from "../components/Content";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { kebabCase } from 'lodash';
+import Helmet from 'react-helmet';
+import Link from 'gatsby-link';
+
+import Content, { HTMLContent } from '../components/Content';
+import ReadMore from '../components/ReadMore';
 
 export const HotelPageTemplate = ({
-                                    content,
-                                    contentComponent,
-                                    tags,
-                                    title,
-                                    image,
-                                    heading,
-                                    helmet
-                                  }) => {
+    content,
+    contentComponent,
+    tags,
+    title,
+    image,
+    heading,
+    helmet
+  }) => {
 
   const PostContent = contentComponent || Content;
 
@@ -81,7 +83,7 @@ export const HotelPageTemplate = ({
                     <h3 className="is-size-5 has-text-weight-bold">Info</h3>
                   </div>
                   <div className="column is-9 content margin-top-0">
-                    <PostContent content={content}/>
+                      <ReadMore />
                   </div>
                 </div>
 
