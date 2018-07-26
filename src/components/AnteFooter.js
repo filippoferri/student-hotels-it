@@ -9,7 +9,7 @@ const AnteFooter = () => (
       <div className="columns">
         <div className="column is-centered">
           <div className="ante-footer-brand ">
-            <Link to="/">
+            <Link to="https://studenthotels.it">
               <figure className="image">
                 <img className="logo-footer" src={logo} alt="Student Hotels Italia"/>
               </figure>

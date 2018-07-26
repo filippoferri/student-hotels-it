@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 
-import Hero from "../components/Hero";
+import HomeHero from "../components/HomeHero";
 import HomeMosaic from "../components/HomeMosaic";
 import FeaturedHotels from "../components/FeaturedHotels";
 import JoinCommunity from "../components/JoinCommunity";
@@ -16,7 +16,7 @@ export default class IndexPage extends React.Component {
 
     return (
       <main>
-        <Hero/>
+        <HomeHero/>
         <HomeMosaic/>
         <FeaturedHotels/>
         <LatestNews posts={posts}/>

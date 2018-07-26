@@ -2,15 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import Helmet from "react-helmet";
+
 import Content, { HTMLContent } from "../components/Content";
+import Hero from '../components/Hero';
 
 export const DefaultPageTemplate = ({
-                                      content,
-                                      contentComponent,
-                                      title,
-                                      hero,
-                                      helmet
-                                    }) => {
+    content,
+    contentComponent,
+    title,
+    hero,
+    helmet
+  }) => {
 
   const PageContent = contentComponent || Content;
 
@@ -18,18 +20,11 @@ export const DefaultPageTemplate = ({
     <section className="default-page">
       {helmet || ""}
 
-      <div className="hero is-medium is-primary background-image">
-        <div className="hero-body"
-             style={{ backgroundImage: `url(${hero})` }}></div>
-      </div>
+      <Hero image={hero} heading={title} />
 
       <div className="container content">
         <div className="columns">
           <div className="column is-6 is-offset-3">
-
-            <h1 className="title is-size-huge has-text-weight-bold is-uppercase">
-              {title}
-            </h1>
 
             <PageContent content={content}/>
 

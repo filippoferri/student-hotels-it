@@ -5,5 +5,141 @@
   left: 0
   right: 0
 
-.navbar-brand img.logo
-  width: 41px
+.navbar-brand
+  width: 100%
+
+  img.logo
+    width: 41px
+
+  .navbar-burger
+    display: flex
+    margin-left: auto
+    margin-right: 1rem
+    color: white
+
+.sh-modal
+  position: fixed
+  top: 0
+  right: 0
+  left: auto
+  bottom: 0
+  overflow: hidden
+  width: 0
+  height: 100%
+  z-index: -1
+
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    background: rgba(0,0,0,.6)
+    opacity: 0
+    transition: opacity 200ms linear
+
+  .sh-off-menu
+    width: 0
+    position: fixed
+    right: 0
+    top: 0
+    bottom: 0
+
+  .sh-main-menu
+    width: 0
+    position: fixed
+    right: 0
+    top: 0
+    bottom: 0
+    display: flex
+    background: white
+    transition: all 200ms cubic-bezier(1,0,.61,.15)
+    transform: translateX(100%)
+    transform: translate3d(100%, 0, 0)
+
+    .sh-scroll-container
+      overflow-y: scroll
+      position: absolute
+      bottom: 0
+      top: 0
+      left: 0
+      right: 0
+
+      .navbar-burger.is-active
+        display: flex
+        position: absolute
+        top: 0
+        right: 0
+        color: black
+
+  &.is-open
+    bottom: 0
+    left: 0
+    position: fixed
+    right: 0
+    top: 0
+    width: 100%
+    z-index: 1000
+
+
+    &::before
+      opacity: 1
+
+    @media (min-width: 65rem)
+      .sh-off-menu
+        width: calc(100vw - 32rem)
+
+    .sh-main-menu
+      transform: translateX(0)
+      transform: translate3d(0, 0, 0)
+      width: 100vw
+
+      @media (min-width: 65rem)
+        width: 28rem
+
+  .sh-nav-wrapper
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: 100%
+    width: 100%
+    flex: 1 1 0
+
+    header
+      padding: 0 1.5rem
+      height: 3.25rem
+      line-height: 3.25rem
+
+
+    .sh-nav-list
+      justify-content: center
+      display: flex
+      flex-direction: column
+      flex: 1 1 0
+      padding: 0.5rem 1.5rem
+
+      .sh-nav-link
+        margin-bottom: .5rem
+        display: block
+        color: $black
+
+        @media (min-width: 65rem)
+          margin-bottom: 1.5rem
+
+    .sh-nav-copy
+      background: $white-ter
+      padding: 2rem 2rem .5rem 2rem
+      font-size: .6rem
+      text-transform: uppercase
+
+    footer
+      background: $black
+      padding: 1rem
+      font-size: .8rem
+
+      a
+        color: white
+        padding: 0 1rem
+
+

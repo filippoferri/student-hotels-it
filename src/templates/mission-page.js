@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import Hero from '../components/Hero'
 import BlockText from '../components/BlockText'
 import BlockTextImage from '../components/BlockTextImage'
 import BlockTextBoard from '../components/BlockTextBoard'
@@ -19,21 +20,7 @@ export const MissionPageTemplate = ({
   return (
     <mission-page>
 
-      <section className="hero is-medium is-primary background-image"
-               style={{ backgroundImage: `url(${image})` }}>
-        <div className="hero-body">
-          <div className="container has-text-centered">
-            <div className="columns">
-              <div className="column is-8 is-offset-2">
-                <h1 className="title">
-                  {heading}
-                </h1>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      <Hero image={image} heading={heading} />
 
       <BlockText content={intro} />
 
