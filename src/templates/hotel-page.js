@@ -6,6 +6,8 @@ import Link from 'gatsby-link';
 
 import Content, { HTMLContent } from '../components/Content';
 import ReadMore from '../components/ReadMore';
+import Newsletter from '../components/Newsletter';
+import AnteFooter from '../components/AnteFooter';
 
 export const HotelPageTemplate = ({
     content,
@@ -29,7 +31,7 @@ export const HotelPageTemplate = ({
         <div className="hero-body">
           <div className="container has-text-centered">
             <div className="columns">
-              <div className="column is-8 is-offset-2">
+              <div className="column is-8-desktop is-offset-2-desktop">
                 <h1 className="title">{heading}</h1>
               </div>
             </div>
@@ -40,7 +42,7 @@ export const HotelPageTemplate = ({
 
       <section className="section">
         <div className="container">
-          <div className="columns is-6">
+          <div className="columns is-6-desktop">
             <div className="column is-6 is-offset-1">
 
               <div className="sh-hotel-header">
@@ -101,9 +103,9 @@ export const HotelPageTemplate = ({
         </div>
       </section>
 
-      <section>
+      <section className="section">
         <div className="columns">
-          <div className="column is-8 is-offset-2">
+          <div className="column is-8-desktop is-offset-2-desktop">
             <div className="sh-hotel-map has-background-black">
 
             </div>
@@ -111,6 +113,10 @@ export const HotelPageTemplate = ({
         </div>
 
       </section>
+
+      <Newsletter />
+
+      <AnteFooter />
 
     </hotelPage>
   );

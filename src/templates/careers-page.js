@@ -1,38 +1,27 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import BlockTextBoard from "../components/BlockTextBoard";
+import BlockTextBoard from '../components/BlockTextBoard';
+import Hero from '../components/Hero';
+import Newsletter from '../components/Newsletter';
+import AnteFooter from '../components/AnteFooter';
 
 export const CareersPageTemplate = ({
-                                      title,
-                                      image,
-                                      heading,
-                                      board,
-                                      positions
-                                    }) => {
+    title,
+    image,
+    heading,
+    board,
+    positions
+  }) => {
 
   return (
-    <careersPage>
+    <main>
 
-      <section className="hero is-medium is-primary background-image"
-               style={{ backgroundImage: `url(${image})` }}>
-        <div className="hero-body">
-          <div className="container has-text-centered">
-            <div className="columns">
-              <div className="column is-8 is-offset-2">
-                <h1 className="title">
-                  {heading}
-                </h1>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      <Hero image={image} heading={heading} />
 
       <BlockTextBoard content={board} style={"white-ter"}/>
 
-      <section>
+      <section className="section">
         <div className="container">
 
           <h3 className="title is-3 is-centered">Posizioni aperte</h3>
@@ -63,9 +52,11 @@ export const CareersPageTemplate = ({
         </div>
       </section>
 
+      <Newsletter />
 
+      <AnteFooter />
 
-    </careersPage>
+    </main>
   );
 };
 

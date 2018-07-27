@@ -1,10 +1,14 @@
 .block-text-image
 
   &.is-left
-    margin-bottom: 3rem
+
+    @media (min-width: $tablet)
+      margin-bottom: 3rem
 
   &.is-right
-    margin-top: 3rem
+
+    @media (min-width: $tablet)
+      margin-top: 3rem
 
   .block-image
     background: center
@@ -18,9 +22,13 @@
       color: white
 
     .block-image
-      height: 100%
       width: 100%
+      height: 30rem
       background-color: $primary
+
+
+      @media (min-width: $tablet)
+        width: 100%
 
   &.has-background-white-ter,
   &.has-background-white
@@ -30,21 +38,41 @@
       color: $black
 
     .block-image
-      height: 100%
       width: 100%
+      height: 30rem
       background-color: $black
+
+      @media (min-width: $tablet)
+        height: 100%
 
 
 
   &.is-right .block-image
-    transform: translateY(-6rem)
-    border-radius: 4px
+
+    @media (min-width: $tablet)
+      transform: translateY(-6rem)
+
+    @media (min-width: $desktop)
+      border-radius: 4px
+      transform: translateY(-6rem)
+
 
   &.is-left .block-image
-    transform: translateY(6rem)
-    border-radius: 4px
+
+
+    @media (min-width: $tablet)
+      transform: translateY(3rem)
+
+    @media (min-width: $desktop)
+      //transform: translateY(6rem)
+      border-radius: 4px
 
   article
-    padding: 6rem 0
     font-size: 1.1rem
     line-height: 1.6
+
+    @media (min-width: $tablet)
+      padding: 3rem
+
+    @media (min-width: $desktop)
+      padding: 3rem 0

@@ -6,17 +6,17 @@ import logo from "../img/logo-footer.svg";
 const AnteFooter = () => (
   <section className="section ante-footer is-medium">
     <div className="container">
-      <div className="columns">
-        <div className="column is-centered">
+      <div className="columns is-multiline">
+        <div className="column is-one-quarter-desktop is-centered is-hidden-touch">
           <div className="ante-footer-brand ">
-            <Link to="https://studenthotels.it">
-              <figure className="image">
+            <Link to="/">
+              <figure className="image is-block-centered is-inline-block">
                 <img className="logo-footer" src={logo} alt="Student Hotels Italia"/>
               </figure>
             </Link>
           </div>
         </div>
-        <div className="column">
+        <div className="column is-one-third-tablet is-one-quarter-desktop">
           <h5 className="menu-label">Student Hotels</h5>
           <nav>
             <ul className="menu-list">
@@ -26,7 +26,7 @@ const AnteFooter = () => (
             </ul>
           </nav>
         </div>
-        <div className="column">
+        <div className="column is-one-third-tablet is-one-quarter-desktop">
           <h5 className="menu-label">Informazioni</h5>
           <nav>
             <ul className="menu-list">
@@ -36,7 +36,7 @@ const AnteFooter = () => (
             </ul>
           </nav>
         </div>
-        <div className="column">
+        <div className="column is-one-third-tablet is-one-quarter-desktop">
           <h5 className="menu-label">Note legali</h5>
           <nav>
             <ul className="menu-list">

@@ -7,7 +7,7 @@ const Hero = ({image, heading}) => (
     <div className="hero-body">
       <div className="container has-text-centered">
         <div className="columns">
-          <div className="column is-8 is-offset-2">
+          <div className="column is-8-desktop is-offset-2-desktop">
             <h1 className="title">
               {heading}
             </h1>

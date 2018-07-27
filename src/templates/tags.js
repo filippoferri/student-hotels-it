@@ -2,7 +2,8 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 
-import blogBg from "../img/blog-bg.jpg";
+import blogBg from '../img/blog-bg.jpg';
+import Hero from '../components/Hero';
 
 class TagRoute extends React.Component {
   render() {
@@ -34,21 +35,14 @@ class TagRoute extends React.Component {
     const totalCount = this.props.data.allMarkdownRemark.totalCount
     const tagHeader = `${totalCount} articol${
       totalCount === 1 ? 'o' : 'i'
-    } in “${tag}”`
+    } in "${tag}"`
 
     return (
       <section id="blog">
 
         <Helmet title={`${tag} | ${title}`} />
 
-        <div className="hero is-medium is-primary is-bold"
-             style={{ backgroundImage: `url(${blogBg})` }}>
-          <div className="hero-body">
-            <div className="container is-centered">
-              <h3 className="title is-size-4 is-uppercase">{tagHeader}</h3>
-            </div>
-          </div>
-        </div>
+        <Hero image={blogBg} heading={tagHeader} />
 
         <div className="container has-margin-bottom has-margin-top">
           <div className="columns is-multiline">
@@ -57,6 +51,7 @@ class TagRoute extends React.Component {
 
           </div>
         </div>
+
       </section>
     )
   }

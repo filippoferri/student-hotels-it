@@ -1,12 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 
-import HomeHero from "../components/HomeHero";
-import HomeMosaic from "../components/HomeMosaic";
-import FeaturedHotels from "../components/FeaturedHotels";
-import JoinCommunity from "../components/JoinCommunity";
-import LatestNews from "../components/LatestNews";
+import HomeHero from '../components/HomeHero';
+import HomeMosaic from '../components/HomeMosaic';
+import FeaturedHotels from '../components/FeaturedHotels';
+import JoinCommunity from '../components/JoinCommunity';
+import LatestNews from '../components/LatestNews';
+import Newsletter from '../components/Newsletter';
+import AnteFooter from '../components/AnteFooter';
 
 
 export default class IndexPage extends React.Component {
@@ -16,10 +18,19 @@ export default class IndexPage extends React.Component {
 
     return (
       <main>
+
         <HomeHero/>
+
         <HomeMosaic/>
+
         <FeaturedHotels/>
+
         <LatestNews posts={posts}/>
+
+        <Newsletter />
+
+        <AnteFooter />
+
       </main>
     );
   }

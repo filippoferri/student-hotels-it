@@ -1,40 +1,30 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import Hero from '../components/Hero';
+import Newsletter from '../components/Newsletter';
+import AnteFooter from '../components/AnteFooter';
+
 export const ContactPageTemplate = ({
-                                      title,
-                                      image,
-                                      heading
-                                    }) => {
+    title,
+    image,
+    heading
+  }) => {
 
   return (
-    <contactPage>
+    <main className="contact-page">
 
-      <section className="hero is-medium is-primary background-image"
-               style={{ backgroundImage: `url(${image})` }}>
-        <div className="hero-body">
-          <div className="container has-text-centered">
-            <div className="columns">
-              <div className="column is-8 is-offset-2">
-                <h1 className="title">
-                  {heading}
-                </h1>
-              </div>
-            </div>
+      <Hero image={image} heading={heading} />
 
-          </div>
-        </div>
-      </section>
+      <section className="section">
 
-
-      <section className="section is-medium">
         <div className="container">
 
           <h2 className="title is-4 is-centered">Hai bisogno di aiuto?</h2>
 
           <div className="columns">
 
-            <div className="column is-6 is-offset-3">
+            <div className="column is-6-desktop is-offset-3-desktop">
 
               <form name="contact" method="POST" netlify>
 
@@ -90,7 +80,11 @@ export const ContactPageTemplate = ({
         </div>
       </section>
 
-    </contactPage>
+      <Newsletter />
+
+      <AnteFooter />
+
+    </main>
   );
 };
 

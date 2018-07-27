@@ -5,6 +5,8 @@ import Hero from '../components/Hero'
 import BlockText from '../components/BlockText'
 import BlockTextImage from '../components/BlockTextImage'
 import BlockTextBoard from '../components/BlockTextBoard'
+import Newsletter from '../components/Newsletter';
+import AnteFooter from '../components/AnteFooter';
 
 export const MissionPageTemplate = ({
   title,
@@ -18,7 +20,7 @@ export const MissionPageTemplate = ({
 }) => {
 
   return (
-    <mission-page>
+    <main>
 
       <Hero image={image} heading={heading} />
 
@@ -32,7 +34,10 @@ export const MissionPageTemplate = ({
 
       <BlockTextImage content={block3} dir={"is-right"} style={"white-ter"} />
 
-    </mission-page>
+      <Newsletter />
+      <AnteFooter />
+
+    </main>
   )
 }
 

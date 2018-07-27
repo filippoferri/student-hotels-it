@@ -5,7 +5,7 @@ import FaTwitterSquare from "@fortawesome/fontawesome-free-brands/faTwitterSquar
 import FaInstagram from "@fortawesome/fontawesome-free-brands/faInstagram";
 import Link from "gatsby-link";
 
-import bgNewsletter from '../img/newsletter-bg.jpg'
+import bgNewsletter from "../img/newsletter-bg.jpg";
 
 const Newsletter = () => (
   <section className="section newsletter is-small is-primary">

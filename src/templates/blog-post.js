@@ -3,80 +3,96 @@ import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import Helmet from "react-helmet";
 import Link from "gatsby-link";
+
+import Hero from "../components/Hero";
 import Content, { HTMLContent } from "../components/Content";
+import Newsletter from "../components/Newsletter";
+import AnteFooter from "../components/AnteFooter";
 
 export const BlogPostTemplate = ({
- content,
- contentComponent,
- description,
- tags,
- title,
- thumbnail,
- nextTitle,
- nextSlug,
- prevTitle,
- prevSlug,
- helmet
-}) => {
+    content,
+    contentComponent,
+    description,
+    tags,
+    title,
+    thumbnail,
+    nextTitle,
+    nextSlug,
+    prevTitle,
+    prevSlug,
+    helmet
+  }) => {
   const PostContent = contentComponent || Content;
 
   return (
-    <section className="blog-post">
+    <main className="blog-post">
+
       {helmet || ""}
 
-      <div className="hero is-medium is-primary background-image">
-        <div className="hero-body"
-             style={{ backgroundImage: `url(${thumbnail})` }}></div>
-      </div>
+      <Hero image={thumbnail} heading={title}/>
 
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-6 is-offset-3">
-
-            <h1 className="title is-size-huge has-text-weight-bold is-uppercase">
-              {title}
-            </h1>
-
-            <p>{description}</p>
-
-            <PostContent content={content}/>
-
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link className="tag is-primary" to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-
-          </div>
-        </div>
-      </div>
-
-      <div className="next-post">
+      <section className="section">
         <div className="container">
           <div className="columns">
-            {nextTitle ? (
-              <div className="column is-6 is-offset-3 is-centered">
-                <div className="is-uppercase">Ti potrebbe interessare</div>
+            <div className="column is-6-desktop is-offset-3-desktop">
 
-                <Link to={nextSlug} className="title is-4 is-uppercase">{nextTitle}</Link>
-              </div>
-            ) : (
-              <div className="column is-6 is-offset-3 is-centered">
-                <div className="is-uppercase">Ti potrebbe interessare</div>
-                <Link to={prevSlug} className="title is-4 is-uppercase">{prevTitle}</Link>
-              </div>
-            )}
+              <nav className="breadcrumb" aria-label="breadcrumb">
+                <ul>
+                  <li><Link to="https//studenthotels.it">Student Hotels</Link></li>
+                  <li><Link to="/blog">Blog</Link></li>
+                </ul>
+              </nav>
+
+              <div className="content">
+
+                <p>{description}</p>
+
+                <PostContent content={content}/>
+
+                {tags && tags.length ? (
+                  <div style={{ marginTop: `4rem` }}>
+                    <ul className="taglist">
+                      {tags.map(tag => (
+                        <li key={tag + `tag`}>
+                          <Link className="tag is-primary" to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}</div>
+
+
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-    </section>
+      <section className="section has-background-white-ter is-medium">
+        <div className="next-post">
+          <div className="container">
+            <div className="columns">
+              {nextTitle ? (
+                <div className="column is-6 is-offset-3 is-centered">
+                  <div className="is-uppercase">Ti potrebbe interessare</div>
+
+                  <Link to={nextSlug} className="title is-4 is-uppercase">{nextTitle}</Link>
+                </div>
+              ) : (
+                <div className="column is-6 is-offset-3 is-centered">
+                  <div className="is-uppercase">Ti potrebbe interessare</div>
+                  <Link to={prevSlug} className="title is-4 is-uppercase">{prevTitle}</Link>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Newsletter/>
+
+      <AnteFooter/>
+
+    </main>
   );
 };
 

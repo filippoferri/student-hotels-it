@@ -1,9 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import Link from "gatsby-link";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import Link from 'gatsby-link';
 
-import blogBg from "../../img/blog-bg.jpg";
+import blogBg from '../../img/blog-bg.jpg';
+import Hero from '../../components/Hero';
+import Newsletter from '../../components/Newsletter';
+import AnteFooter from '../../components/AnteFooter';
 
 export default class BlogPage extends React.Component {
   render() {
@@ -11,44 +14,46 @@ export default class BlogPage extends React.Component {
     const { edges: posts } = data.allMarkdownRemark;
 
     return (
-      <section id="blog">
+      <main id="blog">
 
-        <Helmet title={`Blog | Ultime notizie dal mondo student`} />
+        <Helmet title={`Blog | Student Hotels`} />
 
-        <div className="hero is-medium is-primary is-bold"
-             style={{ backgroundImage: `url(${blogBg})` }}>
-          <div className="hero-body">
-            <div className="container is-centered"></div>
-          </div>
-        </div>
+        <Hero image={blogBg} heading="Blog" />
 
-        <div className="container has-margin-bottom has-margin-top">
-          <div className="columns is-multiline">
-            {posts
-              .map(({ node: post }, index) => (
-                <div
-                  className="column is-one-third"
-                  key={post.id}
-                >
-                  <article
-                    className={"notification" + (index % 3 === 1 ? " is-primary" : "") + (index % 4 === 3 ? " is-black" : "")}>
-                    <div className="sh-blog-content">
-                      <span className="title is-uppercase is-3">{post.frontmatter.title}</span>
+        <section className="section">
+          <div className="container has-margin-bottom has-margin-top">
+            <div className="columns is-multiline">
+              {posts
+                .map(({ node: post }, index) => (
+                  <div
+                    className="column is-one-third"
+                    key={post.id}
+                  >
+                    <article
+                      className={"notification" + (index % 3 === 1 ? " is-primary" : "") + (index % 4 === 3 ? " is-black" : "")}>
+                      <div className="sh-blog-content">
+                        <span className="title is-uppercase is-3">{post.frontmatter.title}</span>
 
-                      <div className="sh-blog-date">
-                        <small>{post.frontmatter.date}</small>
+                        <div className="sh-blog-date">
+                          <small>{post.frontmatter.date}</small>
+                        </div>
+                        <p>
+                          {post.excerpt}
+                        </p>
                       </div>
-                      <p>
-                        {post.excerpt}
-                      </p>
-                    </div>
-                    <Link className="sh-blog-link"  to={post.fields.slug}></Link>
-                  </article>
-                </div>
-              ))}
+                      <Link className="sh-blog-link"  to={post.fields.slug}></Link>
+                    </article>
+                  </div>
+                ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <Newsletter />
+
+        <AnteFooter />
+
+      </main>
     );
   }
 }

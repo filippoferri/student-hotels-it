@@ -1,10 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { kebabCase } from "lodash";
-import Helmet from "react-helmet";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 
-import Content, { HTMLContent } from "../components/Content";
+import Content, { HTMLContent } from '../components/Content';
 import Hero from '../components/Hero';
+import Newsletter from '../components/Newsletter';
+import AnteFooter from '../components/AnteFooter';
 
 export const DefaultPageTemplate = ({
     content,
@@ -17,22 +18,28 @@ export const DefaultPageTemplate = ({
   const PageContent = contentComponent || Content;
 
   return (
-    <section className="default-page">
+    <main className="default-page">
       {helmet || ""}
 
-      <Hero image={hero} heading={title} />
+      <Hero image={hero} heading={title}/>
 
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-6 is-offset-3">
+      <section className="section">
+        <div className="container content">
+          <div className="columns">
+            <div className="column is-6-desktop is-offset-3-desktop">
 
-            <PageContent content={content}/>
+              <PageContent content={content}/>
 
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-    </section>
+      <Newsletter />
+
+      <AnteFooter />
+
+    </main>
   );
 };
 

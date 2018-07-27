@@ -3,20 +3,16 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Navbar from '../components/Navbar'
-import Newsletter from '../components/Newsletter'
-import AnteFooter from '../components/AnteFooter'
 import Footer from '../components/Footer'
 import './all.sass'
 
 const TemplateWrapper = ({ children }) => (
-  <mainWrapper>
+  <wrapper>
     <Helmet title="Student Hotels Italia: hotels a misura di studente" />
     <Navbar />
     {children()}
-    <Newsletter />
-    <AnteFooter />
     <Footer />
-  </mainWrapper>
+  </wrapper>
 )
 
 TemplateWrapper.propTypes = {

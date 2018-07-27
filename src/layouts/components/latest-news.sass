@@ -1,5 +1,23 @@
 #latest-news
 
+  .tile
+
+    &.has-column-tablet
+      @media (min-width: $tablet)
+        flex-direction: column
+
+      @media (min-width: $desktop)
+        flex-direction: row
+
+    &.is-9-desktop
+      @media (min-width: $tablet)
+        flex: 1
+
+      @media (min-width: $desktop)
+        flex: none
+        width: 75%
+
+
   .tile-solo-link
     position: absolute
     top: 0
@@ -34,6 +52,9 @@
 
     &:hover:before
       width: 100%
+
+  .has-min-height
+    min-height: 15rem
 
 
 

@@ -1,6 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { createFilter } from "react-search-input";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { createFilter } from 'react-search-input';
+
+import Hero from '../components/Hero';
+import Newsletter from '../components/Newsletter';
+import AnteFooter from '../components/AnteFooter';
 
 const KEYS_TO_FILTERS = ['question', 'answer'];
 
@@ -23,28 +27,14 @@ class FaqPageTemplate extends React.Component {
     const filteredFaq = this.props.faq.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS));
 
     return (
-      <faqPage>
+      <main>
 
-        <section className="hero is-medium is-primary background-image"
-                 style={{ backgroundImage: `url(${this.props.image})` }}>
-          <div className="hero-body">
-            <div className="container has-text-centered">
-              <div className="columns">
-                <div className="column is-8 is-offset-2">
-                  <h1 className="title">
-                    {this.props.heading}
-                  </h1>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
+        <Hero image={this.props.image} heading={this.props.heading} />
 
         <section className="section is-small">
           <div className="container">
             <div className="columns">
-              <div className="column is-6 is-offset-3">
+              <div className="column is-6-desktop is-offset-3-desktop">
 
                 <div className="search-filter">
                   <input type="text" className="input" placeholder="Cerca" onChange={this.searchUpdated} />
@@ -68,7 +58,11 @@ class FaqPageTemplate extends React.Component {
           </div>
         </section>
 
-      </faqPage>
+        <Newsletter />
+
+        <AnteFooter />
+
+      </main>
     );
   }
 }

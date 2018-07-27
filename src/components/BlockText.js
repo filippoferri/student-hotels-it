@@ -4,9 +4,9 @@ const BlockText = ({ content }) => {
 
   return (
     <section className="section container is-medium block-text">
-      <div className="columns is-6">
+      <div className="columns is-6-desktop">
         <div className="column">
-          <h2 className="title is-2 has-text-right">{content.heading}</h2>
+          <h2 className="title is-2">{content.heading}</h2>
         </div>
         <div className="column">
           <article>{content.description}</article>
@@ -14,7 +14,6 @@ const BlockText = ({ content }) => {
       </div>
     </section>
   );
-
 };
 
 export default BlockText;

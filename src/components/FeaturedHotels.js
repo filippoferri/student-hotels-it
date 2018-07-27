@@ -23,7 +23,7 @@ const FeaturedHotels = () => (
 
         <div className="tile is-parent">
           <article className="tile is-child notification is-primary is-animated">
-            <p className="tile-solo-link title is-3 is-uppercase has-text-weight-bold"><span>PISA:<br/> prossima apertura</span></p>
+            <p className="tile-solo-link title is-3 is-uppercase has-text-weight-bold"><span>PISA:<br/> prossima<br/> apertura</span></p>
           </article>
         </div>
       </div>
