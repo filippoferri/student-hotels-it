@@ -11,6 +11,7 @@ class HomeSearch extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
+    this.handleOpen = this.handleOpen.bind(this);
   }
 
   handleClick() {
@@ -28,10 +29,16 @@ class HomeSearch extends React.Component {
   }
 
   handleOutsideClick(e) {
-      if (!this.node.contains(e.target) && this.state.popupVisible) {
-        this.setState({ popupVisible: false });
-      }
+    e.preventDefault();
+    if (!this.node.contains(e.target) && this.state.popupVisible) {
+      this.setState({ popupVisible: false });
+    }
+  }
 
+  handleOpen() {
+    this.setState({ popupVisible: false });
+    const slug = "hotel-test"
+    window.location = '/hotels/'+ slug;
   }
 
   getSuggestions() {
@@ -39,7 +46,7 @@ class HomeSearch extends React.Component {
         <div className="sh-search-suggestion">
 
           <header>
-            <Link to="/hotels/hotel-test" target="" className="button is-primary is-rounded" ref={node => {this.node = node}}>Firenze</Link>
+            <button onClick={this.handleOpen} className="button is-primary is-rounded">Firenze</button>
           </header>
 
           <div className="sh-list-box">
