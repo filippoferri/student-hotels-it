@@ -11,6 +11,12 @@ import arrow from '../img/arrow-right.svg'
 const HomeMosaic = () => (
   <section className="section is-home-mosaic">
     <div className="container">
+
+      <div className="is-centered has-margin-bottom">
+        <h3 className="title has-text-weight-bold is-3">Il motore di ricerca degli Student Hotels</h3>
+        <p className="">Trovare student Hotels in Italia non è mai stato così facile.</p>
+      </div>
+
       <div className="tile is-ancestor has-column-tablet">
 
         <div className="tile is-vertical is-8-desktop">

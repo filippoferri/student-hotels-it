@@ -1,5 +1,5 @@
-import React from "react";
-import Link from "gatsby-link";
+import React from 'react';
+import Link from 'gatsby-link';
 
 const Tile = ({ post, style, hasbg }) => {
 
@@ -11,11 +11,13 @@ const Tile = ({ post, style, hasbg }) => {
   if (hasbg) {
     var image = {backgroundImage: `url(${img})` }
     var bg    = "has-background"
+  } else {
+    var bg    = "is-animated"
   }
 
   return (
     <div className="tile is-parent">
-      <article className={"tile is-child notification has-min-height " + style + " " + bg}
+      <article className={"tile is-child notification has-min-height " + (style ? style : "")  + " " + bg}
                style={image}>
         <p className="tile-title title is-4">{title}</p>
         <span className="tile-date">{date}</span>
@@ -31,6 +33,7 @@ const LatestNews = ({ posts }) => {
   return (
     <section id="latest-news" className="section has-margin-bottom">
       <div className="container">
+
         <div className="is-centered has-margin-bottom">
           <h3 className="title has-text-weight-bold is-3">Novità dal mondo</h3>
           <p className="">Il mondo degli Student Hotels guarda al futuro.<br/>Rimani aggiornato sulle ultime
@@ -64,7 +67,7 @@ const LatestNews = ({ posts }) => {
             </div>
           </div>
 
-          <Tile post={posts[3]} style={"is-black"}/>
+          <Tile post={posts[3]} style={"is-black"} />
 
         </div>
 

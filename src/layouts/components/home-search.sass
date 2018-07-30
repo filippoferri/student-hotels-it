@@ -18,14 +18,13 @@
     border-bottom-left-radius: 4px
     border-bottom-right-radius: 4px
     overflow: scroll
-    box-shadow: rgba(0, 0, 0, 0.28) 0px 0.65rem 1rem 0rem, rgba(0, 0, 0, 0.08) 0px 0.35rem 1.5rem 0px inset
+    box-shadow: rgba(0, 0, 0, 0.28) 0 0.65rem 1rem 0, rgba(0, 0, 0, 0.08) 0 0.35rem 1.5rem 0 inset
 
     header
       padding: 1rem 1rem
       border-top: 1px solid $white-ter
 
     .sh-list-box
-      //padding: 0 1rem
       color: $black
 
       .sh-list-box-title
@@ -58,7 +57,7 @@
           &:hover
             background-color: $white-ter
 
-  &:after
+  &.has-search-icon::after
     content: ''
     display: inline-block
     width: 30px

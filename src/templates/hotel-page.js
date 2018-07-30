@@ -4,6 +4,8 @@ import { kebabCase } from 'lodash';
 import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
 
+import HotelContent from '../API/HotelContent';
+
 import Content, { HTMLContent } from '../components/Content';
 import ReadMore from '../components/ReadMore';
 import Newsletter from '../components/Newsletter';
@@ -19,10 +21,11 @@ export const HotelPageTemplate = ({
     helmet
   }) => {
 
-  const PostContent = contentComponent || Content;
+  HotelContent()
 
   return (
-    <hotelPage>
+
+    <main>
 
       {helmet || ""}
 
@@ -118,7 +121,7 @@ export const HotelPageTemplate = ({
 
       <AnteFooter />
 
-    </hotelPage>
+    </main>
   );
 };
 
@@ -128,7 +131,7 @@ HotelPageTemplate.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.string,
   image: PropTypes.string,
-  helmet: PropTypes.instanceOf(Helmet)
+  helmet: PropTypes.object
 };
 
 const HotelDetails = ({ data }) => {

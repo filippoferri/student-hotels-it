@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import Link from 'gatsby-link';
 
 class HomeSearch extends React.Component {
 
@@ -82,9 +81,9 @@ class HomeSearch extends React.Component {
     var expandedDiv = this.getSuggestions();
 
     return (
-      <div className="control has-button-right" ref={node => {this.node = node}}>
+      <div className="control has-button-right has-search-icon" ref={node => {this.node = node}}>
 
-        <input className="input is-large has-icons-left" type="text" placeholder="Dove vuoi andare?" onClick={this.handleClick} readOnly/>
+        <input className="input is-large has-icons-left " type="text" placeholder="Dove vuoi andare?" onClick={this.handleClick} readOnly/>
 
         {this.state.popupVisible && (
           expandedDiv

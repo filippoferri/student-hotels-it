@@ -7,7 +7,7 @@ const FeaturedHotels = () => (
   <section id="featured-hotels" className="section">
     <div className="container">
       <div className="is-centered has-margin-bottom">
-        <h3 className="title is-3 is-primary">In evidenza</h3>
+        <h3 className="title is-3 is-primary">Destinazioni in Italia</h3>
       </div>
 
       <div className="tile is-ancestor">
