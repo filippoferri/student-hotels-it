@@ -1,71 +1,8 @@
 import React from 'react';
-import Sabre from "../lib/Sabre";
+import TravelPayouts from '../lib/TravelPayouts/Content'
 
-const HotelContent = () => {
-
-  const params = {
-
-    "GetHotelContentRQ": {
-
-      "SearchCriteria": {
-
-        "HotelRefs": {
-
-          "HotelRef": [{
-
-            "HotelCode": "1"
-
-          }, {
-
-            "HotelCode": "1100"
-
-          }]
-
-        },
-
-        "DescriptiveInfoRef": {
-
-          "PropertyInfo": true,
-
-          "LocationInfo": true,
-
-          "Amenities": true,
-
-          "Descriptions": {
-
-            "Description": [{
-
-              "Type": "Dining"
-
-            }, {
-
-              "Type": "Alerts"
-
-            }]
-
-          },
-
-          "Airports": true,
-
-          "AcceptedCreditCards": true
-
-        },
-
-        "ImageRef": {
-
-          "MaxImages": "10"
-
-        }
-
-      }
-
-    }
-
-  }
-
-
-
-  return Sabre.HotelContentAPI(params).then(console.log);
+const HotelContent = (hotelId) => {
+  return TravelPayouts.HotelContentAPI(hotelId).then(json => json.data.results.hotels[0]);
 };
 
 export default HotelContent;

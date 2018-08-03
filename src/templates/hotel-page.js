@@ -4,133 +4,139 @@ import { kebabCase } from 'lodash';
 import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
 
-import HotelContent from '../API/HotelContent';
+import HotelContentAPI from '../API/HotelContent';
+import HotelImagesAPI from '../API/HotelImages';
 
 import Content, { HTMLContent } from '../components/Content';
-import ReadMore from '../components/ReadMore';
+import HotelHero from '../components/HotelHero';   //<HotelHero locationId={hotel.locationId} heading={this.props.heading}/>
+import HotelImages from "../components/HotelImages";
+import Map from '../components/Map'; //<Map location={hotel.location} />
+import FindBooking from '../components/FindBooking'
 import Newsletter from '../components/Newsletter';
 import AnteFooter from '../components/AnteFooter';
 
-export const HotelPageTemplate = ({
-    content,
-    contentComponent,
-    tags,
-    title,
-    image,
-    heading,
-    helmet
-  }) => {
+class HotelPageTemplate extends React.Component {
 
-  HotelContent()
+  constructor(props) {
+    super(props);
+    this.state = {
+      hotel: null,
+      images: null
+    };
+  }
 
-  return (
+  componentDidMount() {
 
-    <main>
+    HotelContentAPI(this.props.hotelId).then(
+      result => this.setState({
+        hotel: result
+      })
+    );
 
-      {helmet || ""}
+    HotelImagesAPI(this.props.hotelId).then(
+      result => this.setState({
+        images: result
+      })
+    );
+  }
 
-      <section className="hero is-medium is-primary background-image"
-               style={{ backgroundImage: `url(${image})` }}>
-        <div className="hero-body">
-          <div className="container has-text-centered">
-            <div className="columns">
-              <div className="column is-8-desktop is-offset-2-desktop">
-                <h1 className="title">{heading}</h1>
+  render() {
+
+    const { hotel } = this.state;
+    const { images } = this.state;
+
+    const facilities = this.props.facilities;
+    const facilitiesDiv = facilities.map((item, index) => (
+      <li key={index}>{item}</li>
+    ));
+    const Info = this.props.contentComponent || Content;
+
+    return (
+      hotel ?
+        <main>
+
+          <section className="section">
+            <div className="container">
+              <div className="columns is-6-desktop">
+                <div className="column is-7 is-offset-1">
+
+                  <div className="sh-hotel-header">
+                    <h2 className="title is-size-4">{hotel.label}</h2>
+                    <span style={{'marginRight': '1rem'}}>{this.props.address}</span>
+                    <Link to="#map"><span>Mappa</span></Link>
+                  </div>
+
+                  {images ?
+                    <div className="sh-hotel-gallery">
+                      <HotelImages data={images} hotelId={hotel.id} />
+                    </div>
+                    : null}
+
+                  <div className="sh-hotel-services">
+
+                    <div className="columns">
+                      <div className="column is-3-tablet">
+                        <h3 className="is-size-5 has-text-weight-bold">Servizi</h3>
+                      </div>
+                      <div className="column is-9-tablet">
+                        <ul className="sh-hotel-services-list">
+                          {facilitiesDiv}
+                        </ul>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div className="sh-hotel-info">
+
+                    <div className="columns">
+                      <div className="column is-3-tablet">
+                        <h3 className="is-size-5 has-text-weight-bold">Info</h3>
+                      </div>
+                      <div className="column is-9-tablet content has-text-smaller margin-top-0">
+                        <Info content={this.props.content}/>
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                </div>
+                <div className="column is-3 has-border-left is-centered">
+
+                  <FindBooking locationId={hotel.locationId} hotelId={hotel.id}/>
+
+                </div>
               </div>
             </div>
+          </section>
 
-          </div>
-        </div>
-      </section>
+          <section className="section">
+            <div className="container">
+              <div className="columns is-6-desktop">
+                <div className="column is-10-desktop is-offset-1-desktop">
+                  <div className="sh-hotel-map has-background-black">
 
-      <section className="section">
-        <div className="container">
-          <div className="columns is-6-desktop">
-            <div className="column is-6 is-offset-1">
-
-              <div className="sh-hotel-header">
-                <h2 className="title is-size-4">{title}</h2>
-                <span>Via Da qualche parte</span>
-                <Link to="#map"><span>Mappa</span></Link>
-                <div>Stelle</div>
-              </div>
-
-              <div className="sh-hotel-gallery">
-                <img
-                  style={{ borderRadius: "4px" }}
-                  src={image}
-                  alt={title}
-                />
-              </div>
-
-              <div className="sh-hotel-services">
-
-                <div className="columns">
-                  <div className="column is-3">
-                    <h3 className="is-size-5 has-text-weight-bold">Servizi</h3>
-                  </div>
-                  <div className="column is-9">
-                    <ul className="sh-hotel-services-list">
-                      <li>Business Center</li>
-                      <li>Bar/Loiunge</li>
-                      <li>Business Center</li>
-                      <li>Bar/Loiunge</li>
-                    </ul>
                   </div>
                 </div>
-
               </div>
-
-              <div className="sh-hotel-info">
-
-                <div className="columns">
-                  <div className="column is-3">
-                    <h3 className="is-size-5 has-text-weight-bold">Info</h3>
-                  </div>
-                  <div className="column is-9 content margin-top-0">
-                      <ReadMore />
-                  </div>
-                </div>
-
-              </div>
-
-
             </div>
-            <div className="column is-3 is-offset-1 has-border-left is-centered">
 
+          </section>
 
-              <button type="button" className="button is-medium is-primary is-fullwidth">Validità</button>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="columns">
-          <div className="column is-8-desktop is-offset-2-desktop">
-            <div className="sh-hotel-map has-background-black">
-
-            </div>
-          </div>
-        </div>
-
-      </section>
-
-      <Newsletter />
-
-      <AnteFooter />
-
-    </main>
-  );
-};
+        </main> : <main className="is-loader"></main>
+    );
+  }
+}
 
 HotelPageTemplate.propTypes = {
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.func,
   title: PropTypes.string,
   heading: PropTypes.string,
-  image: PropTypes.string,
+  hotelId: PropTypes.number,
+  address: PropTypes.string,
+  info: PropTypes.string,
   helmet: PropTypes.object
 };
 
@@ -143,8 +149,10 @@ const HotelDetails = ({ data }) => {
       contentComponent={HTMLContent}
       helmet={<Helmet title={`${hotel.frontmatter.title} | Student Hotels`}/>}
       tags={hotel.frontmatter.tags}
+      facilities={hotel.frontmatter.facilities}
       title={hotel.frontmatter.title}
-      image={hotel.frontmatter.hero}
+      hotelId={hotel.frontmatter.hotelId}
+      address={hotel.frontmatter.address}
       heading={hotel.frontmatter.heading}
     />
   );
@@ -164,10 +172,11 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         title
-        hero
         heading
+        hotelId
+        address
+        facilities
         tags
       }
     }

@@ -3,12 +3,14 @@ import GoogleMapReact from 'google-map-react';
 
 const Marker = () => <div className="sh-map-marker"></div>;
 
-const Map = () => {
+const Map = ({location}) => {
+
+  console.log({location})
 
   const dataMap = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: location.lat,
+      lon: location.lon
     },
     zoom: 11
   };
@@ -23,7 +25,7 @@ const Map = () => {
       >
         <Marker
           lat={dataMap.center.lat}
-          lng={dataMap.center.lng}
+          lng={dataMap.center.lon}
         />
       </GoogleMapReact>
     </div>

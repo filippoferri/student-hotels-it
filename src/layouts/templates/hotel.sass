@@ -17,8 +17,24 @@
     columns: 2
     font-size: 1.1rem
 
+    li
+      position: relative
+      padding-left: 1.5rem
+      margin-bottom: 1rem
+      font-size: 1rem
+
+      &::after
+        content: ''
+        display: inline-block
+        width: 24px
+        height: 24px
+        position: absolute
+        left: 0
+        top: 0
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABsUlEQVRoQ+2X600DQQyEJx1QAukAOoAOSAfQAVQQOoAOoIOkA+gAOoASKAGNdJZWq+UufmSXSPbf7MPfjL2+rHDisTrx/JEAox1MB9IBpwJZQk4B3dvTAbeEzgPSAaeA7u3/wYELAJ9WktEANwB2AN4BbAD8aEFGAlD5NwBnU9JM/lrrxigAJs3kCVHGK4A7jQujAF4A3FaJ0oG1toxGANwDeGqozPJhL6iiNwBL5qOR4QOAZ1Xm02IPAOv4XNF0XP9VNK3ku59eIEv+5r+UZROy6dh8S8GmvaoW8f1n6aifTznH4gBV59tdviCXC06w5ln7ZZiezVolC8AjgK0iGRlW9d2HOjfrrAWADrARZQDJBS1F62Ela9mwbFx3WAB46V+JEYLl9D0BtoYV655rQsIKMAchjcm6DxlWc6QeAIFovet0oi4xrjcNq2MC8GyqzE+DpTAPq2MDHALhGlY9AOYg3MOqFwDvqQdWyLDqCcC7yk/lkGHVG0AgqH7IsBoBsPQihf3unQNhiVgPSgCrclH70oEoJa3npANW5aL2pQNRSlrPSQesykXtSweilLSe8wskVEIx2ibO2gAAAABJRU5ErkJggg==')
+        background-size: cover
+
 .sh-hotel-info
-  margin-bottom: 3rem
 
   .content
     font-size: 1.1rem
@@ -34,6 +50,9 @@
       text-transform: uppercase
       margin-top: 3rem
       margin-bottom: 2rem
+    p
+      font-size: 1rem
+      line-height: 1.9
 
 .sh-hotel-map
   min-height: 30rem
