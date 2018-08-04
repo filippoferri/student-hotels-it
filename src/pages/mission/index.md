@@ -2,7 +2,7 @@
 templateKey: 'mission-page'
 path: /mission
 title: La mission di Student Hotels
-image: /img/jumbotron.jpg
+image: "../img/jumbotron.jpg"
 heading: La mission di Student Hotels
 intro:
   heading: We're unlocking the world's greatest cities for the creative and ambitious

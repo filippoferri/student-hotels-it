@@ -34,9 +34,6 @@
 @import "templates/contact"
 
 // General
-html
-  background-color: $primary
-
 body.has-overflow-hidden
   overflow: hidden
   position: fixed
@@ -89,7 +86,9 @@ a,
   background-position: center
 
 .has-border-left
-  border-left: 1px solid $white-ter
+
+  @media (min-width: $tablet)
+    border-left: 1px solid $white-ter
 
 .has-text-small
   font-size: .9rem
@@ -114,8 +113,32 @@ a,
 
   &.is-flex-end
     align-items: flex-end
+  &.is-flex-center
+    align-items: center
 
+.has-small-padding
+  padding: 1rem
 
+.is-image-wrapper
+  position: relative
+  display: block
+  width: 100%
+  height: 100%
+  overflow: hidden
+
+  img
+    width: 100%
+    height: 100%
+    object-position: 50% 50%
+    object-fit: cover
+    font-family: 'object-position: 50% 50%; object-fit: cover;'
+
+  &.has-position-absolute
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
 
 .is-loader
   width: 100%

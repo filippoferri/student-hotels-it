@@ -1,5 +1,5 @@
 import React from 'react';
-import TravelPayouts from '../lib/TravelPayouts/Prices'
+import TravelPayouts from '../lib/TravelPayouts/Prices';
 
 const HotelPrices = (locationId, hotelId, checkIn, checkOut) => {
 

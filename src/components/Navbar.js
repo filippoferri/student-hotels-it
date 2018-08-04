@@ -2,9 +2,9 @@ import React from 'react'
 import Link from 'gatsby-link'
 import BodyClassName from 'react-body-classname';
 
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-import logo from '../img/logo.svg'
+import logo from '../img/logo.svg';
 
 class Navbar extends React.Component {
 

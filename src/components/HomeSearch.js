@@ -13,6 +13,8 @@ class HomeSearch extends React.Component {
     this.handleOpen = this.handleOpen.bind(this);
   }
 
+
+
   handleClick() {
     if(!this.state.popupVisible) {
       document.addEventListener('click', this.handleOutsideClick, false);
@@ -29,7 +31,9 @@ class HomeSearch extends React.Component {
 
   handleOutsideClick(e) {
     e.preventDefault();
-    if (!this.node.contains(e.target) && this.state.popupVisible) {
+    const { childNode } = this;
+    const isDescendantOfRoot = childNode && childNode.contains(e.target);
+    if (!isDescendantOfRoot) {
       this.setState({ popupVisible: false });
     }
   }
@@ -55,7 +59,7 @@ class HomeSearch extends React.Component {
 
               <div className="sh-list-item">
                 <div className="sh-list-item-inner">
-                  Pisa
+                  Bologna
                 </div>
               </div>
               <div className="sh-list-item">
@@ -65,7 +69,7 @@ class HomeSearch extends React.Component {
               </div>
               <div className="sh-list-item">
                 <div className="sh-list-item-inner">
-                  Bari
+                  Milano
                 </div>
               </div>
 
@@ -81,7 +85,7 @@ class HomeSearch extends React.Component {
     var expandedDiv = this.getSuggestions();
 
     return (
-      <div className="control has-button-right has-search-icon" ref={node => {this.node = node}}>
+      <div className="control is-bordered has-button-right has-search-icon" ref={(ref) => { this.childNode = ref; }}>
 
         <input className="input is-large has-icons-left " type="text" placeholder="Dove vuoi andare?" onClick={this.handleClick} readOnly/>
 

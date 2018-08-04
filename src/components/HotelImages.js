@@ -19,7 +19,7 @@ class HotelImages extends React.Component {
 
           </div>
 
-          <div className="tile is-vertical is-parent">
+          <div className="tile is-vertical is-parent is-hidden-mobile">
             <div className="tile is-child is-fill">
               <img src={"https://photo.hotellook.com/image_v2/limit/" + imageIds[1] + "/1000/520.auto"} alt=""/>
             </div>

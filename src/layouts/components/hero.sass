@@ -39,6 +39,11 @@
       @media (min-width: $tablet)
         font-size: 2rem
 
+      &.has-negative-margin-top
+
+        @media (min-width: $tablet)
+          margin-top: -3rem
+
     &.is-home-hero
       margin-top: -4rem
 
@@ -70,6 +75,16 @@
       background-size: cover
       transform: translateY(50%) translateX(-50%)
 
+  .hero-partners
+    position: absolute
+    bottom: 5rem
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 10
+
+    img
+      width: 120px
+      height: 30px
 
   &.background-image
     background-position: center

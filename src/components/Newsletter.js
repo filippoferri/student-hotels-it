@@ -9,9 +9,8 @@ import bgNewsletter from "../img/newsletter-bg.jpg";
 
 const Newsletter = () => (
   <section className="section newsletter is-small is-primary">
-    <div
-      className="has-background"
-      style={{ backgroundImage: `url(${bgNewsletter})` }}></div>
+    <div className="is-image-wrapper has-position-absolute"><img src={bgNewsletter}/></div>
+
     <div className="container">
       <div className="column is-three-fifths is-offset-one-fifth is-centered">
         <h3 className="title is-3 is-spaced has-text-centered">Rimani in contatto</h3>

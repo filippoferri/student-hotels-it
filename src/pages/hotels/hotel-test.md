@@ -6,10 +6,11 @@ hotelId: 1899654757
 address: Viale Spartaco Lavagnini 70 - 72
 facilities:
   - Posizione sicura e centrale
-  - Reception 24 ore
+  - Bagno privato
   - Bar-Ristorante
   - WiFi gratuito
   - TV a schermo piatto
+  - Stanze per lo studio e il lavoro
   - Palestra
   - Aria condizionata
 tags:

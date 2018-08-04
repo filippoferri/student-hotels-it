@@ -1,19 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { kebabCase } from 'lodash';
-import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
+import React from "react";
+import PropTypes from "prop-types";
+import { kebabCase } from "lodash";
+import Helmet from "react-helmet";
+import Link from "gatsby-link";
+import Moment from 'moment';
 
-import HotelContentAPI from '../API/HotelContent';
-import HotelImagesAPI from '../API/HotelImages';
+import HotelContentAPI from "../API/HotelContent";
+import HotelImagesAPI from "../API/HotelImages";
 
-import Content, { HTMLContent } from '../components/Content';
-import HotelHero from '../components/HotelHero';   //<HotelHero locationId={hotel.locationId} heading={this.props.heading}/>
+import Content, { HTMLContent } from "../components/Content";
+import HotelHero from "../components/HotelHero";   //<HotelHero locationId={hotel.locationId} heading={this.props.heading}/>
 import HotelImages from "../components/HotelImages";
-import Map from '../components/Map'; //<Map location={hotel.location} />
-import FindBooking from '../components/FindBooking'
-import Newsletter from '../components/Newsletter';
-import AnteFooter from '../components/AnteFooter';
+import Map from "../components/Map"; //<Map location={hotel.location} />
+import FindBooking from "../components/FindBooking";
+import Newsletter from "../components/Newsletter";
+import AnteFooter from "../components/AnteFooter";
 
 class HotelPageTemplate extends React.Component {
 
@@ -21,7 +22,9 @@ class HotelPageTemplate extends React.Component {
     super(props);
     this.state = {
       hotel: null,
-      images: null
+      images: null,
+      checkIn: this.dayCalc(10),
+      checkOut: this.dayCalc(11)
     };
   }
 
@@ -40,6 +43,19 @@ class HotelPageTemplate extends React.Component {
     );
   }
 
+  dayCalc(num) {
+    const today = new Date;
+    const newDate = Moment(today, "DD-MM-YYYY").add(num,'days') ;
+    const day = newDate.format('DD');
+    const month = newDate.format('MM');
+    const year = newDate.format('YYYY');
+    return (year + '-' + month + '-' + day)
+  }
+
+  takeCity(location) {
+    return location.substr(0, location.indexOf(','));
+  }
+
   render() {
 
     const { hotel } = this.state;
@@ -55,20 +71,22 @@ class HotelPageTemplate extends React.Component {
       hotel ?
         <main>
 
+          <HotelHero locationId={hotel.locationId} heading={this.props.heading}/>
+
           <section className="section">
             <div className="container">
               <div className="columns is-6-desktop">
-                <div className="column is-7 is-offset-1">
+                <div className="column is-7-tablet is-8-desktop is-7-widescreen is-offset-1-widescreen">
 
                   <div className="sh-hotel-header">
                     <h2 className="title is-size-4">{hotel.label}</h2>
-                    <span style={{'marginRight': '1rem'}}>{this.props.address}</span>
+                    <span style={{ "marginRight": "1rem" }}>{this.props.address}</span>
                     <Link to="#map"><span>Mappa</span></Link>
                   </div>
 
                   {images ?
                     <div className="sh-hotel-gallery">
-                      <HotelImages data={images} hotelId={hotel.id} />
+                      <HotelImages data={images} hotelId={hotel.id}/>
                     </div>
                     : null}
 
@@ -102,9 +120,26 @@ class HotelPageTemplate extends React.Component {
 
 
                 </div>
-                <div className="column is-3 has-border-left is-centered">
+                <div className="column is-5-tablet is-4-desktop is-3-widescreen has-border-left is-centered">
 
-                  <FindBooking locationId={hotel.locationId} hotelId={hotel.id}/>
+                  <FindBooking locationId={hotel.locationId}
+                               hotelId={hotel.id}
+                               checkIn={this.state.checkIn}
+                               checkOut={this.state.checkOut}/>
+
+                  <div className="has-text-left">
+                    <div className="notification has-background-black has-text-white">
+                      <p className="heading">Soluzioni per studenti</p>
+                      <p className="has-text-small">Disponibilità di soggiorni di 4, 8, 9, 10 o 12 mesi per godere a
+                        pieno l'esperienza di uno student hotel a {this.takeCity(hotel.locationName)}.</p>
+                    </div>
+
+                    <div className="notification has-background-black has-text-white">
+                      <p className="heading">Soggiorno prolungato</p>
+                      <p className="has-text-small">Soluzioni di soggiorni con camere singole o condivise da due settimane a un anno per vivere e studiare a {this.takeCity(hotel.locationName)}.</p>
+                    </div>
+
+                  </div>
 
                 </div>
               </div>
@@ -116,13 +151,17 @@ class HotelPageTemplate extends React.Component {
               <div className="columns is-6-desktop">
                 <div className="column is-10-desktop is-offset-1-desktop">
                   <div className="sh-hotel-map has-background-black">
-
+                    <Map location={hotel.location} />
                   </div>
                 </div>
               </div>
             </div>
 
           </section>
+
+          <Newsletter/>
+
+          <AnteFooter/>
 
         </main> : <main className="is-loader"></main>
     );
@@ -137,7 +176,9 @@ HotelPageTemplate.propTypes = {
   hotelId: PropTypes.number,
   address: PropTypes.string,
   info: PropTypes.string,
-  helmet: PropTypes.object
+  helmet: PropTypes.object,
+  hotel: PropTypes.object,
+  images: PropTypes.object
 };
 
 const HotelDetails = ({ data }) => {

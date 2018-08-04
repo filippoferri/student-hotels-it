@@ -1,19 +1,19 @@
-import React from "react";
-import PropTypes from "prop-types";
-import HotelPricesAPI from "../API/HotelPrices";
+import React from 'react';
+import PropTypes from 'prop-types';
+import HotelPricesAPI from '../API/HotelPrices';
 
 class FindBooking extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
-      prices: false,
-      expanded: false
+      prices: null
     };
-    this.getRandomArbitrary = this.getRandomArbitrary.bind(this);
+    this.variation = this.variation.bind(this);
   }
 
   componentDidMount() {
-    HotelPricesAPI(this.props.locationId, this.props.hotelId, "2018-09-13", "2018-09-14").then(
+    HotelPricesAPI(this.props.locationId, this.props.hotelId, this.props.checkIn, this.props.checkOut).then(
       result => this.setState({
         prices: result
       })
@@ -27,43 +27,52 @@ class FindBooking extends React.Component {
   render() {
 
     const { prices } = this.state;
+    const priceFrom = prices ? prices.priceFrom : 120;
+    const goTo = "https://whitelabel.travelpayouts.com/hotels?preview=1&host=booking.studenthotels.it&destination=" + this.props.hotelId + "&checkIn=" + this.props.checkIn + "&checkOut=" + this.props.checkOut + "&marker=184772&children=&adults=1&language=it&currency=eur";
 
     return (
 
-      <div>
-        {prices ?
-          <div className="sh-price-from has-text-left is-flex is-flex-end">
-            <div className="">
-              <div>
-                <p className="heading">Hotel da</p>
-                <p className="title">€ {prices.priceFrom}</p>
-              </div>
-            </div>
-            <div className="has-text-small has-text-grey">
-              <div>A notte per persona</div>
-            </div>
-          </div> : null}
+      <div className="has-margin-bottom">
 
-        <button type="button" className="button is-medium is-primary is-fullwidth">Compara prezzi</button>
+        <div className="sh-price-from has-text-left is-flex is-flex-end is-hidden-mobile">
+          <div>
+              <p className="heading">Hotel da</p>
+              <p className="title">€ {priceFrom}</p>
+          </div>
+          <div className="has-text-small has-text-grey">
+            <div>A notte per persona</div>
+          </div>
+        </div>
 
-        <div className="sh-compare-price has-text-left">
+        <a className="sh-booking" href={`${goTo}`} target="_blank">
+          <button type="button" className="button is-medium is-primary is-fullwidth">Compara prezzi
+          </button>
+        </a>
+
+        <div className="sh-compare-price has-text-left is-hidden-mobile">
           <div className="sh-adv-item is-flex">
             <div>Booking.com</div>
-            <div>€ {this.variation(prices.priceFrom, (prices.priceFrom + 30))}</div>
+            <div>€ {this.variation(priceFrom, (priceFrom + 30))}</div>
           </div>
           <div className="sh-adv-item is-flex">
             <div>Agodà</div>
-            <div>€ {this.variation(prices.priceFrom, (prices.priceFrom + 30))}</div>
+            <div>€ {this.variation(priceFrom, (priceFrom + 30))}</div>
           </div>
           <div className="sh-adv-item is-flex">
             <div>Expedia</div>
-            <div>€ {this.variation(prices.priceFrom, (prices.priceFrom + 30))}</div>
+            <div>€ {this.variation(priceFrom, (priceFrom + 30))}</div>
           </div>
           <div className="sh-adv-item is-flex">
             <div>Hotels.com</div>
-            <div>€ {this.variation(prices.priceFrom, (prices.priceFrom + 30))}</div>
+            <div>€ {this.variation(priceFrom, (priceFrom + 30))}</div>
+          </div>
+          <div className="sh-adv-item">
+            <div className="has-text-centered has-text-small">
+              <a className="sh-booking" href={`${goTo}`} target="_blank">+ 2 offerte</a>
+            </div>
           </div>
         </div>
+
       </div>
     );
   }
@@ -72,5 +81,5 @@ class FindBooking extends React.Component {
 export default FindBooking;
 
 FindBooking.propTypes = {
-  expanded: PropTypes.bool
+  prices: PropTypes.object
 };

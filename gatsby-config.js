@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: 'Student Hotels',
+    author: 'Filippo Ferri - filippoferri.it',
+    description: 'Student Hotels - Il motore di ricerca per strutture alberghiere con tutti i comfort per studenti',
+    siteUrl: 'https://www.studenthotels.it',
     instagramAPI: {
       userId: '8081412028',
       clientId: 'bb37bade18f94c70a7262cbc3ac1b1df',

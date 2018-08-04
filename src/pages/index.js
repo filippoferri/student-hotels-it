@@ -22,8 +22,6 @@ export default class IndexPage extends React.Component {
 
         <HomeHero/>
 
-        <BlockIcons/>
-
         <FeaturedHotels/>
 
         <HomeMosaic/>
