@@ -1,7 +1,7 @@
 ---
 templateKey: mission-page
 title: La mission di Student Hotels
-heroImage: img/jumbotron.jpg
+heroImage: ../../static/img/jumbotron.jpg
 heading: La mission di Student Hotels
 intro:
   description: >
@@ -16,18 +16,18 @@ block1:
   description: >
     Incomparable Candidate Experience Game-Changing Leaders Innovative and
     Flexible Your Brand Ambassadors Partners With A Shared Goal
-  image: /img/chemex.jpg
   heading: >-
     We work tirelessly to build world-class board and executive leadership teams
     for companies around the globe
+  image: /img/chemex.jpg
 block2:
   description: >
     Incomparable Candidate Experience Game-Changing Leaders Innovative and
     Flexible Your Brand Ambassadors Partners With A Shared Goal
-  image: /img/chemex.jpg
   heading: >-
     We work tirelessly to build world-class board and executive leadership teams
     for companies around the globe
+  image: /img/chemex.jpg
 board:
   description: >
     So now you know a bit about us, we’re probably going to wonder why we
@@ -41,9 +41,9 @@ block3:
   description: >
     Incomparable Candidate Experience Game-Changing Leaders Innovative and
     Flexible Your Brand Ambassadors Partners With A Shared Goal
-  image: /img/chemex.jpg
   heading: >-
     We work tirelessly to build world-class board and executive leadership teams
     for companies around the globe
+  image: /img/chemex.jpg
 ---
 
