@@ -23,6 +23,7 @@ class HotelHero extends React.Component {
   render() {
 
     const {location} = this.state;
+    const hero = location ? "Https://photo.hotellook.com/static/cities/1200x720/" + location.iata[0] + ".jpg" : ""
 
     return (
 
@@ -30,7 +31,8 @@ class HotelHero extends React.Component {
           <div className="hero is-medium is-primary">
 
             { location ?
-            <div className="has-background is-bg-animated" style={{ backgroundImage: `url(Https://photo.hotellook.com/static/cities/1200x720/${location.iata[0]}.jpg)` }}></div> : null }
+              <div className="is-image-wrapper has-position-absolute"><img src={hero} /></div>
+             : null }
 
             <div className="hero-body">
               <div className="container has-text-centered">

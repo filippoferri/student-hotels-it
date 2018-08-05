@@ -27,12 +27,28 @@ module.exports = {
         name: 'images',
       },
     },
-    'gatsby-plugin-sharp',
+    "gatsby-remark-copy-linked-files",
     'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-remark-images`,
+      options: {
+        maxWidth: 1280,
+      },
+    },
     {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `black`,
+        // Disable the loading spinner.
+        showSpinner: false,
       },
     },
     {

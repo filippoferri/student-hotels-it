@@ -11,8 +11,8 @@ const BlockTextImage = ({ content, dir, style }) => {
 
           {dir === "is-left" &&
           <div className="column is-6-desktop">
-            <div className="block-image"
-                 style={{ backgroundImage: `url(${content.image})` }}>
+            <div className="block-image">
+              <div className="is-image-wrapper has-position-absolute"><img src={content.image} /></div>
             </div>
           </div>
           }

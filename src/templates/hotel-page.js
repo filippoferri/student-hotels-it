@@ -2,16 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
 import Helmet from "react-helmet";
-import Link from "gatsby-link";
-import Moment from 'moment';
+import Moment from "moment";
+import { Link, DirectLink } from "react-scroll";
 
 import HotelContentAPI from "../API/HotelContent";
 import HotelImagesAPI from "../API/HotelImages";
 
 import Content, { HTMLContent } from "../components/Content";
-import HotelHero from "../components/HotelHero";   //<HotelHero locationId={hotel.locationId} heading={this.props.heading}/>
+import HotelHero from "../components/HotelHero";
 import HotelImages from "../components/HotelImages";
-import Map from "../components/Map"; //<Map location={hotel.location} />
+import Map from "../components/Map";
 import FindBooking from "../components/FindBooking";
 import Newsletter from "../components/Newsletter";
 import AnteFooter from "../components/AnteFooter";
@@ -45,19 +45,18 @@ class HotelPageTemplate extends React.Component {
 
   dayCalc(num) {
     const today = new Date;
-    const newDate = Moment(today, "DD-MM-YYYY").add(num,'days') ;
-    const day = newDate.format('DD');
-    const month = newDate.format('MM');
-    const year = newDate.format('YYYY');
-    return (year + '-' + month + '-' + day)
+    const newDate = Moment(today, "DD-MM-YYYY").add(num, "days");
+    const day = newDate.format("DD");
+    const month = newDate.format("MM");
+    const year = newDate.format("YYYY");
+    return (year + "-" + month + "-" + day);
   }
 
   takeCity(location) {
-    return location.substr(0, location.indexOf(','));
+    return location.substr(0, location.indexOf(","));
   }
 
   render() {
-
     const { hotel } = this.state;
     const { images } = this.state;
 
@@ -81,7 +80,8 @@ class HotelPageTemplate extends React.Component {
                   <div className="sh-hotel-header">
                     <h2 className="title is-size-4">{hotel.label}</h2>
                     <span style={{ "marginRight": "1rem" }}>{this.props.address}</span>
-                    <Link to="#map"><span>Mappa</span></Link>
+                    <Link activeClass="active" to="map" smooth={true} offset={-50}><span
+                      className="has-text-primary">Mappa</span></Link>
                   </div>
 
                   {images ?
@@ -118,7 +118,6 @@ class HotelPageTemplate extends React.Component {
 
                   </div>
 
-
                 </div>
                 <div className="column is-5-tablet is-4-desktop is-3-widescreen has-border-left is-centered">
 
@@ -136,7 +135,8 @@ class HotelPageTemplate extends React.Component {
 
                     <div className="notification has-background-black has-text-white">
                       <p className="heading">Soggiorno prolungato</p>
-                      <p className="has-text-small">Soluzioni di soggiorni con camere singole o condivise da due settimane a un anno per vivere e studiare a {this.takeCity(hotel.locationName)}.</p>
+                      <p className="has-text-small">Soluzioni di soggiorni con camere singole o condivise da due
+                        settimane a un anno per vivere e studiare a {this.takeCity(hotel.locationName)}.</p>
                     </div>
 
                   </div>
@@ -146,12 +146,12 @@ class HotelPageTemplate extends React.Component {
             </div>
           </section>
 
-          <section className="section">
+          <section className="section element" name="map">
             <div className="container">
               <div className="columns is-6-desktop">
                 <div className="column is-10-desktop is-offset-1-desktop">
                   <div className="sh-hotel-map has-background-black">
-                    <Map location={hotel.location} />
+                    <Map location={hotel.location}/>
                   </div>
                 </div>
               </div>

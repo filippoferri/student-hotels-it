@@ -3,22 +3,17 @@ import Link from 'gatsby-link';
 
 const Tile = ({ post, style, hasbg }) => {
 
-  let title = post.node.frontmatter.title;
-  let date = post.node.frontmatter.date;
-  let url = post.node.fields.slug;
-  let img = "../img/chemex.jpg"
-
-  if (hasbg) {
-    var image = {backgroundImage: `url(${img})` }
-    var bg    = "has-background"
-  } else {
-    var bg    = "is-animated"
-  }
+  const title = post.node.frontmatter.title;
+  const date = post.node.frontmatter.date;
+  const url = post.node.fields.slug;
+  const img = post.node.frontmatter.thumbnail
 
   return (
     <div className="tile is-parent">
-      <article className={"tile is-child notification has-min-height " + (style ? style : "")  + " " + bg}
-               style={image}>
+      <article className={"tile is-child notification has-min-height" + (style ? " " + style : "") + (hasbg ? " has-background" : " is-animated")}>
+        { hasbg ?
+        <div className="is-image-wrapper has-position-absolute"><img src={img} /></div>
+        : null }
         <p className="tile-title title is-4">{title}</p>
         <span className="tile-date">{date}</span>
         <Link className="tile-link" to={url}></Link>

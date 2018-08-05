@@ -1,6 +1,5 @@
 import React from "react"
 import Instafeed from "react-instafeed"
-import Link from 'gatsby-link'
 import PropTypes from "prop-types";
 
 const instafeedTarget = "instafeed"
@@ -8,26 +7,24 @@ const instafeedTarget = "instafeed"
 
 const JoinCommunity = ( {api} ) => {
   return (
-    <section className="section has-margin-bottom">
-      <div className="container is-centered">
-
-        <h3 className="title is-h3">Unisciti alla community</h3>
-        <p>Condividi la tua esperienza su Instagram <Link to="" className="has-text-primary">@studenthotels</Link></p>
-
-        <div id={instafeedTarget} className="is-small">
+    <div className="is-image-wrapper has-position-absolute">
+        <div id={instafeedTarget}>
           <Instafeed
-            limit='4'
-            resolution='thumbnail'
-            sortBy='most-recent'
+            limit="1"
+            resolution="standard_resolution"
+            sortBy="most-recent"
             target={instafeedTarget}
-            template=''
+            template="
+            <a href='{{link}}' target='_blank' class='instafeed__item'></a>
+            <div class='is-image-wrapper has-position-absolute has-background'>
+              <img class='instafeed__item__background' src='{{image}}' />
+            </div>"
             userId={api.userId}
             clientId={api.clientId}
             accessToken={api.accessToken}
           />
         </div>
-      </div>
-    </section>
+    </div>
   );
 }
 

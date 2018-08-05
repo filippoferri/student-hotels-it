@@ -14,9 +14,7 @@ const FeaturedHotels = () => (
 
         <div className="tile is-parent is-8">
             <article className="tile is-child notification is-paddingless">
-              <div className="is-image-wrapper">
-                <img src={bgHotel} alt=""/>
-              </div>
+              <div className="is-image-wrapper"><img src={bgHotel} alt=""/></div>
               <p className="tile-title title is-4 is-uppercase">Firenze</p>
               <Link className="tile-link" to="/hotels/hotel-test"></Link>
             </article>

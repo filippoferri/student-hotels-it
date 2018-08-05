@@ -1,21 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 
-import HomeHero from '../components/HomeHero';
-import HomeMosaic from '../components/HomeMosaic';
-import BlockIcons from '../components/BlockIcons';
-import FeaturedHotels from '../components/FeaturedHotels';
-import JoinCommunity from '../components/JoinCommunity';
-import LatestNews from '../components/LatestNews';
-import Newsletter from '../components/Newsletter';
-import AnteFooter from '../components/AnteFooter';
+import HomeHero from "../components/HomeHero";
+import HomeMosaic from "../components/HomeMosaic";
+import FeaturedHotels from "../components/FeaturedHotels";
+import JoinCommunity from "../components/JoinCommunity";
+import LatestNews from "../components/LatestNews";
+import Newsletter from "../components/Newsletter";
+import AnteFooter from "../components/AnteFooter";
 
 
 export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
+    const { siteMetadata: api } = data.site;
 
     return (
       <main>
@@ -24,13 +24,13 @@ export default class IndexPage extends React.Component {
 
         <FeaturedHotels/>
 
-        <HomeMosaic/>
+        <HomeMosaic api={api.instagramAPI}/>
 
         <LatestNews posts={posts}/>
 
-        <Newsletter />
+        <Newsletter/>
 
-        <AnteFooter />
+        <AnteFooter/>
 
       </main>
     );
@@ -39,6 +39,9 @@ export default class IndexPage extends React.Component {
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.array
+    }),
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array
     })
@@ -72,6 +75,7 @@ export const pageQuery = graphql`
             title
             templateKey
             date(formatString: "DD MMMM, YYYY", locale: "it")
+            thumbnail
           }
         }
       }

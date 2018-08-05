@@ -13,7 +13,7 @@ const hero = 'https://source.unsplash.com/nF8xhLMmg0c/1600x900';
 const HomeHero = () => (
   <section className="hero is-primary is-fullheight">
     <div className="hero-slides">
-      <div className="is-image-wrapper"><img src={hero}/></div>
+      <div className="is-image-wrapper"><img src={hero} /></div>
     </div>
     <div className="hero-body is-home-hero">
       <div className="container is-centered">

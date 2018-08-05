@@ -5,8 +5,6 @@ const Marker = () => <div className="sh-map-marker"></div>;
 
 const Map = ({location}) => {
 
-  console.log({location})
-
   const dataMap = {
     center: {
       lat: location.lat,

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "gatsby-link";
+import JoinCommunity from "./JoinCommunity"
 
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 import FaInstagram from "@fortawesome/fontawesome-free-brands/faInstagram";
@@ -8,7 +9,7 @@ import bgTileThird from "../img/tile-hotels.jpg";
 import bgLogo from "../img/bg-logo.svg"
 import arrow from '../img/arrow-right.svg'
 
-const HomeMosaic = () => (
+const HomeMosaic = ( {api} ) => (
   <section className="section is-home-mosaic">
     <div className="container">
 
@@ -27,7 +28,7 @@ const HomeMosaic = () => (
               <article className="tile is-child notification is-gray-light has-min-height is-animated has-content">
                 <Link className="is-overlay-link" to="/mission"></Link>
                 <div className="is-over-tablet">
-                  <h3 className="title is-4 is-uppercase has-text-weight-bold">Perché scegliere Student Hotels?</h3>
+                  <h3 className="title is-4 is-uppercase has-text-weight-bold">Perché scegliere uno student Hotel?</h3>
                   <p>Per tantissime ragioni! Soprattutto perché proponiamo solo strutture che offrono non solo alloggi per dormire, ma anche spazi per studiare, divertirsi e conoscere nuovi amici.</p>
                   <p className="sh-goto"><span className="is-hidden-desktop" >Leggi di più</span><img className="is-hidden-touch"  style={{width: `40px`}} src={arrow} alt="mission"/></p>
                 </div>
@@ -58,16 +59,21 @@ const HomeMosaic = () => (
 
         <div className="tile is-parent is-vertical is-4-desktop">
 
-          <article className="tile is-child notification is-black has-background has-min-height"
-                   style={{ backgroundImage: `url(${bgTileThird})` }}>
+          <article className="tile is-child notification is-black has-min-height">
+
+            <JoinCommunity api={api} />
 
             <div className="is-over is-block-top">
-              <h3 className="title is-5 is-uppercase has-text-weight-bold">#studentspirit</h3>
+              <h3 className="title is-5 is-uppercase has-text-weight-bold">Unisciti alla community</h3>
+
+              <span>@studenthotels</span>
             </div>
 
             <Link className="icon-social" to="/">
               <FontAwesomeIcon className="icon-social" icon={FaInstagram} />
             </Link>
+
+            <a className="sh-overlay-link" href='https://www.instagram.com/student_hotels/' target='_blank'></a>
 
           </article>
 
