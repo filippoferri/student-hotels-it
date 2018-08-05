@@ -75,7 +75,7 @@ const MissionPage = ({ data }) => {
   return (
     <MissionPageTemplate
       title={frontmatter.title}
-      image={frontmatter.image}
+      image={frontmatter.heroImage}
       heading={frontmatter.heading}
       intro={frontmatter.intro}
       block1={frontmatter.block1}
@@ -97,7 +97,7 @@ export const missionPageQuery = graphql`
     markdownRemark(id: { eq: $id } ) {
       frontmatter {
         title
-        image 
+        heroImage 
         heading
         intro {
           heading

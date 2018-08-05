@@ -1,7 +1,9 @@
 import axios from 'axios';
 import Utils from '../Const/TravelPayoutConst';
 
+const APPEND = '/api/v2/lookup.json?';
+
 export default {
   HotelContentAPI: id =>
-  axios.get( Utils.URL_BASE + '/api/v2/lookup.json?query=' + id + '&lang=' + Utils.LANGUAGE +'&lookFor=hotel&limit=1&token=' + Utils.TOKEN)
+  axios.get( Utils.URL_BASE + APPEND + 'query=' + id + '&lang=' + Utils.LANGUAGE +'&lookFor=hotel&token=' + Utils.TOKEN)
 };

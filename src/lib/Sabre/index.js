@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 
 const URL_BASE = 'https://api-crt.cert.havail.sabre.com/v1.0.0/shop/hotels/content?mode=content';
-const SIMPLE_HOTEL_SEARCH_ENDPOINT = `/v1.0.0/shop/hotels/content?mode=content`;
 
 const axiosConfig = {
   headers: {
