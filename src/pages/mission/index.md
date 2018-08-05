@@ -1,7 +1,7 @@
 ---
 templateKey: mission-page
 title: La mission di Student Hotels
-heroImage: ../img/jumbotron.jpg
+heroImage: ../img/flavor_wheel.jpg
 heading: La mission di Student Hotels
 intro:
   description: >
