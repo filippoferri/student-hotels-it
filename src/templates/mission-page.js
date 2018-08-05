@@ -43,7 +43,6 @@ export const MissionPageTemplate = ({
 
 MissionPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
-  image: PropTypes.string,
   heading: PropTypes.string,
   intro: PropTypes.shape({
     heading: PropTypes.string,
@@ -98,7 +97,13 @@ export const missionPageQuery = graphql`
     markdownRemark(id: { eq: $id } ) {
       frontmatter {
         title
-        image
+        image {
+          childImageSharp {
+            sizes(maxWidth: 1280) {
+              ...GatsbyImageSharpSizes_withWebp
+            }
+          }
+        }
         heading
         intro {
           heading

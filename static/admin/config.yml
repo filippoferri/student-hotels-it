@@ -50,7 +50,11 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "mission-page"}
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Image", name: "image", widget: "image"}
+          - label: "Image"
+            name: "image"
+            widget: "custompathimage"
+            customMediaPath: "../img/"
+            rawMediaPath: "https://raw.githubusercontent.com/user/repo/master/images/"
           - {label: Heading, name: heading, widget: string}
           - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text} ]}
           - {label: Block With Image, name: block1, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image, name: image, widget: image} ]}

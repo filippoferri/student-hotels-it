@@ -27,19 +27,14 @@ module.exports = {
         name: 'images',
       },
     },
-    "gatsby-remark-copy-linked-files",
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-remark-images`,
-      options: {
-        maxWidth: 1280,
-      },
-    },
-    {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: [],
+        plugins: [
+          "gatsby-remark-copy-linked-files",
+        ],
       },
     },
     {
