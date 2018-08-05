@@ -97,13 +97,7 @@ export const missionPageQuery = graphql`
     markdownRemark(id: { eq: $id } ) {
       frontmatter {
         title
-        image {
-          childImageSharp {
-            sizes(maxWidth: 1280) {
-              ...GatsbyImageSharpSizes_withWebp
-            }
-          }
-        }
+        image
         heading
         intro {
           heading
