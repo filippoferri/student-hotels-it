@@ -30,6 +30,7 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Image", name: "image", widget: "image"}
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"
@@ -50,7 +51,7 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "mission-page"}
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Image", name: "image", widget: "custompathimage", customMediaPath: "../img/", rawMediaPath: "https://raw.githubusercontent.com/filippoferri/student-hotels-it/master/img/"}
+          - {label: "Image", name: "image", widget: "custompathimage", customMediaPath: "../../static/img/", rawMediaPath: "https://raw.githubusercontent.com/filippoferri/student-hotels-it/master/static/img/"}
           - {label: Heading, name: heading, widget: string}
           - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text} ]}
           - {label: Block With Image, name: block1, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image, name: image, widget: image} ]}
@@ -79,7 +80,7 @@ collections:
       - {label: "Heading", name: "heading", widget: "string"}
       - {label: "TravelPayout hotelId", name: "hotelId", widget: "string"}
       - {label: "Address", name: "address", widget: "string"}
-      - {label: "Hotel Info", name: "info", widget: "markdown"}
+      - {label: "Hotel Info", name: "body", widget: "markdown"}
       - {label: "Facilities", name: "facilities", widget: "list"}
       - {label: "Tags", name: "tags", widget: "list"}
 
@@ -91,7 +92,8 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "default"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Hero Image", name: "hero", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
 
 

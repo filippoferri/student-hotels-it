@@ -97,7 +97,7 @@ export const missionPageQuery = graphql`
     markdownRemark(id: { eq: $id } ) {
       frontmatter {
         title
-        image
+        image 
         heading
         intro {
           heading

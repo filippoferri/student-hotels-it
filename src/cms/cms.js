@@ -16,6 +16,7 @@ import CareersPagePreview from './preview-templates/CareersPagePreview'
 CMS.registerWidget("custompathimage", CustomPathImageControl, CustomPathImagePreview);
 
 CMS.registerPreviewStyle('/styles.css')
+
 CMS.registerPreviewTemplate('about', AboutPagePreview)
 CMS.registerPreviewTemplate('products', ProductPagePreview)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)
