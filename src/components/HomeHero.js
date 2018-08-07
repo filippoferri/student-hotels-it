@@ -1,20 +1,18 @@
-import React from 'react';
+import React from "react";
 import Img from "gatsby-image";
 
-import HomeSearch from '../components/HomeSearch';
+import HomeSearch from "../components/HomeSearch";
 
-import bgGrunge from '../img/grunge.png';
-import agoda from '../img/agencies/agoda.png';
-import bookingcom from '../img/agencies/2.png';
-import expedia from '../img/agencies/expedia.png';
-import hotelsdotcom from '../img/agencies/hotelsdotcom.png';
+import bgGrunge from "../img/grunge.png";
+import agoda from "../img/agencies/agoda.png";
+import bookingcom from "../img/agencies/2.png";
+import expedia from "../img/agencies/expedia.png";
+import hotelsdotcom from "../img/agencies/hotelsdotcom.png";
 
-const hero = 'https://source.unsplash.com/nF8xhLMmg0c/1600x900';
-
-const HomeHero = ( {content} ) => (
+const HomeHero = ({ content }) => (
   <section className="hero is-primary is-fullheight">
     <div className="hero-slides">
-      <Img sizes={content.heroImage.childImageSharp.sizes} />
+      <Img sizes={content.heroImage.childImageSharp.sizes}/>
     </div>
     <div className="hero-body is-home-hero">
       <div className="container is-centered">

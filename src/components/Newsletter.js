@@ -1,8 +1,6 @@
 import React from "react";
 import Img from "gatsby-image";
 
-import bgNewsletter from "../img/newsletter-bg.jpg";
-
 const Newsletter = ({image}) => (
   <section className="section newsletter is-small is-primary">
     <div className="is-image-wrapper has-position-absolute"><Img sizes={image}/></div>

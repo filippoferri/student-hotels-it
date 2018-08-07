@@ -12,7 +12,8 @@ const TagsPage = ({
     data: {
       tags: { group },
       hometags: {frontmatter},
-      site: { siteMetadata: { title } }
+      site: { siteMetadata: { title } },
+      newsletter: { edges }
     }
   }) => (
   <main id="blog">
@@ -36,7 +37,7 @@ const TagsPage = ({
       </div>
     </section>
 
-    <Newsletter/>
+    <Newsletter image={edges[0].node.frontmatter.newsletterImage.childImageSharp.sizes}/>
 
     <AnteFooter/>
 
@@ -69,6 +70,23 @@ export const tagPageQuery = graphql`
           childImageSharp{
             sizes(maxWidth: 1280) {
               ...GatsbyImageSharpSizes
+            }
+          }
+        }
+      }
+    }
+    newsletter: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "home-page" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            newsletterImage {
+              childImageSharp{
+                sizes(maxWidth: 1280) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
             }
           }
         }

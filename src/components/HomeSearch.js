@@ -37,8 +37,6 @@ class HomeSearch extends React.Component {
     const isDescendantOfRoot = childNode && childNode.contains(e.target);
     if (!isDescendantOfRoot) {
       this.setState({ popupVisible: false });
-    } else {
-      alert('sono qua')
     }
   }
 

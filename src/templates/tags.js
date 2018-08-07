@@ -1,21 +1,17 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
+import React from "react";
+import Helmet from "react-helmet";
+import Link from "gatsby-link";
 
-import blogBg from '../img/blog-bg.jpg';
-import Hero from '../components/Hero';
-import Newsletter from '../components/Newsletter';
+import Hero from "../components/Hero";
+import Newsletter from "../components/Newsletter";
 import AnteFooter from "../components/AnteFooter";
-
 
 class TagRoute extends React.Component {
   render() {
     const { data } = this.props;
-    const posts = data.posts.edges
+    const posts = data.posts.edges;
     const heroImage = data.hero.edges[0].node.frontmatter.heroImage;
     const newsletterImage = data.newsletter.edges[0].node.frontmatter.newsletterImage;
-
-    console.log(heroImage)
 
     const postLinks = posts.map(post => (
       <div
@@ -34,34 +30,34 @@ class TagRoute extends React.Component {
               {post.node.excerpt}
             </p>
           </div>
-          <Link className="sh-blog-link"  to={post.node.fields.slug}></Link>
+          <Link className="sh-blog-link" to={post.node.fields.slug}></Link>
         </article>
       </div>
-    ))
-    const tag = this.props.pathContext.tag
+    ));
+    const tag = this.props.pathContext.tag;
 
-    const title = this.props.data.site.siteMetadata.title
+    const title = this.props.data.site.siteMetadata.title;
 
-    const totalCount = data.posts.totalCount
+    const totalCount = data.posts.totalCount;
     const tagHeader = `${totalCount} articol${
-      totalCount === 1 ? 'o' : 'i'
-    } in "${tag}"`
+      totalCount === 1 ? "o" : "i"
+      } in "${tag}"`;
 
     return (
       <main id="blog">
 
-        <Helmet title={`${tag} | ${title}`} />
+        <Helmet title={`${tag} | ${title}`}/>
 
         <Hero image={heroImage.childImageSharp.sizes} heading={tagHeader}/>
 
         <section className="section">
-        <div className="container has-margin-bottom has-margin-top">
-          <div className="columns is-multiline">
+          <div className="container has-margin-bottom has-margin-top">
+            <div className="columns is-multiline">
 
               {postLinks}
 
+            </div>
           </div>
-        </div>
         </section>
 
         <Newsletter image={newsletterImage.childImageSharp.sizes}/>
@@ -69,11 +65,11 @@ class TagRoute extends React.Component {
         <AnteFooter/>
 
       </main>
-    )
+    );
   }
 }
 
-export default TagRoute
+export default TagRoute;
 
 export const tagPageQuery = graphql`
   query TagPage($tag: String) {
@@ -135,4 +131,4 @@ export const tagPageQuery = graphql`
       }
     }
   }
-`
+`;
