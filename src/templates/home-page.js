@@ -12,21 +12,22 @@ import AnteFooter from "../components/AnteFooter";
 export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props;
+    const { home: home } = data;
     const { posts: posts } = data;
     const { siteMetadata: api } = data.site;
 
     return (
       <main>
 
-        <HomeHero/>
+        <HomeHero content={home.frontmatter}/>
 
         <FeaturedHotels/>
 
-        <HomeMosaic api={api.instagramAPI}/>
+        <HomeMosaic content={home.frontmatter} api={api.instagramAPI}/>
 
-        <LatestNews posts={posts.edges}/>
+        <LatestNews content={home.frontmatter} posts={posts.edges}/>
 
-        <Newsletter/>
+        <Newsletter image={home.frontmatter.newsletterImage.childImageSharp.sizes}/>
 
         <AnteFooter/>
 
@@ -37,15 +38,14 @@ export default class IndexPage extends React.Component {
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
-    site: PropTypes.shape({
-      siteMetadata: PropTypes.array
-    }),
+    site: PropTypes.object,
+    home: PropTypes.object,
     posts: PropTypes.object
   })
 };
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query IndexQuery($id: String!) {
     site {
       siteMetadata {
         instagramAPI {
@@ -77,6 +77,38 @@ export const pageQuery = graphql`
                   ...GatsbyImageSharpSizes
                 }
               }
+            }
+          }
+        }
+      }
+    }
+    home: markdownRemark(
+      id: { eq: $id }
+    ) {
+      id
+      frontmatter {
+        title
+        subtitle
+        templateKey
+        heroImage {
+          childImageSharp{
+            sizes(maxWidth: 1280) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
+        mosaic {
+          title
+          subtitle
+        }
+        posts {
+          title
+          subtitle
+        }
+        newsletterImage {
+          childImageSharp{
+            sizes(maxWidth: 1280) {
+              ...GatsbyImageSharpSizes
             }
           }
         }

@@ -10,6 +10,7 @@ import Newsletter from "../components/Newsletter";
 import AnteFooter from "../components/AnteFooter";
 
 export const BlogPostTemplate = ({
+    helmet,
     content,
     contentComponent,
     description,
@@ -20,7 +21,7 @@ export const BlogPostTemplate = ({
     nextSlug,
     prevTitle,
     prevSlug,
-    helmet
+    newsletterImage
   }) => {
   const PostContent = contentComponent || Content;
 
@@ -88,7 +89,7 @@ export const BlogPostTemplate = ({
         </div>
       </section>
 
-      <Newsletter/>
+      <Newsletter image={newsletterImage.childImageSharp.sizes}/>
 
       <AnteFooter/>
 
@@ -106,7 +107,8 @@ BlogPostTemplate.propTypes = {
   nextTitle: PropTypes.string,
   nextSlug: PropTypes.string,
   prevTitle: PropTypes.string,
-  prevSlug: PropTypes.string
+  prevSlug: PropTypes.string,
+  newsletterImage: PropTypes.shape(),
 };
 
 const BlogPost = ({ data }) => {
@@ -125,6 +127,9 @@ const BlogPost = ({ data }) => {
     var prevSlug = prevPost.fields.slug;
   }
 
+  const { newsletter: newsletter } = data;
+  const image = newsletter.edges[0].node;
+
   return (
     <BlogPostTemplate
       content={post.html}
@@ -138,6 +143,7 @@ const BlogPost = ({ data }) => {
       nextSlug={nextSlug}
       prevTitle={prevTitle}
       prevSlug={prevSlug}
+      newsletterImage={image.frontmatter.newsletterImage}
     />
   );
 };
@@ -146,7 +152,8 @@ BlogPost.propTypes = {
   data: PropTypes.shape({
     current: PropTypes.object,
     prev: PropTypes.object,
-    next: PropTypes.object
+    next: PropTypes.object,
+    newsletter: PropTypes.object
   })
 };
 
@@ -185,6 +192,23 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
+      }
+    }
+    newsletter: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "home-page" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            newsletterImage {
+              childImageSharp{
+                sizes(maxWidth: 1280) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

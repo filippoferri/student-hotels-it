@@ -4,11 +4,13 @@ import PropTypes from "prop-types";
 import Hero from '../components/Hero';
 import Newsletter from '../components/Newsletter';
 import AnteFooter from '../components/AnteFooter';
+import DefaultPage from "./default";
 
 export const ContactPageTemplate = ({
     title,
     heroImage,
-    heading
+    heading,
+    newsletterImage
   }) => {
 
   return (
@@ -80,7 +82,7 @@ export const ContactPageTemplate = ({
         </div>
       </section>
 
-      <Newsletter />
+      <Newsletter image={newsletterImage.childImageSharp.sizes} />
 
       <AnteFooter />
 
@@ -95,26 +97,33 @@ ContactPageTemplate.propTypes = {
 };
 
 const ContactPage = ({ data }) => {
-  const { markdownRemark: post } = data;
+
+  const { current: post } = data;
+  const { newsletter: newsletter } = data;
+  const image = newsletter.edges[0].node;
 
   return (
     <ContactPageTemplate
       title={post.frontmatter.title}
       heroImage={post.frontmatter.heroImage}
       heading={post.frontmatter.heading}
+      newsletterImage={image.frontmatter.newsletterImage}
     />
   );
 };
 
-ContactPage.propTypes = {
-  data: PropTypes.object.isRequired
+DefaultPage.propTypes = {
+  data: PropTypes.shape({
+    current: PropTypes.object,
+    newsletter: PropTypes.object
+  })
 };
 
 export default ContactPage;
 
 export const pageQuery = graphql`
   query ContactPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    current: markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
         title
@@ -126,6 +135,23 @@ export const pageQuery = graphql`
           }
         }
         heading
+      }
+    }
+    newsletter: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "home-page" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            newsletterImage {
+              childImageSharp{
+                sizes(maxWidth: 1280) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

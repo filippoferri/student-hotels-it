@@ -1,11 +1,11 @@
 import React from "react";
-import Link from "gatsby-link";
+import Img from "gatsby-image";
 
 import bgNewsletter from "../img/newsletter-bg.jpg";
 
-const Newsletter = () => (
+const Newsletter = ({image}) => (
   <section className="section newsletter is-small is-primary">
-    <div className="is-image-wrapper has-position-absolute"><img src={bgNewsletter}/></div>
+    <div className="is-image-wrapper has-position-absolute"><Img sizes={image}/></div>
 
     <div className="container">
       <div className="column is-three-fifths is-offset-one-fifth is-centered">

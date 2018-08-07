@@ -4,12 +4,20 @@ import Link from 'gatsby-link'
 
 import blogBg from '../img/blog-bg.jpg';
 import Hero from '../components/Hero';
+import Newsletter from '../components/Newsletter';
+import AnteFooter from "../components/AnteFooter";
+
 
 class TagRoute extends React.Component {
   render() {
-    const posts = this.props.data.allMarkdownRemark.edges
-    const postLinks = posts.map(post => (
+    const { data } = this.props;
+    const posts = data.posts.edges
+    const heroImage = data.hero.edges[0].node.frontmatter.heroImage;
+    const newsletterImage = data.newsletter.edges[0].node.frontmatter.newsletterImage;
 
+    console.log(heroImage)
+
+    const postLinks = posts.map(post => (
       <div
         className="column is-one-third"
         key={post.node.fields.slug}
@@ -31,19 +39,22 @@ class TagRoute extends React.Component {
       </div>
     ))
     const tag = this.props.pathContext.tag
+
     const title = this.props.data.site.siteMetadata.title
-    const totalCount = this.props.data.allMarkdownRemark.totalCount
+
+    const totalCount = data.posts.totalCount
     const tagHeader = `${totalCount} articol${
       totalCount === 1 ? 'o' : 'i'
     } in "${tag}"`
 
     return (
-      <section id="blog">
+      <main id="blog">
 
         <Helmet title={`${tag} | ${title}`} />
 
-        <Hero image={blogBg} heading={tagHeader} />
+        <Hero image={heroImage.childImageSharp.sizes} heading={tagHeader}/>
 
+        <section className="section">
         <div className="container has-margin-bottom has-margin-top">
           <div className="columns is-multiline">
 
@@ -51,8 +62,13 @@ class TagRoute extends React.Component {
 
           </div>
         </div>
+        </section>
 
-      </section>
+        <Newsletter image={newsletterImage.childImageSharp.sizes}/>
+
+        <AnteFooter/>
+
+      </main>
     )
   }
 }
@@ -66,7 +82,7 @@ export const tagPageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(
+    posts: allMarkdownRemark(
       limit: 1000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
@@ -80,6 +96,40 @@ export const tagPageQuery = graphql`
           }
           frontmatter {
             title
+          }
+        }
+      }
+    }
+    hero: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "home-tags" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            heroImage {
+              childImageSharp{
+                sizes(maxWidth: 1280) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    newsletter: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "home-page" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            newsletterImage {
+              childImageSharp{
+                sizes(maxWidth: 1280) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
         }
       }

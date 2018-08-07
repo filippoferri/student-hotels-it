@@ -58,7 +58,7 @@ class FaqPageTemplate extends React.Component {
           </div>
         </section>
 
-        <Newsletter />
+        <Newsletter image={this.props.newsletterImage.childImageSharp.sizes} />
 
         <AnteFooter />
 
@@ -73,7 +73,9 @@ FaqPageTemplate.propTypes = {
 
 const FaqPage = ({ data }) => {
 
-  const { frontmatter } = data.markdownRemark;
+  const { frontmatter } = data.current;
+  const { newsletter: newsletter } = data;
+  const image = newsletter.edges[0].node;
 
   return (
     <FaqPageTemplate
@@ -81,19 +83,21 @@ const FaqPage = ({ data }) => {
       heroImage={frontmatter.heroImage}
       heading={frontmatter.heading}
       faq={frontmatter.faq}
+      newsletterImage={image.frontmatter.newsletterImage}
     />
   );
 };
 
 FaqPage.propTypes = {
-  data: PropTypes.object.isRequired
+  current: PropTypes.object,
+  newsletter: PropTypes.object
 };
 
 export default FaqPage;
 
 export const pageQuery = graphql`
   query FaqPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    current: markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
         heroImage {
@@ -107,6 +111,23 @@ export const pageQuery = graphql`
         faq {
           question
           answer        
+        }
+      }
+    }
+    newsletter: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "home-page" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            newsletterImage {
+              childImageSharp{
+                sizes(maxWidth: 1280) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
+          }
         }
       }
     }

@@ -5,13 +5,13 @@ import JoinCommunity from "./JoinCommunity"
 import bgLogo from "../img/bg-logo.svg"
 import arrow from '../img/arrow-right.svg'
 
-const HomeMosaic = ( {api} ) => (
+const HomeMosaic = ( {content, api} ) => (
   <section className="section is-home-mosaic">
     <div className="container">
 
       <div className="is-centered has-margin-bottom">
-        <h3 className="title has-text-weight-bold is-3">Il motore di ricerca degli Student Hotels</h3>
-        <p className="">Trovare student Hotels in Italia non è mai stato così facile.</p>
+        <h3 className="title has-text-weight-bold is-3">{content.mosaic.title}</h3>
+        <p className="">{content.mosaic.subtitle}</p>
       </div>
 
       <div className="tile is-ancestor has-column-tablet">

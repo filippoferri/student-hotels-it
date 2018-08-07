@@ -11,7 +11,8 @@ export const CareersPageTemplate = ({
     heroImage,
     heading,
     board,
-    positions
+    positions,
+    newsletterImage
   }) => {
 
   return (
@@ -52,7 +53,7 @@ export const CareersPageTemplate = ({
         </div>
       </section>
 
-      <Newsletter />
+      <Newsletter image={newsletterImage.childImageSharp.sizes}/>
 
       <AnteFooter />
 
@@ -75,7 +76,9 @@ CareersPageTemplate.propTypes = {
 };
 
 const CareersPage = ({ data }) => {
-  const { markdownRemark: post } = data;
+  const { current: post } = data;
+  const { newsletter: newsletter } = data;
+  const image = newsletter.edges[0].node;
 
   return (
     <CareersPageTemplate
@@ -84,19 +87,23 @@ const CareersPage = ({ data }) => {
       heading={post.frontmatter.heading}
       board={post.frontmatter.board}
       positions={post.frontmatter.positions}
+      newsletterImage={image.frontmatter.newsletterImage}
     />
   );
 };
 
 CareersPage.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.shape({
+    current: PropTypes.object,
+    newsletter: PropTypes.object
+  })
 };
 
 export default CareersPage;
 
 export const pageQuery = graphql`
   query CareersPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    current: markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
         title
@@ -115,6 +122,23 @@ export const pageQuery = graphql`
         positions {
           role
           description        
+        }
+      }
+    }
+    newsletter: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "home-page" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            newsletterImage {
+              childImageSharp{
+                sizes(maxWidth: 1280) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
+          }
         }
       }
     }

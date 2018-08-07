@@ -16,10 +16,9 @@ export const MissionPageTemplate = ({
     block1,
     block2,
     block3,
-    board
+    board,
+    newsletterImage
   }) => {
-
-  console.log(image);
 
   return (
     <main>
@@ -36,7 +35,7 @@ export const MissionPageTemplate = ({
 
       <BlockTextImage content={block3} dir={"is-right"} style={"white-ter"}/>
 
-      <Newsletter/>
+      <Newsletter image={newsletterImage.childImageSharp.sizes}/>
 
       <AnteFooter/>
 
@@ -70,7 +69,10 @@ MissionPageTemplate.propTypes = {
 };
 
 const MissionPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
+
+  const { frontmatter } = data.current;
+  const { newsletter: newsletter } = data;
+  const image = newsletter.edges[0].node;
 
   return (
     <MissionPageTemplate
@@ -82,19 +84,21 @@ const MissionPage = ({ data }) => {
       block2={frontmatter.block2}
       block3={frontmatter.block3}
       board={frontmatter.board}
+      newsletterImage={image.frontmatter.newsletterImage}
     />
   );
 };
 
 MissionPage.propTypes = {
-  data: PropTypes.object.isRequired
+  current: PropTypes.object,
+  newsletter: PropTypes.object
 };
 
 export default MissionPage;
 
 export const missionPageQuery = graphql`
   query MissionPage($id: String!) {
-    markdownRemark(id: { eq: $id } ) {
+    current: markdownRemark(id: { eq: $id } ) {
       frontmatter {
         title
         heroImage {
@@ -145,6 +149,23 @@ export const missionPageQuery = graphql`
         board {
           heading
           description
+        }
+      }
+    }
+    newsletter: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "home-page" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            newsletterImage {
+              childImageSharp{
+                sizes(maxWidth: 1280) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
+          }
         }
       }
     }

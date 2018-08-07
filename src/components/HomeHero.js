@@ -1,4 +1,5 @@
 import React from 'react';
+import Img from "gatsby-image";
 
 import HomeSearch from '../components/HomeSearch';
 
@@ -10,10 +11,10 @@ import hotelsdotcom from '../img/agencies/hotelsdotcom.png';
 
 const hero = 'https://source.unsplash.com/nF8xhLMmg0c/1600x900';
 
-const HomeHero = () => (
+const HomeHero = ( {content} ) => (
   <section className="hero is-primary is-fullheight">
     <div className="hero-slides">
-      <div className="is-image-wrapper"><img src={hero} /></div>
+      <Img sizes={content.heroImage.childImageSharp.sizes} />
     </div>
     <div className="hero-body is-home-hero">
       <div className="container is-centered">
@@ -21,9 +22,9 @@ const HomeHero = () => (
         <div className="columns">
           <div className="column is-6-desktop is-offset-3-desktop is-8-tablet is-offset-2-tablet">
             <h1 className="title has-negative-margin-top">
-              Hotel a misura di studente
+              {content.title}
             </h1>
-            <h2 className="subtitle">Inizia ora a cercare gli Student Hotel in Italia!</h2>
+            <h2 className="subtitle">{content.subtitle}</h2>
 
             <HomeSearch/>
 

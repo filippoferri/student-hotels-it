@@ -3,8 +3,6 @@ import Img from "gatsby-image";
 
 const BlockTextImage = ({ content, dir, style }) => {
 
-  console.log(content)
-
   return (
     <section className={"section block-text-image " + dir + " has-background-" + style}>
 

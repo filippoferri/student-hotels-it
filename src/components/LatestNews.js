@@ -26,16 +26,15 @@ const Tile = ({ post, style, hasbg }) => {
 
 };
 
-const LatestNews = ({ posts }) => {
+const LatestNews = ({ content,posts }) => {
 
   return (
     <section id="latest-news" className="section has-margin-bottom">
       <div className="container">
 
         <div className="is-centered has-margin-bottom">
-          <h3 className="title has-text-weight-bold is-3">Novità dal mondo</h3>
-          <p className="">Il mondo degli Student Hotels guarda al futuro.<br/>Rimani aggiornato sulle ultime
-            novità.</p>
+          <h3 className="title has-text-weight-bold is-3">{content.posts.title}</h3>
+          <p className="">{content.posts.subtitle}</p>
         </div>
 
         <div className="tile is-ancestor has-column-tablet">

@@ -13,7 +13,9 @@ class HomeSearch extends React.Component {
     this.handleOpen = this.handleOpen.bind(this);
   }
 
-
+  componentWillUnmount() {
+    this.handleOutsideClick
+  }
 
   handleClick() {
     if(!this.state.popupVisible) {
@@ -35,6 +37,8 @@ class HomeSearch extends React.Component {
     const isDescendantOfRoot = childNode && childNode.contains(e.target);
     if (!isDescendantOfRoot) {
       this.setState({ popupVisible: false });
+    } else {
+      alert('sono qua')
     }
   }
 
