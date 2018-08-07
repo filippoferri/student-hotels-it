@@ -11,17 +11,19 @@ export const DefaultPageTemplate = ({
     content,
     contentComponent,
     title,
-    hero,
+    heroImage,
     helmet
   }) => {
 
   const PageContent = contentComponent || Content;
 
+  console.log(heroImage)
+
   return (
     <main className="default-page">
       {helmet || ""}
 
-      <Hero image={hero} heading={title}/>
+      <Hero image={heroImage.childImageSharp.sizes} heading={title}/>
 
       <section className="section">
         <div className="container content">
@@ -47,7 +49,6 @@ DefaultPageTemplate.propTypes = {
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.func,
   title: PropTypes.string,
-  hero: PropTypes.string,
   helmet: PropTypes.object
 };
 
@@ -61,7 +62,7 @@ const DefaultPage = ({ data }) => {
       contentComponent={HTMLContent}
       helmet={<Helmet title={`${page.frontmatter.title} | Student Hotels`}/>}
       title={page.frontmatter.title}
-      hero={page.frontmatter.hero}
+      heroImage={page.frontmatter.heroImage}
     />
   );
 };
@@ -81,7 +82,13 @@ export const defaultPageQuery = graphql`
       html
       frontmatter {
         title
-        hero
+        heroImage {
+          childImageSharp {
+            sizes(maxWidth: 1280) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
       }
     }
   }

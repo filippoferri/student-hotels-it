@@ -19,10 +19,12 @@ export const MissionPageTemplate = ({
     board
   }) => {
 
+  console.log(image);
+
   return (
     <main>
 
-      <Hero image={image} heading={heading}/>
+      <Hero image={image.childImageSharp.sizes} heading={heading}/>
 
       <BlockText content={intro}/>
 
@@ -35,6 +37,7 @@ export const MissionPageTemplate = ({
       <BlockTextImage content={block3} dir={"is-right"} style={"white-ter"}/>
 
       <Newsletter/>
+
       <AnteFooter/>
 
     </main>
@@ -50,18 +53,15 @@ MissionPageTemplate.propTypes = {
   }),
   block1: PropTypes.shape({
     heading: PropTypes.string,
-    description: PropTypes.string,
-    image: PropTypes.string
+    description: PropTypes.string
   }),
   block2: PropTypes.shape({
     heading: PropTypes.string,
-    description: PropTypes.string,
-    image: PropTypes.string
+    description: PropTypes.string
   }),
   block3: PropTypes.shape({
     heading: PropTypes.string,
-    description: PropTypes.string,
-    image: PropTypes.string
+    description: PropTypes.string
   }),
   board: PropTypes.shape({
     heading: PropTypes.string,
@@ -97,7 +97,13 @@ export const missionPageQuery = graphql`
     markdownRemark(id: { eq: $id } ) {
       frontmatter {
         title
-        heroImage 
+        heroImage {
+          childImageSharp{
+            sizes(maxWidth: 1280) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
         heading
         intro {
           heading
@@ -106,17 +112,35 @@ export const missionPageQuery = graphql`
         block1 {
           heading
           description
-          image
+          image {
+            childImageSharp{
+              sizes(maxWidth: 1280) {
+                ...GatsbyImageSharpSizes
+              }
+            }
+          }
         }
         block2 {
           heading
           description
-          image
+          image {
+            childImageSharp{
+              sizes(maxWidth: 1280) {
+                ...GatsbyImageSharpSizes
+              }
+            }
+          }
         }
         block3 {
           heading
           description
-          image
+          image {
+            childImageSharp{
+              sizes(maxWidth: 1280) {
+                ...GatsbyImageSharpSizes
+              }
+            }
+          }
         }
         board {
           heading

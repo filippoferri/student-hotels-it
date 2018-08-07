@@ -2,10 +2,6 @@ import React from "react";
 import Link from "gatsby-link";
 import JoinCommunity from "./JoinCommunity"
 
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import FaInstagram from "@fortawesome/fontawesome-free-brands/faInstagram";
-
-import bgTileThird from "../img/tile-hotels.jpg";
 import bgLogo from "../img/bg-logo.svg"
 import arrow from '../img/arrow-right.svg'
 
@@ -69,9 +65,7 @@ const HomeMosaic = ( {api} ) => (
               <span>@studenthotels</span>
             </div>
 
-            <Link className="icon-social" to="/">
-              <FontAwesomeIcon className="icon-social" icon={FaInstagram} />
-            </Link>
+            <span className="sh-icon-social instagram" href="/"></span>
 
             <a className="sh-overlay-link" href='https://www.instagram.com/student_hotels/' target='_blank'></a>
 

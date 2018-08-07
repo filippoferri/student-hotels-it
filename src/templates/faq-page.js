@@ -29,7 +29,7 @@ class FaqPageTemplate extends React.Component {
     return (
       <main>
 
-        <Hero image={this.props.image} heading={this.props.heading} />
+        <Hero image={this.props.heroImage.childImageSharp.sizes} heading={this.props.heading} />
 
         <section className="section is-small">
           <div className="container">
@@ -78,7 +78,7 @@ const FaqPage = ({ data }) => {
   return (
     <FaqPageTemplate
       title={frontmatter.title}
-      image={frontmatter.image}
+      heroImage={frontmatter.heroImage}
       heading={frontmatter.heading}
       faq={frontmatter.faq}
     />
@@ -96,7 +96,13 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        image
+        heroImage {
+          childImageSharp {
+            sizes(maxWidth: 1280) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
         heading
         faq {
           question

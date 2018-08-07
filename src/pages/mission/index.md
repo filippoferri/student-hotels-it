@@ -1,7 +1,7 @@
 ---
 templateKey: mission-page
 title: La mission di Student Hotels
-heroImage: ../img/flavor_wheel.jpg
+heroImage: ../../img/flavor_wheel.jpg
 heading: La mission di Student Hotels
 intro:
   description: >
@@ -19,7 +19,7 @@ block1:
   heading: >-
     We work tirelessly to build world-class board and executive leadership teams
     for companies around the globe
-  image: /img/chemex.jpg
+  image: ../../img/chemex.jpg
 block2:
   description: >
     Incomparable Candidate Experience Game-Changing Leaders Innovative and
@@ -27,7 +27,7 @@ block2:
   heading: >-
     We work tirelessly to build world-class board and executive leadership teams
     for companies around the globe
-  image: /img/chemex.jpg
+  image: ../../img/chemex.jpg
 board:
   description: >
     So now you know a bit about us, we’re probably going to wonder why we
@@ -44,6 +44,6 @@ block3:
   heading: >-
     We work tirelessly to build world-class board and executive leadership teams
     for companies around the globe
-  image: /img/chemex.jpg
+  image: ../../img/chemex.jpg
 ---
 

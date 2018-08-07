@@ -1,19 +1,22 @@
-import React from 'react';
-import Link from 'gatsby-link';
+import React from "react";
+import Link from "gatsby-link";
+
+import Img from "gatsby-image";
 
 const Tile = ({ post, style, hasbg }) => {
 
   const title = post.node.frontmatter.title;
   const date = post.node.frontmatter.date;
   const url = post.node.fields.slug;
-  const img = post.node.frontmatter.thumbnail
+  const img = post.node.frontmatter.heroImage.childImageSharp.sizes;
 
   return (
     <div className="tile is-parent">
-      <article className={"tile is-child notification has-min-height" + (style ? " " + style : "") + (hasbg ? " has-background" : " is-animated")}>
-        { hasbg ?
-        <div className="is-image-wrapper has-position-absolute"><img src={img} /></div>
-        : null }
+      <article
+        className={"tile is-child notification has-min-height" + (style ? " " + style : "") + (hasbg ? " has-background" : " is-animated")}>
+        {hasbg ?
+          <div className="is-image-wrapper has-position-absolute"><Img sizes={img}/></div>
+          : null}
         <p className="tile-title title is-4">{title}</p>
         <span className="tile-date">{date}</span>
         <Link className="tile-link" to={url}></Link>
@@ -40,7 +43,7 @@ const LatestNews = ({ posts }) => {
           <div className="tile is-vertical is-9-desktop">
             <div className="tile">
 
-              <Tile post={posts[0]} hasbg />
+              <Tile post={posts[0]} hasbg/>
 
               <div className="tile is-8 is-vertical">
 
@@ -56,13 +59,13 @@ const LatestNews = ({ posts }) => {
 
                 </div>
 
-                <Tile post={posts[2]} hasbg />
+                <Tile post={posts[2]} hasbg/>
 
               </div>
             </div>
           </div>
 
-          <Tile post={posts[3]} style={"is-black"} />
+          <Tile post={posts[3]} style={"is-black"}/>
 
         </div>
 

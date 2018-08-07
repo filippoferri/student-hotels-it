@@ -1,9 +1,10 @@
 import React from "react";
+import Img from "gatsby-image";
 
 const Hero = ({image, heading}) => (
 
   <section className="hero is-medium is-primary background-image">
-    <div className="is-image-wrapper has-position-absolute"><img src={image} /></div>
+    <div className="is-image-wrapper has-position-absolute"><Img sizes={image} /></div>
     <div className="hero-body">
       <div className="container has-text-centered">
         <div className="columns">

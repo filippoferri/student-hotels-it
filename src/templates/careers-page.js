@@ -8,7 +8,7 @@ import AnteFooter from '../components/AnteFooter';
 
 export const CareersPageTemplate = ({
     title,
-    image,
+    heroImage,
     heading,
     board,
     positions
@@ -17,7 +17,7 @@ export const CareersPageTemplate = ({
   return (
     <main>
 
-      <Hero image={image} heading={heading} />
+      <Hero image={heroImage.childImageSharp.sizes} heading={heading} />
 
       <BlockTextBoard content={board} style={"white-ter"}/>
 
@@ -80,7 +80,7 @@ const CareersPage = ({ data }) => {
   return (
     <CareersPageTemplate
       title={post.frontmatter.title}
-      image={post.frontmatter.image}
+      heroImage={post.frontmatter.heroImage}
       heading={post.frontmatter.heading}
       board={post.frontmatter.board}
       positions={post.frontmatter.positions}
@@ -100,7 +100,13 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        image
+        heroImage {
+          childImageSharp {
+            sizes(maxWidth: 1280) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
         heading
         board {
           heading

@@ -15,7 +15,7 @@ export const BlogPostTemplate = ({
     description,
     tags,
     title,
-    thumbnail,
+    heroImage,
     nextTitle,
     nextSlug,
     prevTitle,
@@ -29,7 +29,7 @@ export const BlogPostTemplate = ({
 
       {helmet || ""}
 
-      <Hero image={thumbnail} heading={title}/>
+      <Hero image={heroImage.childImageSharp.sizes} heading={title}/>
 
       <section className="section">
         <div className="container">
@@ -101,7 +101,7 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  thumbnail: PropTypes.string,
+  heroImage: PropTypes.shape(),
   helmet: PropTypes.object,
   nextTitle: PropTypes.string,
   nextSlug: PropTypes.string,
@@ -133,7 +133,7 @@ const BlogPost = ({ data }) => {
       helmet={<Helmet title={`${post.frontmatter.title} | Blog`}/>}
       tags={post.frontmatter.tags}
       title={post.frontmatter.title}
-      thumbnail={post.frontmatter.thumbnail}
+      heroImage={post.frontmatter.heroImage}
       nextTitle={nextTitle}
       nextSlug={nextSlug}
       prevTitle={prevTitle}
@@ -162,7 +162,13 @@ export const pageQuery = graphql`
         title
         description
         tags
-        thumbnail
+        heroImage {
+          childImageSharp {
+            sizes(maxWidth: 1280) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
       }
     }
     next: markdownRemark(id: { eq: $next }) {

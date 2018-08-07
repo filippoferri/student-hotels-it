@@ -2,7 +2,7 @@
 templateKey: 'careers-page'
 path: /lavora-con-noi
 title: Lavora con noi
-image: /img/jumbotron.jpg
+heroImage: ../../img/jumbotron.jpg
 heading: Lavora con noi
 board:
   heading: Tell us more

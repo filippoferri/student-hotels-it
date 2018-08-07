@@ -7,14 +7,14 @@ import AnteFooter from '../components/AnteFooter';
 
 export const ContactPageTemplate = ({
     title,
-    image,
+    heroImage,
     heading
   }) => {
 
   return (
     <main className="contact-page">
 
-      <Hero image={image} heading={heading} />
+      <Hero image={heroImage.childImageSharp.sizes} heading={heading} />
 
       <section className="section">
 
@@ -100,7 +100,7 @@ const ContactPage = ({ data }) => {
   return (
     <ContactPageTemplate
       title={post.frontmatter.title}
-      image={post.frontmatter.image}
+      heroImage={post.frontmatter.heroImage}
       heading={post.frontmatter.heading}
     />
   );
@@ -118,7 +118,13 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        image
+        heroImage {
+          childImageSharp {
+            sizes(maxWidth: 1280) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
         heading
       }
     }

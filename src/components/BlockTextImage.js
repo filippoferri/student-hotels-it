@@ -1,6 +1,9 @@
 import React from "react";
+import Img from "gatsby-image";
 
 const BlockTextImage = ({ content, dir, style }) => {
+
+  console.log(content)
 
   return (
     <section className={"section block-text-image " + dir + " has-background-" + style}>
@@ -12,7 +15,7 @@ const BlockTextImage = ({ content, dir, style }) => {
           {dir === "is-left" &&
           <div className="column is-6-desktop">
             <div className="block-image">
-              <div className="is-image-wrapper has-position-absolute"><img src={content.image} /></div>
+              <Img sizes={content.image.childImageSharp.sizes} />
             </div>
           </div>
           }
@@ -26,9 +29,7 @@ const BlockTextImage = ({ content, dir, style }) => {
 
           {dir === "is-right" &&
           <div className="column is-offset-1-desktop">
-            <div className="block-image"
-                 style={{ backgroundImage: `url(${content.image})` }}>
-            </div>
+            <div className="block-image"><Img sizes={content.image.childImageSharp.sizes} /></div>
           </div>
           }
 

@@ -1,8 +1,4 @@
 import React from "react";
-import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import FaFacebookSquare from "@fortawesome/fontawesome-free-brands/faFacebookSquare";
-import FaTwitterSquare from "@fortawesome/fontawesome-free-brands/faTwitterSquare";
-import FaInstagram from "@fortawesome/fontawesome-free-brands/faInstagram";
 import Link from "gatsby-link";
 
 import bgNewsletter from "../img/newsletter-bg.jpg";
@@ -22,15 +18,9 @@ const Newsletter = () => (
           </div>
         </div>
         <div className="is-centered is-spaced">
-          <Link className="" to="/">
-            <FontAwesomeIcon className="icon-social" icon={FaFacebookSquare}/>
-          </Link>
-          <Link className="" to="/">
-            <FontAwesomeIcon className="icon-social" icon={FaTwitterSquare}/>
-          </Link>
-          <Link className="" to="/">
-            <FontAwesomeIcon className="icon-social" icon={FaInstagram}/>
-          </Link>
+          <a className="sh-icon-social facebook" href="/" target="_blank"></a>
+          <a className="sh-icon-social twitter" href="/" target="_blank"></a>
+          <a className="sh-icon-social instagram" href="/" target="_blank"></a>
         </div>
       </div>
     </div>

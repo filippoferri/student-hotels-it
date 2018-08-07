@@ -5,7 +5,7 @@ import { MissionPageTemplate } from '../../templates/mission-page'
 const MissionPagePreview = ({ entry }) => (
   <MissionPageTemplate
     title={entry.getIn(['data', 'title'])}
-    image={entry.getIn(['data', 'image'])}
+    image={entry.getIn(['data', 'heroImage'])}
     heading={entry.getIn(['data', 'heading'])}
     intro={{
       heading: entry.getIn(['data', 'intro', 'heading']),

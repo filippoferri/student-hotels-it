@@ -3,7 +3,7 @@ templateKey: blog-post
 title: Batch of Jamaican Blue Mountain in store
 date: 2017-04-08T17:04:10.000Z
 description: Proud to announce that we’ll be offering a small batch of Jamaica Mountain coffee beans in our store.
-thumbnail: /img/chemex.jpg
+heroImage: ../../img/chemex.jpg
 tags:
   - jamaica
   - green beans

@@ -1,7 +1,7 @@
 ---
 templateKey: default
 title: Informativa sulla privacy
-hero: /img/flavor_wheel.jpg
+heroImage: ../../img/flavor_wheel.jpg
 ---
 ## Perché raccogliamo i dati personali dell'interessato?
 

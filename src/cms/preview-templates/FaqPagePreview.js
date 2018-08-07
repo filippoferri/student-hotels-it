@@ -11,7 +11,7 @@ const FaqPagePreview = ({ entry }) => {
   return (
     <FaqPageTemplate
       title={entry.getIn(["data", "title"])}
-      image={entry.getIn(["data", "image"])}
+      image={entry.getIn(['data', 'heroImage'])}
       heading={entry.getIn(["data", "heading"])}
       faq={faq}
     />

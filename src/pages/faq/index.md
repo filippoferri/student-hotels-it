@@ -2,7 +2,7 @@
 templateKey: 'faq-page'
 path: /faq
 title: FAQ
-image: /img/jumbotron.jpg
+heroImage: ../../img/jumbotron.jpg
 heading: Domande Frequenti
 faq:
     - question: C'è Il WI-FI?
