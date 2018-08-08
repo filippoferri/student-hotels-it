@@ -35,8 +35,6 @@ collections:
           - {label: Mosaic, name: "mosaic", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Subtitle, name: subtitle, widget: string} ]}
           - {label: Posts, name: "posts", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Subtitle, name: subtitle, widget: string} ]}
           - {label: "Newsletter Image", name: "newsletterImage", widget: custompathimage, customMediaPath: "../../img/", rawMediaPath: "https://raw.githubusercontent.com/filippoferri/student-hotels-it/src/static/img/"}}
-
-
       - file: "src/pages/blog/index.md"
         label: "Home Blog"
         name: "homeblog"

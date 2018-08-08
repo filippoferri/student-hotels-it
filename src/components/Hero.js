@@ -14,7 +14,6 @@ const Hero = ({image, heading}) => (
             </h1>
           </div>
         </div>
-
       </div>
     </div>
   </section>
