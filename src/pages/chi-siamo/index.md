@@ -10,8 +10,6 @@ Con questo intento, Student Hotels confronta i prezzi tra tutti i più important
 
 I nostri utenti beneficiano di un confronto prezzi veloce e trasparente che può portare fino a un risparmio del 60%!
 
-![flavor wheel](../../img/team-studenthotels.jpg)
-
 Il portale garantisce da un lato un rigoroso controllo di tutti i nostri siti partner, dall'altro, offre tante recensioni di utenti , che conferiscono un'ulteriore sicurezza alla tua prenotazione.
 
 Student Hotels si prenderà cura della tua ricerca con un obiettivo ben chiaro: trovare una sistemazione perfetta per chiunque abbia la mentalità di uno studente. Le strutture selezionate e verificate oltre a garantire tutti i comfort, offrono un continuo contatto e scambio in spazi dedicati per il co-living e il co-working, immersi in un'atmosfera stimolante e una community internazionale.
