@@ -3,6 +3,7 @@
 // Utils
 @import "utils/_variables"
 @import "utils/_animations"
+@import "utils/_loader"
 
 // Components
 @import "components/navbar"
@@ -130,9 +131,34 @@ a,
     right: 0
     bottom: 0
 
-.is-loader
+.is-loader-wrapper
   width: 100%
   height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
+
+  .cont
+
+    .dot
+      width: 10px
+      height: 10px
+      background-color: $primary
+      border-radius: 10px
+      margin: 9px
+
+    #dot-1
+      animation: loading 4s cubic-bezier(.1,1,1,.1) infinite
+      animation-delay: 2s
+
+    #dot-2
+      animation: loading 4s cubic-bezier(.1,1,1,.1) infinite
+      animation-delay: 2.3s
+
+    #dot-3
+      animation: loading 4s cubic-bezier(.1,1,1,.1) infinite
+      animation-delay: 2.6s
+
 
 .is-fill
   display: flex

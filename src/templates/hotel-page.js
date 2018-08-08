@@ -159,11 +159,17 @@ class HotelPageTemplate extends React.Component {
 
           </section>
 
-          <Newsletter/>
+          <Newsletter image={this.props.newsletterImage.childImageSharp.sizes}/>
 
           <AnteFooter/>
 
-        </main> : <main className="is-loader"></main>
+        </main> : <main className="is-loader-wrapper has-text-black">
+          <div className="cont">
+            <div className="dot" id="dot-1"></div>
+            <div className="dot" id="dot-2"></div>
+            <div className="dot" id="dot-3"></div>
+          </div>
+        </main>
     );
   }
 }
@@ -182,7 +188,10 @@ HotelPageTemplate.propTypes = {
 };
 
 const HotelDetails = ({ data }) => {
-  const { markdownRemark: hotel } = data;
+
+  const { current: hotel } = data;
+  const { newsletter: newsletter } = data;
+  const image = newsletter.edges[0].node;
 
   return (
     <HotelPageTemplate
@@ -195,13 +204,14 @@ const HotelDetails = ({ data }) => {
       hotelId={hotel.frontmatter.hotelId}
       address={hotel.frontmatter.address}
       heading={hotel.frontmatter.heading}
+      newsletterImage={image.frontmatter.newsletterImage}
     />
   );
 };
 
 HotelDetails.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object
+    current: PropTypes.object
   })
 };
 
@@ -209,7 +219,7 @@ export default HotelDetails;
 
 export const pageQuery = graphql`
   query HotelPostByID($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    current: markdownRemark(id: { eq: $id }) {
       id
       html
       frontmatter {
@@ -219,6 +229,23 @@ export const pageQuery = graphql`
         address
         facilities
         tags
+      }
+    }
+    newsletter: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "home-page" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            newsletterImage {
+              childImageSharp{
+                sizes(maxWidth: 1280) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
