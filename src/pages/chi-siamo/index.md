@@ -2,19 +2,23 @@
 templateKey: default
 path: /chi-siamo
 title: Chi siamo
-heroImage: ../../img/jumbotron.jpg
+heroImage: ../../img/about-studenthotels.jpg
 ---
-### Shade-grown coffee
-Coffee is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of shade coffee farms provides habitat for a great number of migratory and resident species.
+Nato in Italia, Student Hotels è un motore di ricerca per residenze studentesche, che offre un veloce e aggiornato confronto prezzi.
 
-### Single origin
-Single-origin coffee is coffee grown within a single known geographic origin. Sometimes, this is a single farm or a specific collection of beans from a single country. The name of the coffee is then usually the place it was grown to whatever degree available.
+Con questo intento, Student Hotels confronta i prezzi tra tutti i più importanti siti di prenotazione online ed offre un accesso diretto alle migliori strutture ricettive verificate.
 
-### Sustainable farming
-Sustainable agriculture is farming in sustainable ways based on an understanding of ecosystem services, the study of relationships between organisms and their environment. What grows where and how it is grown are a matter of choice and careful consideration for nature and communities.
+I nostri utenti beneficiano di un confronto prezzi veloce e trasparente che può portare fino a un risparmio del 60%!
 
-### Direct sourcing
-Direct trade is a form of sourcing practiced by some coffee roasters. Advocates of direct trade practices promote direct communication and price negotiation between buyer and farmer, along with systems that encourage and incentivize quality.
+![flavor wheel](../../img/team-studenthotels.jpg)
 
-### Reinvest profits
-We want to truly empower the communities that bring amazing coffee to you. That’s why we reinvest 20% of our profits into farms, local businesses and schools everywhere our coffee is grown. You can see the communities grow and learn more about coffee farming on our blog.
+Il portale garantisce da un lato un rigoroso controllo di tutti i nostri siti partner, dall'altro, offre tante recensioni di utenti , che conferiscono un'ulteriore sicurezza alla tua prenotazione.
+
+Student Hotels si prenderà cura della tua ricerca con un obiettivo ben chiaro: trovare una sistemazione perfetta per chiunque abbia la mentalità di uno studente. Le strutture selezionate e verificate oltre a garantire tutti i comfort, offrono un continuo contatto e scambio in spazi dedicati per il co-living e il co-working, immersi in un'atmosfera stimolante e una community internazionale.
+
+### Il team
+Dietro a Student Hotels c'è un'esperienza decennale e una passione di viaggi e tecnologia. Nell'ufficio situato a stretto contatto con il mondo studentesco e turistico della riviera adriatica, nella cittò di Pesaro, lavorano esperti di diverse nazionalità: sviluppatori, creativi e professionisti del settore che, in un fermento continuo, perfezionano la ricerca della sistemazione con il miglior rapporto qualità/prezzo rendendo il più trasparente possibile il mercato alberghiero studentesco.
+
+L'obiettivo di Student Hotels è di semplificare la ricerca di queste nuove concezioni di hotel, nuove strutture che non si limitano alla sola offerta di stanze/studio confortevoli e dal design moderno, ma che propongono anche esperienze di vita basate sulla condivisione di idee, di conoscenze e di sogni.
+
+Student Hotels è unico in tutto il mondo, è il miglior portale online per il confronto prezzi di strutture per studenti.

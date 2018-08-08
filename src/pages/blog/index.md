@@ -1,5 +1,5 @@
 ---
 templateKey: home-blog
 title: Blog
-heroImage: ../../img/jumbotron.jpg
+heroImage: ../../img/blog-studenthotels.jpg
 ---

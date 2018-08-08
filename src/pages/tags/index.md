@@ -1,5 +1,5 @@
 ---
 templateKey: home-tags
 title: Tags
-heroImage: ../../img/jumbotron.jpg
+heroImage: ../../img/blog-studenthotels.jpg
 ---

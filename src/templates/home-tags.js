@@ -3,7 +3,6 @@ import { kebabCase } from "lodash";
 import Helmet from "react-helmet";
 import Link from "gatsby-link";
 
-import heroBg from "../img/blog-bg.jpg";
 import Hero from "../components/Hero";
 import Newsletter from "../components/Newsletter";
 import AnteFooter from "../components/AnteFooter";

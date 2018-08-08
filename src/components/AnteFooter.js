@@ -40,8 +40,8 @@ const AnteFooter = () => (
           <h5 className="menu-label">Note legali</h5>
           <nav>
             <ul className="menu-list">
-              <li><Link to="/note-legali/termini-utilizzo">Termini di utilizzo</Link></li>
               <li><Link to="/note-legali/condizioni-generali">Condizioni generali</Link></li>
+              <li><Link to="/note-legali/termini-utilizzo">Termini di utilizzo</Link></li>
               <li><Link to="/note-legali/informativa-privacy">Informativa Privacy</Link></li>
               <li><Link to="/note-legali/informativa-newsletter">Informativa newsletter</Link></li>
             </ul>
