@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { CareersPageTemplate } from '../../templates/careers-page'
+import { BlogPostTemplate } from "../../templates/blog-post";
 
-const CareersPagePreview = ({ entry }) => {
+const CareersPagePreview = ({ entry, fields }) => {
 
-  const entryPositions = entry.getIn(["data", "positions"]);
-  const positions = entryFaq ? entryPositions.toJS() : [];
+  const rawMediaPath = fields.getIn([4, 'rawMediaPath']);
 
   return (
   <CareersPageTemplate
     title={entry.getIn(['data', 'title'])}
-    image={entry.getIn(['data', 'heroImage'])}
+    image={entry.getIn(['data', 'heroImage']).replace('../../img/', rawMediaPath)}
     heading={entry.getIn(['data', 'heading'])}
     positions={positions}
     board={{
