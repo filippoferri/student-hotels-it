@@ -18,7 +18,7 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Featured Image", name: "heroImage", widget: custompathimage, customMediaPath: "../../img/", rawMediaPath: "https://raw.githubusercontent.com/filippoferri/student-hotels-it/src/static/img/"}}
+      - {label: "Featured Image", name: "heroImage", widget: custompathimage, customMediaPath: "../../img/", rawMediaPath: "https://raw.githubusercontent.com/filippoferri/student-hotels-it/src/static/img/"}
       - {label: "Tags", name: "tags", widget: "list"}
 
   - name: "pages"
@@ -31,24 +31,24 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Subtitle", name: "subtitle", widget: "string"}
-          - {label: "Hero Image", name: "heroImage", widget: custompathimage, customMediaPath: "../../img/", rawMediaPath: "https://raw.githubusercontent.com/filippoferri/student-hotels-it/src/static/img/"}}
+          - {label: "Hero Image", name: "heroImage", widget: custompathimage, customMediaPath: "../../img/", rawMediaPath: "https://raw.githubusercontent.com/filippoferri/student-hotels-it/src/static/img/"}
           - {label: Mosaic, name: "mosaic", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Subtitle, name: subtitle, widget: string} ]}
           - {label: Posts, name: "posts", widget: object, fields: [{label: Title, name: title, widget: string}, {label: Subtitle, name: subtitle, widget: string} ]}
-          - {label: "Newsletter Image", name: "newsletterImage", widget: custompathimage, customMediaPath: "../../img/", rawMediaPath: "https://raw.githubusercontent.com/filippoferri/student-hotels-it/src/static/img/"}}
+          - {label: "Newsletter Image", name: "newsletterImage", widget: custompathimage, customMediaPath: "../../img/", rawMediaPath: "https://raw.githubusercontent.com/filippoferri/student-hotels-it/src/static/img/"}
       - file: "src/pages/blog/index.md"
         label: "Home Blog"
         name: "homeblog"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-blog"}
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Hero Image", name: "heroImage", widget: custompathimage, customMediaPath: "../../img/", rawMediaPath: "https://raw.githubusercontent.com/filippoferri/student-hotels-it/src/static/img/"}}
+          - {label: "Hero Image", name: "heroImage", widget: custompathimage, customMediaPath: "../../img/", rawMediaPath: "https://raw.githubusercontent.com/filippoferri/student-hotels-it/src/static/img/"}
       - file: "src/pages/tags/index.md"
         label: "Home Tags"
         name: "hometags"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-tags"}
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Hero Image", name: "heroImage", widget: custompathimage, customMediaPath: "../../img/", rawMediaPath: "https://raw.githubusercontent.com/filippoferri/student-hotels-it/src/static/img/"}}
+          - {label: "Hero Image", name: "heroImage", widget: custompathimage, customMediaPath: "../../img/", rawMediaPath: "https://raw.githubusercontent.com/filippoferri/student-hotels-it/src/static/img/"}
       - file: "src/pages/chi-siamo/index.md"
         label: "About"
         name: "about"
@@ -56,7 +56,7 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
-          - {label: "Hero Image", name: "heroImage", widget: custompathimage, customMediaPath: "../../img/", rawMediaPath: "https://raw.githubusercontent.com/filippoferri/student-hotels-it/src/static/img/"}}
+          - {label: "Hero Image", name: "heroImage", widget: custompathimage, customMediaPath: "../../img/", rawMediaPath: "https://raw.githubusercontent.com/filippoferri/student-hotels-it/src/static/img/"}
       - file: "src/pages/mission/index.md"
         label: "Mission"
         name: "mission"
@@ -76,7 +76,7 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Title", name: "title", widget: "string"}
-          - {label: Image, name: "heroImage", widget: custompathimage, customMediaPath: "../../img/", rawMediaPath: "https://raw.githubusercontent.com/filippoferri/student-hotels-it/src/static/img/"}}
+          - {label: Image, name: "heroImage", widget: custompathimage, customMediaPath: "../../img/", rawMediaPath: "https://raw.githubusercontent.com/filippoferri/student-hotels-it/src/static/img/"}
           - {label: Heading, name: heading, widget: string}
           - {label: faq, name: faq, widget: list, fields: [{label: Question, name: question, widget: string}, {label: Answer, name: answer, widget: text}]}
 
@@ -103,7 +103,7 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "default"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Hero Image", name: "heroImage", widget: custompathimage, customMediaPath: "../../img/", rawMediaPath: "https://raw.githubusercontent.com/filippoferri/student-hotels-it/src/static/img/"}}
+      - {label: "Hero Image", name: "heroImage", widget: custompathimage, customMediaPath: "../../img/", rawMediaPath: "https://raw.githubusercontent.com/filippoferri/student-hotels-it/src/static/img/"}
       - {label: "Body", name: "body", widget: "markdown"}
 
 

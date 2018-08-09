@@ -2,6 +2,6 @@
 templateKey: 'contact-page'
 path: /contatti
 title: Contattaci
-heroImage: ../../img/jumbotron.jpg
+heroImage: ../../img/contact-studenthotels.jpg
 heading: Domande? Feedback?
 ---
