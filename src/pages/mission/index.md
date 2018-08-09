@@ -1,17 +1,12 @@
 ---
 templateKey: mission-page
 title: La mission di Student Hotels
-heroImage: ../../img/flavor_wheel.jpg
+heroImage: ../../img/mission-studenthotels.jpg
 heading: La mission di Student Hotels
 intro:
+  heading: Noi crediamo nella condivisione di obiettivi, idee, valori e sinergie
   description: >
-    Our mission is simple: we want to build a world that's more alive, more
-    together and more collaborative. Our buildings are so much more than just
-    bricks and mortar: they redefine the way people choose to live, work and
-    play by providing unique and collaborative environments that unlock
-    inspiration and make every single day extraordinary. We create places where
-    you can meet new people, try new things, and learn something new every day.
-  heading: We're unlocking the world's greatest cities for the creative and ambitious
+    La nostra missione è semplice: amiamo incoraggiare esperienze che amplificano gli stimoli e le possibilità di stringere nuove e utili conoscenze. Per questo selezioniamo una sola e unica tipologia di hotel confrontando i prezzi dei migliori siti di prenotazioni online. Le strutture selezionate e verificate hanno tutte un comune denominatore, si rivolgono a giovani ispirati e collaborativi, più uniti e connessi.
 block1:
   description: >
     Incomparable Candidate Experience Game-Changing Leaders Innovative and
