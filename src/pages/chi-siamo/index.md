@@ -17,7 +17,7 @@ Il portale garantisce da un lato un rigoroso controllo di tutti i nostri siti pa
 Student Hotels si prenderà cura della tua ricerca con un obiettivo ben chiaro: trovare una sistemazione perfetta per chiunque abbia la mentalità di uno studente. Le strutture selezionate e verificate oltre a garantire tutti i comfort, offrono un continuo contatto e scambio in spazi dedicati per il co-living e il co-working, immersi in un'atmosfera stimolante e una community internazionale.
 
 ### Il team
-Dietro a Student Hotels c'è un'esperienza decennale e una passione di viaggi e tecnologia. Nell'ufficio situato a stretto contatto con il mondo studentesco e turistico della riviera adriatica, nella cittò di Pesaro, lavorano esperti di diverse nazionalità: sviluppatori, creativi e professionisti del settore che, in un fermento continuo, perfezionano la ricerca della sistemazione con il miglior rapporto qualità/prezzo rendendo il più trasparente possibile il mercato alberghiero studentesco.
+Dietro a Student Hotels c'è un'esperienza decennale e una passione di viaggi e tecnologia. Nell'ufficio situato a stretto contatto con il mondo studentesco e turistico della riviera adriatica, nella città di Pesaro, lavorano esperti di diverse nazionalità: sviluppatori, creativi e professionisti del settore che, in continuo fermento, perfezionano la ricerca dei migliori hotel rendendo il più trasparente possibile il mercato alberghiero studentesco.
 
 ![Il team di Student Hotels](../../img/staff-studenthotels.jpg)
 
