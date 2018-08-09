@@ -9,7 +9,7 @@ Con questo intento, Student Hotels confronta i prezzi tra tutti i più important
 
 I nostri utenti beneficiano di un confronto prezzi veloce e trasparente che può portare fino a un risparmio del 60%!
 
-![Il team di Student Hotels](/img/team-studentshotels.jpg)
+![Team Student Hotels](/img/team-studentshotels.jpg)
 
 Il portale garantisce da un lato un rigoroso controllo di tutti i nostri siti partner, dall'altro, offre tante recensioni di utenti , che conferiscono un'ulteriore sicurezza alla tua prenotazione.
 
