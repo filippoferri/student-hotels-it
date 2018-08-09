@@ -5,8 +5,10 @@ import Hero from '../components/Hero';
 import Newsletter from '../components/Newsletter';
 import AnteFooter from '../components/AnteFooter';
 import DefaultPage from "./default";
+import Helmet from "react-helmet";
 
 export const ContactPageTemplate = ({
+    helmet,
     title,
     heroImage,
     heading,
@@ -15,6 +17,8 @@ export const ContactPageTemplate = ({
 
   return (
     <main className="contact-page">
+
+      {helmet || ""}
 
       <Hero image={heroImage.childImageSharp.sizes} heading={heading} />
 
@@ -104,6 +108,7 @@ const ContactPage = ({ data }) => {
 
   return (
     <ContactPageTemplate
+      helmet={<Helmet title={`${post.frontmatter.title} | Student Hotels`}/>}
       title={post.frontmatter.title}
       heroImage={post.frontmatter.heroImage}
       heading={post.frontmatter.heading}

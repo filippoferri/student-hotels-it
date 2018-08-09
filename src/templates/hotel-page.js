@@ -70,6 +70,8 @@ class HotelPageTemplate extends React.Component {
       hotel ?
         <main>
 
+          {this.props.helmet || ""}
+
           <HotelHero locationId={hotel.locationId} heading={this.props.heading}/>
 
           <section className="section">

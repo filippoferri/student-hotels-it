@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createFilter } from 'react-search-input';
 
+import Helmet from "react-helmet";
 import Hero from '../components/Hero';
 import Newsletter from '../components/Newsletter';
 import AnteFooter from '../components/AnteFooter';
@@ -28,6 +29,8 @@ class FaqPageTemplate extends React.Component {
 
     return (
       <main>
+
+        {this.props.helmet || ""}
 
         <Hero image={this.props.heroImage.childImageSharp.sizes} heading={this.props.heading} />
 
@@ -79,6 +82,7 @@ const FaqPage = ({ data }) => {
 
   return (
     <FaqPageTemplate
+      helmet={<Helmet title={`${frontmatter.title} | Student Hotels`}/>}
       title={frontmatter.title}
       heroImage={frontmatter.heroImage}
       heading={frontmatter.heading}

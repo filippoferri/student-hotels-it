@@ -8,7 +8,6 @@ import LatestNews from "../components/LatestNews";
 import Newsletter from "../components/Newsletter";
 import AnteFooter from "../components/AnteFooter";
 
-
 export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props;

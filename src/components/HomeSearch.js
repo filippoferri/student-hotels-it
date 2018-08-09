@@ -42,7 +42,7 @@ class HomeSearch extends React.Component {
 
   handleOpen() {
     this.setState({ popupVisible: false });
-    const slug = "hotel-test"
+    const slug = "tsh-florence-lavagnini"
     window.location = '/hotels/'+ slug;
   }
 

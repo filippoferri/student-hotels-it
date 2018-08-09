@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Helmet from "react-helmet";
 import BlockTextBoard from '../components/BlockTextBoard';
 import Hero from '../components/Hero';
 import Newsletter from '../components/Newsletter';
 import AnteFooter from '../components/AnteFooter';
 
 export const CareersPageTemplate = ({
+    helmet,
     title,
     heroImage,
     heading,
@@ -17,6 +19,8 @@ export const CareersPageTemplate = ({
 
   return (
     <main>
+
+      {helmet || ""}
 
       <Hero image={heroImage.childImageSharp.sizes} heading={heading} />
 
@@ -82,6 +86,7 @@ const CareersPage = ({ data }) => {
 
   return (
     <CareersPageTemplate
+      helmet={<Helmet title={`${post.frontmatter.title} | Student Hotels`}/>}
       title={post.frontmatter.title}
       heroImage={post.frontmatter.heroImage}
       heading={post.frontmatter.heading}

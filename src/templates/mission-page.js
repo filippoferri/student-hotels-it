@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Helmet from "react-helmet";
 
 import Hero from "../components/Hero";
 import BlockText from "../components/BlockText";
@@ -9,6 +10,7 @@ import Newsletter from "../components/Newsletter";
 import AnteFooter from "../components/AnteFooter";
 
 export const MissionPageTemplate = ({
+    helmet,
     title,
     image,
     heading,
@@ -22,6 +24,8 @@ export const MissionPageTemplate = ({
 
   return (
     <main>
+
+      {helmet || ""}
 
       <Hero image={image.childImageSharp.sizes} heading={heading}/>
 
@@ -76,6 +80,7 @@ const MissionPage = ({ data }) => {
 
   return (
     <MissionPageTemplate
+      helmet={<Helmet title={`${frontmatter.title} | Student Hotels`}/>}
       title={frontmatter.title}
       image={frontmatter.heroImage}
       heading={frontmatter.heading}
