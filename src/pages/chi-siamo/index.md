@@ -1,7 +1,7 @@
 ---
 templateKey: default
 title: Chi siamo
-heroImage: ../../img/about-studenthotels.jpg
+heroImage: ../../img/staff-studenthotels.jpg
 ---
 Nato in Italia, Student Hotels è un motore di ricerca per residenze studentesche, che offre un veloce e aggiornato confronto prezzi.
 
