@@ -8,37 +8,26 @@ intro:
   description: >
     La nostra missione è semplice: amiamo incoraggiare esperienze che amplificano gli stimoli e le possibilità di stringere nuove e utili conoscenze. Per questo selezioniamo una sola e unica tipologia di hotel confrontando i prezzi dei migliori siti di prenotazioni online. Le strutture selezionate e verificate hanno tutte un comune denominatore, si rivolgono a giovani ispirati e collaborativi, più uniti e connessi.
 block1:
-  description: >
-    Incomparable Candidate Experience Game-Changing Leaders Innovative and
-    Flexible Your Brand Ambassadors Partners With A Shared Goal
   heading: >-
-    We work tirelessly to build world-class board and executive leadership teams
-    for companies around the globe
-  image: ../../img/chemex.jpg
+    Un ambiente giovane stimola ad essere più aperti a nuove amicizie, esperienze, collaborazioni.
+  description: >
+    Gli student Hotel incarnano questa filosofia. Per questo nel nostro portale puoi trovare le strutture che propongono spazi dall'atmosfera stimolante rivolti a studenti, viaggiatori, imprenditori, creativi e sognatori in perenne contatto.
+  image: ../../img/coliving-studenthotels.jpg
 block2:
-  description: >
-    Incomparable Candidate Experience Game-Changing Leaders Innovative and
-    Flexible Your Brand Ambassadors Partners With A Shared Goal
   heading: >-
-    We work tirelessly to build world-class board and executive leadership teams
-    for companies around the globe
-  image: ../../img/chemex.jpg
+    Guardando al futuro le vite personali, sociali e anche lavorative non possono più essere separate.
+  description: >
+   Lo Student Hotel si fa forza di una Community internazionale e dinamica dove persone di ogni età, di diverse culture, idee e ambizioni si incontrano per condividere un'esperienza indimenticabile che può segnarli per il resto della loro vita.
+  image: ../../img/experience-studenthotels.jpg
 board:
+  heading: La qualità dei servizi è imprescendibile
   description: >
-    So now you know a bit about us, we’re probably going to wonder why we
-    haven’t spoken to you before; we’d love to see you. We may be knee-deep in
-    finding the team to build a new life-changing app or plotting our clients’
-    plan of global domination, but feel free to pop by the office anytime and
-    say hello. And if you can’t contain yourself until then, give us a call, or
-    an email and let it all out. It’s going to be amazing.
-  heading: Tell us more
+    Finora ne abbiamo elogiato l'atmosfera e la filosofia, ma gli student hotel da noi selezionati e verificati vantano una alta qualità dei servizi. Le stanze dispongono di tutti i comfort compreso il bagno in stanza, che per una sistemazione per studenti non è sempre così scontato.
 block3:
-  description: >
-    Incomparable Candidate Experience Game-Changing Leaders Innovative and
-    Flexible Your Brand Ambassadors Partners With A Shared Goal
   heading: >-
-    We work tirelessly to build world-class board and executive leadership teams
-    for companies around the globe
-  image: ../../img/chemex.jpg
+     La sistemazione che cerchi al prezzo più basso.
+  description: >
+    Grazie al nostro motore di ricerca sempre più evoluto e affinato consultiamo i migliori siti di prenotazioni online comparandone i prezzi delle offerte per gli hotel da noi selezionati. A te la scelta della migliore sistemazione che sia di pochi giorni, settimane o addirittura mesi al prezzo più conveniente.
+  image: ../../img/lowprice-studenthotels.jpg
 ---
 

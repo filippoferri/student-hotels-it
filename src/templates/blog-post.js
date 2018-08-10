@@ -130,12 +130,30 @@ const BlogPost = ({ data }) => {
   const { newsletter: newsletter } = data;
   const image = newsletter.edges[0].node;
 
+  console.log(post.frontmatter.heroImage)
+
+  const meta = [
+    { name: 'description', content: post.frontmatter.description },
+
+    { name: "twitter:site", content: "studenthotels.it" },
+    { name: "twitter:creator", content: "StudentHotels.it" },
+    { name: "twitter:title", content: post.frontmatter.title },
+    { name: "twitter:image", content: "https//studenthotels.it" + post.frontmatter.heroImage.childImageSharp.sizes.src },
+
+    { property: "og:title", content: post.frontmatter.title },
+    { property: "og:site_name", content: "studenthotels.it" },
+    { property: "og:type", content: "website" },
+    { property: "og:description", content: post.frontmatter.description },
+    { property: "og:image", content: "https//studenthotels.it" + post.frontmatter.heroImage.childImageSharp.sizes.src },
+    { property: "og:site_name", content: "StudentHotels.it" }
+  ]
+
   return (
     <BlogPostTemplate
       content={post.html}
       contentComponent={HTMLContent}
       description={post.frontmatter.description}
-      helmet={<Helmet title={`${post.frontmatter.title} | Blog`}/>}
+      helmet={<Helmet title={`${post.frontmatter.title} | Student Hotels`} meta={meta} />}
       tags={post.frontmatter.tags}
       title={post.frontmatter.title}
       heroImage={post.frontmatter.heroImage}

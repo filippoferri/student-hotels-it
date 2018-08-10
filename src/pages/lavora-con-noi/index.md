@@ -2,18 +2,18 @@
 templateKey: 'careers-page'
 path: /lavora-con-noi
 title: Lavora con noi
-heroImage: ../../img/jumbotron.jpg
+heroImage: ../../img/careers-studenthotels.jpg
 heading: Lavora con noi
 board:
-  heading: Tell us more
+  heading: Cerchiamo sempre persone straordinarie
   description: >
-    So now you know a bit about us, we’re probably going to wonder why we haven’t spoken to you before; we’d love to see you. We may be knee-deep in finding the team to build a new life-changing app or plotting our clients’ plan of global domination, but feel free to pop by the office anytime and say hello. And if you can’t contain yourself until then, give us a call, or an email and let it all out. It’s going to be amazing.
+    Siamo sempre alla ricerca di nuovi partner, collaborazioni o persone da inserire nel nostro team. Compila il modulo relativo alla posizione aperta o semplicemente mettiti in contatto con noi. In breve tempo riceverai tutte le informazioni in merito alle nostre opzioni. Non aver paura di contattarci, sarà sempre fantastico allargare le conoscenze e crescere i contatti.
 positions:
-    - role: Senior Talent Consultant
+    - role: Business Analyst
       description: >
-        We are one of the leading executive search and people consulting businesses in Europe based in Berkshire and London but working on projects around the globe. We are on a mission to redefine and change the way companies think...
+        Il candidato ideale per questa posizione deve possedere ottime capacità logiche di analisi e di sintesi, e si occuperà della validazione dei requisiti e dei risultati eseguendo test di funzionalità delle soluzioni implementate.
 
-    - role: Project Coordinator
+    - role: Social Media Manager
       description: >
-        We are JD&Co; a leading people consultancy in Europe, working with brave, disruptive start-ups and innovators in the tech, social and digital space, and we’re looking for an ambitious Project Coordinator to join our expanding team. You will be...
+        La risorsa deve possedere un'ottima conoscenza delle strategie social e degli strumenti di misurazione e si occuperà della gestione e pianificazione dei contenuti editoriali e del monitoraggio delle campagne ads.
 ---

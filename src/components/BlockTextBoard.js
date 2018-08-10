@@ -1,9 +1,9 @@
 import React from "react";
 
-const BlockTextBoard = ({ content, style }) => {
+const BlockTextBoard = ({ content, style, size }) => {
 
   return (
-    <section className={"section block-text-board is-medium is-centered " + style}>
+    <section className={"section block-text-board is-centered" + (size ? " " + size : " is-medium") + " " + style}>
 
       <div className="container">
         <div className="columns">

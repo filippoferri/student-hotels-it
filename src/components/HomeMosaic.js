@@ -24,8 +24,8 @@ const HomeMosaic = ( {content, api} ) => (
               <article className="tile is-child notification is-gray-light has-min-height is-animated has-content">
                 <Link className="is-overlay-link" to="/mission"></Link>
                 <div className="is-over-tablet">
-                  <h3 className="title is-4 is-uppercase has-text-weight-bold">Perché scegliere uno student Hotel?</h3>
-                  <p>Per tantissime ragioni! Soprattutto perché proponiamo solo strutture che offrono non solo alloggi per dormire, ma anche spazi per studiare, divertirsi e conoscere nuovi amici.</p>
+                  <h3 className="title is-4 is-uppercase has-text-weight-bold">Cerca. Confronta. Prenota. Risparmia.</h3>
+                  <p>Sul nostro portale puoi trovare tutte le strutture per studenti provenienti dai migliori siti di prenotazioni online. Grazie alla comparazione dei prezzi, puoi risparmiare fino al 60%.</p>
                   <p className="sh-goto"><span className="is-hidden-desktop" >Leggi di più</span><img className="is-hidden-touch"  style={{width: `40px`}} src={arrow} alt="mission"/></p>
                 </div>
                 <div className="bg-logo is-hidden-mobile" style={{ backgroundImage: `url(${bgLogo})` }}></div>
