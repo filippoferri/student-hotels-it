@@ -28,6 +28,7 @@
     "moment": "^2.22.2",
     "netlify-cms": "^1.7.0",
     "npm": "^6.3.0",
+    "nuka-carousel": "^4.3.6",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-axios": "^2.0.0",

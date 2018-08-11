@@ -5,6 +5,25 @@
 .sh-hotel-gallery
   margin-bottom: 3rem
 
+  img
+    cursor: pointer
+
+  .sh-gallery-length
+    display: flex
+    align-items: center
+    justify-content: center
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    z-index: 10
+    font-size: 2rem
+    color: white
+    font-weight: 700
+    background: rgba(0,0,0,.3)
+    cursor: pointer
+
 .sh-hotel-services
   margin-bottom: 3rem
   padding-bottom: 3rem
@@ -59,3 +78,47 @@
 .sh-hotel-map
   min-height: 30rem
   margin-bottom: 3rem
+
+.sh-carousel
+  width: 100%
+  height: 100vh
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: $black
+  z-index: 100
+  overflow: scroll
+  display: flex
+  align-items: center
+  justify-content: center
+
+  .close-carousel
+    position: fixed
+    top: 1rem
+    right: 1rem
+    z-index: 1000
+    cursor: pointer
+
+    @media (min-width: 1024px)
+      top: 2rem
+      right: 2rem
+
+  .slider-frame,
+  .slider-list
+    height: 40rem !important
+
+    .slider-slide
+      display: flex !important
+      align-items: center
+      justify-content: center
+
+      > img
+        width: auto !important
+
+  .slider-control-centerleft img,
+  .slider-control-centerright img
+    cursor: pointer
+
+

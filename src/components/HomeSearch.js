@@ -33,6 +33,8 @@ class HomeSearch extends React.Component {
 
   handleOutsideClick(e) {
     e.preventDefault();
+    e.stopPropagation();
+
     const { childNode } = this;
     const isDescendantOfRoot = childNode && childNode.contains(e.target);
     if (!isDescendantOfRoot) {
@@ -103,5 +105,5 @@ class HomeSearch extends React.Component {
 export default HomeSearch
 
 HomeSearch.propTypes = {
-  popupVisible: PropTypes.bool
+  popupVisible: PropTypes.bool,
 };

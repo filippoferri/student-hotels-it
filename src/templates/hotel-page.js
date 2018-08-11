@@ -24,7 +24,7 @@ class HotelPageTemplate extends React.Component {
       hotel: null,
       images: null,
       checkIn: this.dayCalc(10),
-      checkOut: this.dayCalc(11)
+      checkOut: this.dayCalc(11),
     };
   }
 
@@ -186,7 +186,7 @@ HotelPageTemplate.propTypes = {
   info: PropTypes.string,
   helmet: PropTypes.object,
   hotel: PropTypes.object,
-  images: PropTypes.object
+  images: PropTypes.object,
 };
 
 const HotelDetails = ({ data }) => {
