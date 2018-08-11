@@ -14,6 +14,12 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: 'https://studenthotels.us19.list-manage.com/subscribe/post?u=b5b23e68248d9091febf84e88&amp;id=41f831b06f',
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,

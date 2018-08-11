@@ -1,6 +1,9 @@
 import React from "react";
 import Img from "gatsby-image";
 
+import SendToMailChimp from "../components/MailChimp";
+
+
 import imageAlt from '../img/newsletter-studenthotels.jpg';
 
 const Newsletter = ({image}) => (
@@ -13,9 +16,7 @@ const Newsletter = ({image}) => (
         <h3 className="title is-3 is-spaced has-text-centered">Rimani in contatto</h3>
         <div className="field">
           <div className="control has-icons-left has-button-right">
-            <input className="input is-large" type="text" placeholder="Indirizzo email"/>
-            <span className="icon is-left">@</span>
-            <button type="button" className="button is-primary is-medium">Iscriviti</button>
+            <SendToMailChimp/>
           </div>
         </div>
         <div className="is-centered is-spaced">
@@ -25,6 +26,7 @@ const Newsletter = ({image}) => (
         </div>
       </div>
     </div>
+
   </section>
 );
 
