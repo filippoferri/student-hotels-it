@@ -200,7 +200,7 @@ const HotelDetails = ({ data }) => {
       content={hotel.html}
       contentComponent={HTMLContent}
       helmet={<Helmet title={`${hotel.frontmatter.title} | Student Hotels`}/>}
-      tags={hotel.frontmatter.tags}
+      destinations={hotel.frontmatter.destination}
       facilities={hotel.frontmatter.facilities}
       title={hotel.frontmatter.title}
       hotelId={hotel.frontmatter.hotelId}
@@ -230,7 +230,7 @@ export const pageQuery = graphql`
         hotelId
         address
         facilities
-        tags
+        destinations
       }
     }
     newsletter: allMarkdownRemark(

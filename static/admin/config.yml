@@ -82,7 +82,7 @@ collections:
 
   - name: "hotels"
     label: "Hotels"
-    folder: "src/pages/hotels"
+    folder: "src/pages/camere"
     create: true
     slug: "{{slug}}"
     fields:
@@ -93,7 +93,7 @@ collections:
       - {label: "Address", name: "address", widget: "string"}
       - {label: "Hotel Info", name: "body", widget: "markdown"}
       - {label: "Facilities", name: "facilities", widget: "list"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Destinations", name: "destinations", widget: "list"}
 
   - name: "legals"
     label: "Legals"

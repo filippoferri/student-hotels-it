@@ -16,6 +16,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             }
             frontmatter {
               tags
+              destinations
               templateKey
             }
           }
@@ -50,6 +51,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       })
     })
 
+    // TAGS
     const posts = pages.filter((edge)  => edge.node.frontmatter.templateKey === 'blog-post')
 
     posts
@@ -98,6 +100,32 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         },
       })
     })
+
+    // DESTINATIONS
+    const hotels = pages.filter((edge)  => edge.node.frontmatter.templateKey === 'hotel-page')
+
+    let destinations = []
+    // Iterate through each hotel, putting all found destinations into `destinations`
+    hotels.forEach(edge => {
+      if (_.get(edge, `node.frontmatter.destinations`)) {
+        destinations = destinations.concat(edge.node.frontmatter.destinations)
+      }
+    })
+    destinations = _.uniq(destinations)
+
+    // Make destination pages
+    destinations.forEach(destination => {
+      const destinationPath = `/camere/${_.kebabCase(destination)}/`
+
+      createPage({
+        path: destinationPath,
+        component: path.resolve(`src/templates/destinations.js`),
+        context: {
+          destination,
+        },
+      })
+    })
+
   })
 }
 
