@@ -11,8 +11,16 @@ class SendToMailChimp extends React.Component {
     };
   }
 
+  isValidEmailAddress(e) {
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    return re.test(e);
+  }
+
   _handleEmailChange = e => {
-    this.setState({ email: e.target.value });
+      this.setState({
+        email: e.target.value
+      });
   };
 
   _postEmailToMailchimp = (email, attributes) => {
@@ -76,7 +84,7 @@ class SendToMailChimp extends React.Component {
                      type="email"
                      placeholder="Indirizzo email"
                      onChange={this._handleEmailChange}/>
-              {!this.state.email ? <span className="icon is-left">@</span> : null}
+              {!this.state.email ? <span className="icon is-left">@</span> : null }
               <button type="button"
                       onChange={this._handleFormSubmit}
                       className="button is-primary is-medium">Iscriviti

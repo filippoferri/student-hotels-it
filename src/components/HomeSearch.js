@@ -9,19 +9,15 @@ class HomeSearch extends React.Component {
       popupVisible: false
     };
     this.handleClick = this.handleClick.bind(this);
-    this.handleOutsideClick = this.handleOutsideClick.bind(this);
     this.handleOpen = this.handleOpen.bind(this);
   }
 
-  componentWillUnmount() {
-    this.handleOutsideClick
-  }
 
   handleClick() {
     if(!this.state.popupVisible) {
-      document.addEventListener('click', this.handleOutsideClick, false);
+      this.setState({ popupVisible: false });
     } else {
-      document.addEventListener('click', this.handleOutsideClick, false);
+      this.setState({ popupVisible: true });
     }
 
     this.setState(
@@ -29,17 +25,6 @@ class HomeSearch extends React.Component {
         popupVisible: !prevState.popupVisible
       })
     )
-  }
-
-  handleOutsideClick(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const { childNode } = this;
-    const isDescendantOfRoot = childNode && childNode.contains(e.target);
-    if (!isDescendantOfRoot) {
-      this.setState({ popupVisible: false });
-    }
   }
 
   handleOpen() {
@@ -89,7 +74,11 @@ class HomeSearch extends React.Component {
     var expandedDiv = this.getSuggestions();
 
     return (
-      <div className="control is-bordered has-button-right has-search-icon" ref={(ref) => { this.childNode = ref; }}>
+      <div className="control is-bordered has-button-right has-search-icon">
+
+        {this.state.popupVisible && (
+          <div className="sh-search-overlay-active" onClick={this.handleClick}></div>
+        )}
 
         <input className="input is-large has-icons-left " type="text" placeholder="Dove vuoi andare?" onClick={this.handleClick} readOnly/>
 

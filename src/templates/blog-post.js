@@ -130,8 +130,6 @@ const BlogPost = ({ data }) => {
   const { newsletter: newsletter } = data;
   const image = newsletter.edges[0].node;
 
-  console.log(post.frontmatter.heroImage)
-
   const meta = [
     { name: 'description', content: post.frontmatter.description },
 

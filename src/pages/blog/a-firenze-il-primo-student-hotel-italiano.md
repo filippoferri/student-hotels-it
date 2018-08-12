@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Gli Student Hotel conquistano l'Italia partendo da Firenze
+title: A Firenze il primo Student Hotel italiano
 date: 2018-07-04T15:04:10.000Z
 description: A Firenze il primo Student Hotel italiano che sta cambiando il modo di concepire l’ospitalità in tutta Europa.
 heroImage: ../../img/hero-firenze-studenthotels.jpg
