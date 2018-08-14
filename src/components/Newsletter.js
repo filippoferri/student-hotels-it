@@ -22,7 +22,7 @@ const Newsletter = ({image}) => (
         <div className="is-centered is-spaced">
           <a className="sh-icon-social facebook" href="https://www.facebook.com/studenthotels" target="_blank"></a>
           <a className="sh-icon-social twitter" href="https://twitter.com/studenthotels" target="_blank"></a>
-          <a className="sh-icon-social instagram" href="https://www.instagram.com/student_hotels/" target="_blank"></a>
+          <a className="sh-icon-social instagram" href="https://www.instagram.com/student.hotels/" target="_blank"></a>
         </div>
       </div>
     </div>
