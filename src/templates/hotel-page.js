@@ -124,6 +124,7 @@ class HotelPageTemplate extends React.Component {
                 <div className="column is-5-tablet is-4-desktop is-3-widescreen has-border-left is-centered">
 
                   <FindBooking locationId={hotel.locationId}
+                               hotelName={hotel.label}
                                hotelId={hotel.id}
                                checkIn={this.state.checkIn}
                                checkOut={this.state.checkOut}/>

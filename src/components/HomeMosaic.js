@@ -62,7 +62,7 @@ const HomeMosaic = ( {content, api} ) => (
             <div className="is-over is-block-top">
               <h3 className="title is-5 is-uppercase has-text-weight-bold">Unisciti alla community</h3>
 
-              <span>@studenthotels</span>
+              <span>@student.hotels</span>
             </div>
 
             <span className="sh-icon-social instagram" href="/"></span>

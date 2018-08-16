@@ -22,8 +22,14 @@
     font-size: 1.5rem
     line-height: 1.6
 
-  p:not(:last-child)
-    margin-top: 1.5em
+  h3,
+  h3:not(:first-child)
+    margin-top: 3rem
+    font-size: 1.2rem
+    line-height: 1.6
+
+  p.has-margin-bottom
+    margin-bottom: 4rem
 
   .taglist
     list-style: none
@@ -41,6 +47,27 @@
       a:hover
         text-decoration: none
         background-color: darken($primary, 10%)
+
+  .is-content-section
+    padding-top: 2rem
+    padding-bottom: 2rem
+    font-size: 1rem
+
+    &.has-margin-top
+      margin-top: 2rem
+
+    &.has-border-top
+      border-top: 1px solid $white-ter
+
+    &.has-border-bottom
+      border-bottom: 1px solid $white-ter
+      
+    .is-tag
+      margin-left: .7rem
+      text-transform: capitalize
+
+    figure
+      margin: 0 1rem 0 0
 
 .next-post
 

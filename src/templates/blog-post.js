@@ -6,6 +6,8 @@ import Link from "gatsby-link";
 
 import Hero from "../components/Hero";
 import Content, { HTMLContent } from "../components/Content";
+import SharePost from "../components/SharePost";
+import AddDisqus from "../components/Disqus";
 import Newsletter from "../components/Newsletter";
 import AnteFooter from "../components/AnteFooter";
 
@@ -30,37 +32,51 @@ export const BlogPostTemplate = ({
 
       {helmet || ""}
 
-      <Hero image={heroImage.childImageSharp.sizes} heading={title}/>
+      <Hero image={heroImage.childImageSharp.sizes} heading={title} addClass="is-post"/>
 
       <section className="section">
         <div className="container">
           <div className="columns">
             <div className="column is-6-desktop is-offset-3-desktop">
 
-              <nav className="breadcrumb" aria-label="breadcrumb">
-                <ul>
-                  <li><Link to="https//studenthotels.it">Student Hotels</Link></li>
-                  <li><Link to="/blog">Blog</Link></li>
-                </ul>
-              </nav>
-
               <div className="content">
 
-                <p>{description}</p>
+                <p className="is-italic has-margin-bottom">{description}</p>
 
                 <PostContent content={content}/>
 
                 {tags && tags.length ? (
-                  <div style={{ marginTop: `4rem` }}>
-                    <ul className="taglist">
-                      {tags.map(tag => (
-                        <li key={tag + `tag`}>
-                          <Link className="tag is-primary" to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="is-content-section has-margin-top has-border-top has-border-bottom">
+                    <span className="has-text-weight-semi-bold">In questo articolo:</span>
+                    {tags.map(tag => (
+                      <span className="is-tag" key={tag + `tag`}>
+                            <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                          </span>
+                    ))}
                   </div>
-                ) : null}</div>
+                ) : null}
+
+                <div className="is-content-section has-border-bottom">
+                  <div className="is-flex is-flex-center">
+                    <figure className="image is-96x96">
+                      <img className="is-rounded" src="https://source.unsplash.com/vXQza9AUe40/300x300" alt=""/>
+                    </figure>
+                    <div className="is-inline-block" style={{'flex': '1'}}><span className="has-text-weight-semi-bold">Scritto da Alexia Zanti</span><br/>Sono il CPO e uno dei curatori del blog di Student Hotels. Se hai richieste twittami su <a href="https://twitter.com/StudentHotels" target="_blank">@StudentHotels</a></div>
+                  </div>
+                </div>
+
+                <div className="is-content-section has-border-bottom">
+                  <div className="is-flex is-flex-center">
+                    <div><span className="has-text-weight-semi-bold">Condividi:</span></div>
+                    <div className="has-text-right">
+                      <SharePost shareUrl="/" title={title}/>
+                    </div>
+                  </div>
+                </div>
+
+                <AddDisqus title={title} />
+
+              </div>
 
 
             </div>
@@ -108,7 +124,7 @@ BlogPostTemplate.propTypes = {
   nextSlug: PropTypes.string,
   prevTitle: PropTypes.string,
   prevSlug: PropTypes.string,
-  newsletterImage: PropTypes.shape(),
+  newsletterImage: PropTypes.shape()
 };
 
 const BlogPost = ({ data }) => {
@@ -131,12 +147,15 @@ const BlogPost = ({ data }) => {
   const image = newsletter.edges[0].node;
 
   const meta = [
-    { name: 'description', content: post.frontmatter.description },
+    { name: "description", content: post.frontmatter.description },
 
     { name: "twitter:site", content: "studenthotels.it" },
     { name: "twitter:creator", content: "StudentHotels.it" },
     { name: "twitter:title", content: post.frontmatter.title },
-    { name: "twitter:image", content: "https//studenthotels.it" + post.frontmatter.heroImage.childImageSharp.sizes.src },
+    {
+      name: "twitter:image",
+      content: "https//studenthotels.it" + post.frontmatter.heroImage.childImageSharp.sizes.src
+    },
 
     { property: "og:title", content: post.frontmatter.title },
     { property: "og:site_name", content: "studenthotels.it" },
@@ -144,14 +163,14 @@ const BlogPost = ({ data }) => {
     { property: "og:description", content: post.frontmatter.description },
     { property: "og:image", content: "https//studenthotels.it" + post.frontmatter.heroImage.childImageSharp.sizes.src },
     { property: "og:site_name", content: "StudentHotels.it" }
-  ]
+  ];
 
   return (
     <BlogPostTemplate
       content={post.html}
       contentComponent={HTMLContent}
       description={post.frontmatter.description}
-      helmet={<Helmet title={`${post.frontmatter.title} | Student Hotels`} meta={meta} />}
+      helmet={<Helmet title={`${post.frontmatter.title} | Student Hotels`} meta={meta}/>}
       tags={post.frontmatter.tags}
       title={post.frontmatter.title}
       heroImage={post.frontmatter.heroImage}

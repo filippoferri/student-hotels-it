@@ -28,7 +28,7 @@ class FindBooking extends React.Component {
 
     const { prices } = this.state;
     const priceFrom = prices ? prices.priceFrom : 120;
-    const goTo = "https://whitelabel.travelpayouts.com/hotels?preview=1&host=booking.studenthotels.it&destination=" + this.props.hotelId + "&checkIn=" + this.props.checkIn + "&checkOut=" + this.props.checkOut + "&marker=184772&children=&adults=1&language=it&currency=eur";
+    const goTo = "https://booking.studenthotels.it/hotels?destination=" + this.props.hotelId + "&checkIn=" + this.props.checkIn + "&checkOut=" + this.props.checkOut + "&marker=184772&children=&adults=1&language=it&currency=eur&hotelName=" + this.props.hotelName;
 
     return (
 
