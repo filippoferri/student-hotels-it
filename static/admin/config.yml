@@ -94,6 +94,13 @@ collections:
       - {label: "Hotel Info", name: "body", widget: "markdown"}
       - {label: "Facilities", name: "facilities", widget: "list"}
       - {label: "Destinations", name: "destinations", widget: "list"}
+      details:
+        - {label: "CityId", name: "cityid", widget: string},
+        - {label: "Stars", name: "stars", widget: string},
+        - {label: "PriceFrom", name: "pricefrom", widget: string},
+        - {label: "Rating", name: "rating", widget: string},
+        - {label: "Distance", name: "distance", widget: string},
+        - {label: "Image", name: "image", widget: string}
 
   - name: "legals"
     label: "Legals"

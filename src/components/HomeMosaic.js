@@ -34,7 +34,7 @@ const HomeMosaic = ( {content, api} ) => (
             </div>
             <div className="tile is-parent is-vertical is-first-desktop">
 
-              <article className="tile is-child notification is-black has-min-height">
+              <article className="tile is-child notification is-secondary has-min-height">
                 <div className="is-over is-block-centered">
                   <h1 className="title is-5 is-uppercase has-text-weight-bold">"Una nuova concezione di Hotel:
                     assolutamente fantastico!"</h1>

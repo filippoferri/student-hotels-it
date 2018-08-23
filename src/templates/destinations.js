@@ -1,27 +1,32 @@
 import React from "react";
 import Helmet from "react-helmet";
-import Link from "gatsby-link";
 
+import Hero from "../components/DestinationHero";
 import Newsletter from "../components/Newsletter";
 import AnteFooter from "../components/AnteFooter";
+import Link from "gatsby-link";
 
 class DestinationRoute extends React.Component {
+
+  stars(num) {
+    let stars = [];
+    _.times(num, (i) => {
+      stars.push(<i key={i}></i>);
+    })
+    return stars
+  }
+
   render() {
+    // Hotels data
     const { data } = this.props;
     const hotels = data.hotels.edges;
+    // Find image for newsletter
     const newsletterImage = data.newsletter.edges[0].node.frontmatter.newsletterImage;
-
-    const hotelLinks = hotels.map(hotel => (
-      <div key={hotel.node.fields.slug}>
-        <div className="notification">
-          <Link className="sh-blog-link" to={hotel.node.fields.slug}><span className="title is-uppercase is-3">{hotel.node.frontmatter.title}</span></Link>
-        </div>
-      </div>
-    ));
+    // Find destination name
     const destination = this.props.pathContext.destination;
-
+    // Is title for Helmet
     const title = this.props.data.site.siteMetadata.title;
-
+    // Total Count of hotels for this tag
     const totalCount = data.hotels.totalCount;
 
     return (
@@ -29,19 +34,39 @@ class DestinationRoute extends React.Component {
 
         <Helmet title={`${destination} | ${title}`}/>
 
-        <div className="has-background-black" style={{'height': '4rem'}}></div>
+
+        <Hero destination={destination} heading={destination}/>
 
         <section className="section">
           <div className="container has-margin-bottom has-margin-top">
-            <div className="columns">
+            <div className="sh-list-header"><span className="title is-4">{totalCount} Student Hotel</span></div>
+            <div className="columns is-multiline">
 
-              <div className="column is-2">
-                filtri
-              </div>
+              <div className="column is-4">
 
-              <div className="column is-8">
-
-              {hotelLinks}
+                {hotels.map((hotel, i) =>
+                  <div className="sh-hotel-list-item" key={i}>
+                    <div className="img-container">
+                      <div className="is-image-wrapper">
+                        <Link className="sh-blog-link" to={hotel.node.fields.slug}>
+                          <img src={hotel.node.frontmatter.details[0].image}/>
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="">
+                      <div className="sh-second-block">
+                        <div className="is-flex">
+                          <div className="sh-hotel-stars">{this.stars(hotel.node.frontmatter.details[0].stars)}</div>
+                          <div className="has-text-right"><span
+                            className="sh-hotel-rating">{hotel.node.frontmatter.details[0].rating}</span></div>
+                        </div>
+                        <Link className="sh-blog-link" to={hotel.node.fields.slug}><span
+                          className="title is-5">{hotel.node.frontmatter.title}</span></Link>
+                        <div className="has-text-small"><span>Da {hotel.node.frontmatter.details[0].pricefrom}&euro; a notte</span></div>
+                      </div>
+                    </div>
+                  </div>
+                )}
 
               </div>
 
@@ -81,6 +106,12 @@ export const destinationPageQuery = graphql`
           }
           frontmatter {
             title
+            details {
+              rating
+              stars
+              pricefrom
+              image
+            }
           }
         }
       }

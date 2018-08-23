@@ -9,6 +9,7 @@ import HotelContentAPI from "../API/HotelContent";
 import HotelImagesAPI from "../API/HotelImages";
 
 import Content, { HTMLContent } from "../components/Content";
+import ViewsAlert from "../components/ViewsAlert";
 import HotelHero from "../components/HotelHero";
 import HotelImages from "../components/HotelImages";
 import Map from "../components/Map";
@@ -130,6 +131,9 @@ class HotelPageTemplate extends React.Component {
                                checkOut={this.state.checkOut}/>
 
                   <div className="has-text-left">
+
+                    <ViewsAlert />
+
                     <div className="notification has-background-black has-text-white">
                       <p className="heading">Soluzioni per studenti</p>
                       <p className="has-text-small">Disponibilità di soggiorni di 4, 8, 9, 10 o 12 mesi per godere a

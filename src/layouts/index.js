@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
+import CookieConsent from "react-cookie-consent";
+import Link from "gatsby-link";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -30,6 +32,23 @@ const TemplateWrapper = ({ children }) => (
     <Navbar/>
     {children()}
     <Footer/>
+
+    <CookieConsent
+      location="bottom"
+      acceptOnScroll={true}
+      acceptOnScrollPercentage={25}
+      cookieName="StudentHotels"
+      disableStyles={true}
+
+      buttonClasses="sh-cookie-bar-close"
+      containerClasses="sh-cookie-bar-container"
+      contentClasses=""
+
+      buttonText="×"
+      extraCookieOptions={{domain: '//studenthotels.it'}}
+      debug={true}>
+      Questo sito utilizza i cookie. Per maggiori informazioni, clicca <Link to="note-legali/informativa-privacy">qui</Link>. Se per te va bene, continua a navigare.
+    </CookieConsent>
   </wrapper>
 );
 

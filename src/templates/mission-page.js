@@ -35,7 +35,7 @@ export const MissionPageTemplate = ({
 
       <BlockTextImage content={block2} dir={"is-left"} style={"white"}/>
 
-      <BlockTextBoard content={board} style={"primary"}/>
+      <BlockTextBoard content={board} style={"secondary"}/>
 
       <BlockTextImage content={block3} dir={"is-right"} style={"white-ter"}/>
 

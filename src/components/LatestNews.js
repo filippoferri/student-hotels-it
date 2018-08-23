@@ -18,7 +18,6 @@ const Tile = ({ post, style, hasbg }) => {
           <div className="is-image-wrapper has-position-absolute"><Img sizes={img}/></div>
           : null}
         <p className="tile-title title is-4">{title}</p>
-        <span className="tile-date">{date}</span>
         <Link className="tile-link" to={url}></Link>
       </article>
     </div>
@@ -64,7 +63,7 @@ const LatestNews = ({ content,posts }) => {
             </div>
           </div>
 
-          <Tile post={posts[3]} style={"is-black"}/>
+          <Tile post={posts[3]} style={"is-secondary"}/>
 
         </div>
 

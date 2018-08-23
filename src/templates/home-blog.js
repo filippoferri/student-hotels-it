@@ -33,7 +33,7 @@ export default class BlogPage extends React.Component {
                     key={post.id}
                   >
                     <article
-                      className={"notification" + (index % 3 === 1 ? " is-primary" : "") + (index % 4 === 3 ? " is-black" : "")}>
+                      className={"notification" + (index % 3 === 1 ? " is-primary" : "") + (index % 4 === 3 ? " is-secondary" : "")}>
                       <div className="sh-blog-content">
                         <span className="title is-uppercase is-3">{post.frontmatter.title}</span>
 
