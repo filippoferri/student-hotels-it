@@ -28,5 +28,5 @@ faq:
         Non vediamo l'ora di ricevere il tuo messaggio. Inviaci una e-mail a support@studenthotels.it oppure lascia un messaggio su Facebook, Instagram o Twitter.
     - question: Posso pubblicare la mia struttura studentesca su StudentHotels.it?
       answer: >
-        Non è possibile pubblicare strutture direttamente su StudentHotels.it. Saremmo però felici di aiutarti a trovare i migliori partner con i quali avrai modo di comparire anche sul nostro portale. Inviaci una e-mail con tutte le informazioni riguardati la struttura, i partner con cui collabori attualmente e un link della struttura a support@studenthotels.it.
+        Non è possibile pubblicare strutture direttamente su StudentHotels.it. Saremmo però felici di aiutarti a trovare i migliori partner con i quali avrai modo di comparire anche sul nostro portale. Inviaci una e-mail con tutte le informazioni riguardanti la struttura, i partner con cui collabori attualmente e un link della struttura a support@studenthotels.it.
 ---

@@ -61,7 +61,7 @@ export const BlogPostTemplate = ({
                     <figure className="image is-96x96">
                       <img className="is-rounded" src="https://source.unsplash.com/vXQza9AUe40/300x300" alt=""/>
                     </figure>
-                    <div className="is-inline-block" style={{'flex': '1'}}><span className="has-text-weight-semi-bold">Scritto da Alexia Zanti</span><br/>Alexia è la Responsabile Marketing in StudentHotels e dirige il suo team per far cresecere il nostro brand. Ha ricevuto la nomination come miglior taglio di capelli in ufficio nel mese di Agosto, prevede di vincere nei prossimi mesi.</div>
+                    <div className="is-inline-block" style={{'flex': '1'}}><span className="has-text-weight-semi-bold">Scritto da Alexia Zanti</span><br/>Alexia è consulente Branding in StudentHotels. Ha ricevuto la nomination come miglior taglio di capelli in ufficio.</div>
                   </div>
                 </div>
 

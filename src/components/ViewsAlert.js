@@ -9,7 +9,7 @@ const Actually = ({num}) => (
 )
 
 const OnDemand = ({num}) => (
-  <span className="has-text-small"><b>{num}</b> persone hanno già prenotato nelle ultime 48 ore. <span className="sh-message-icon high-booking"></span></span>
+  <span className="has-text-small"><b>{num}</b> persone hanno prenotato nelle ultime 48 ore. <span className="sh-message-icon high-booking"></span></span>
 )
 
 
@@ -41,8 +41,6 @@ class ViewsAlert extends React.Component {
   }
 
   render() {
-
-    console.log(this.addMessage)
 
     return(
       <div className="notification">

@@ -3,7 +3,7 @@ module.exports = {
     title: 'Student Hotels',
     author: 'Filippo Ferri - filippoferri.it',
     description: 'Student Hotels - Il motore di ricerca per strutture alberghiere con tutti i comfort per studenti',
-    siteUrl: 'https://www.studenthotels.it',
+    siteUrl: 'https://studenthotels.it',
     instagramAPI: {
       userId: '8081412028',
       clientId: 'bb37bade18f94c70a7262cbc3ac1b1df',
@@ -12,6 +12,12 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: 'https://studenthotels.it',
+      },
+    },
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-plugin-mailchimp',
@@ -33,37 +39,39 @@ module.exports = {
         name: 'images',
       },
     },
+    'gatsby-plugin-catch-links',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          "gatsby-remark-copy-linked-files",
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-responsive-iframe',
         ],
       },
     },
     {
-      resolve: `gatsby-plugin-nprogress`,
+      resolve: 'gatsby-plugin-nprogress',
       options: {
         // Setting a color is optional.
-        color: `black`,
+        color: '#2EB3C3',
         // Disable the loading spinner.
         showSpinner: false,
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-tagmanager',
       options: {
-        trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
-        // Puts tracking script in the head instead of the body
-        head: false,
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: true,
-        // Avoids sending pageview hits from custom paths
-        //exclude: ["/preview/**", "/do-not-track/me/too/"],
+        id: "GTM-NWDT37S",
+
+        // Include GTM in development.
+        // Defaults to false meaning GTM will only be loaded in production.
+        includeInDevelopment: false,
+
+        // Specify optional GTM environment details.
+        gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_AUTH_STRING",
+        gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_PREVIEW_NAME",
       },
     },
     {

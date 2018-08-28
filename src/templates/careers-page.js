@@ -38,7 +38,7 @@ export const CareersPageTemplate = ({
                 {positions.map((item, index) => (
                   <div className="column" key={index}>
                     <div className="notification is-button is-black">
-                      <a href="/"></a>
+                      <a href="https://studenthotels.typeform.com/to/nVNTgY" target="_blank"></a>
                       <dl key={index} className="pos-item">
                         <dt className="pos-role">{item.role}</dt>
                         <dd className="pos-desc">
@@ -58,7 +58,7 @@ export const CareersPageTemplate = ({
       
       <section className="section is-small">
         <div className="container is-centered">
-          <div className="title  is-5 has-margin-bottom">Non vedi nessuna posizione aperta di tuo interesse? <a href="/" target="_blank">Fatti sentire in ogni caso</a> </div>
+          <div className="title  is-5 has-margin-bottom">Non vedi nessuna posizione aperta di tuo interesse? <a href="https://studenthotels.typeform.com/to/PfM9ii" target="_blank">Fatti sentire in ogni caso</a> </div>
         </div>
       </section>
 

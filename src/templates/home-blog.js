@@ -8,6 +8,35 @@ import Newsletter from "../components/Newsletter";
 import AnteFooter from "../components/AnteFooter";
 
 export default class BlogPage extends React.Component {
+
+  variation(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  addClass() {
+    var newclass;
+    const num = this.variation(1,9);
+
+    switch(num) {
+      case 1:
+        newclass = " is-primary";
+        break;
+      case 2:
+        newclass = " is-secondary";
+        break;
+      case 3:
+        newclass = " is-greenish";
+        break;
+      case 4:
+        newclass = " is-sunset";
+        break;
+      default:
+        newclass = "";
+    }
+
+    return newclass
+  }
+
   render() {
     const { data } = this.props;
     const { posts: posts } = data;
@@ -27,13 +56,13 @@ export default class BlogPage extends React.Component {
           <div className="container has-margin-bottom has-margin-top">
             <div className="columns is-multiline">
               {posts.edges
-                .map(({ node: post }, index) => (
+                .map(({ node: post }, i) => (
                   <div
                     className="column is-one-third"
-                    key={post.id}
+                    key={i}
                   >
                     <article
-                      className={"notification" + (index % 3 === 1 ? " is-primary" : "") + (index % 4 === 3 ? " is-secondary" : "")}>
+                      className={"notification" + this.addClass()}>
                       <div className="sh-blog-content">
                         <span className="title is-uppercase is-3">{post.frontmatter.title}</span>
 

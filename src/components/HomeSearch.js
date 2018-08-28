@@ -28,7 +28,7 @@ class HomeSearch extends React.Component {
   }
 
   handleOpen() {
-    this.setState({ popupVisible: false });
+    //this.setState({ popupVisible: false });
     const slug = "tsh-florence-lavagnini"
     window.location = '/camere/'+ slug;
   }
