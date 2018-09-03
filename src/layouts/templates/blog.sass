@@ -11,33 +11,47 @@
     margin-bottom: 3rem
 
   article.notification
-    height: 30rem
     position: relative
+    padding: 2rem
+
+    @media (min-width: 769px)
+      height: 30rem
+      padding: 1.25rem 2.5rem 1.25rem 1.5rem
+
+      .title
+        text-transform: uppercase
+
+    .title.is-3
+      font-size: 1.6rem
+
+      @media (min-width: $fullhd)
+        font-size: 2rem
 
     .sh-blog-date
       margin: 1rem 0
 
-    &:after
-      content: ''
-      width: 0
-      height: 100%
-      position: absolute
-      top: 0
-      right: 0
-      bottom: 0
-      left: 0
-      background: rgb(0,0,0)
-      transition: width .4s cubic-bezier(.77,0,.175,1),opacity 50ms linear .4s
-      z-index: 1
+    @media (min-width: $desktop)
+      &:after
+        content: ''
+        width: 0
+        height: 100%
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        background: rgb(0,0,0)
+        transition: width .4s cubic-bezier(.77,0,.175,1),opacity 50ms linear .4s
+        z-index: 1
 
-    &.is-black:after
-      background: $primary
+      &.is-black:after
+        background: $primary
 
-    &:hover:after
-      width: 100%
+      &:hover:after
+        width: 100%
 
-    &:hover
-      color: white
+      &:hover
+        color: white
 
     .sh-blog-content
       position: relative

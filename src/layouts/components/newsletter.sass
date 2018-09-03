@@ -58,15 +58,24 @@
       opacity: .7
 
   .control.has-button-right .input
-    padding-right: 8rem
+    padding-right: 1rem
+
+    @media (min-width: $desktop)
+      padding-right: 8rem
 
   button
-    position: absolute
-    top: 50%
-    right: .3rem
-    transform: translateY(-50%)
+    width: 100%
+    margin-top: .5rem
     text-transform: uppercase
     font-weight: 600
+
+    @media (min-width: $desktop)
+      width: auto
+      margin-top: 0
+      position: absolute
+      top: 50%
+      right: .3rem
+      transform: translateY(-50%)
 
   .gatsby-image-outer-wrapper,
   .gatsby-image-wrapper

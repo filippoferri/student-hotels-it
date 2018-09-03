@@ -4,7 +4,7 @@ import Link from "gatsby-link";
 
 const Hero = ({image, heading, addClass}) => (
 
-  <section className={"hero is-medium is-primary background-image" + (addClass ? " " + addClass : "")}>
+  <section className={"hero is-medium has-background-primary background-image" + (addClass ? " " + addClass : "")}>
     <div className="is-image-wrapper has-position-absolute"><Img sizes={image} /></div>
     <div className="hero-body">
       <div className="container has-text-centered">

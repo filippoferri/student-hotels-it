@@ -15,7 +15,7 @@ export default class BlogPage extends React.Component {
 
   addClass() {
     var newclass;
-    const num = this.variation(1,9);
+    const num = this.variation(1,8);
 
     switch(num) {
       case 1:
@@ -58,13 +58,13 @@ export default class BlogPage extends React.Component {
               {posts.edges
                 .map(({ node: post }, i) => (
                   <div
-                    className="column is-one-third"
+                    className="column is-6-tablet is-4-desktop"
                     key={i}
                   >
                     <article
                       className={"notification" + this.addClass()}>
                       <div className="sh-blog-content">
-                        <span className="title is-uppercase is-3">{post.frontmatter.title}</span>
+                        <span className="title is-3">{post.frontmatter.title}</span>
 
                         <div className="sh-blog-date">
                           <small>{post.frontmatter.date}</small>

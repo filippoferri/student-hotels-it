@@ -1,6 +1,12 @@
 .hero
   position: relative
 
+  &.is-medium
+    margin-top: 4rem
+
+    @media (min-width: 65rem)
+      margin-top: 0
+
   &:after
     content: ''
     display: block
@@ -35,6 +41,7 @@
     .title
       font-size: 1.6rem
       line-height: 1.4
+      color: white
 
       @media (min-width: $tablet)
         font-size: 2rem
@@ -49,6 +56,7 @@
 
     .subtitle
       font-size: 1rem
+      color: white
 
       @media (min-width: $tablet)
         font-size: 1.25rem
@@ -71,6 +79,7 @@
     bottom: 0
     left: 0
     right: 0
+    overflow: hidden
     z-index: 3
 
 

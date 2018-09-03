@@ -1,19 +1,21 @@
 .navbar.is-transparent
-  background: $black
-
+  position: fixed
+  background: $accent
+  top: 0
+  left: 0
+  right: 0
 
   @media (min-width: 65rem)
     background: transparent
     position: absolute
-    top: 0
-    left: 0
-    right: 0
+
 
 .navbar-brand
   width: 100%
 
   img.logo
-    width: 3rem
+    width: 2rem
+    margin-left: .5rem
 
     @media (min-width: 65rem)
       width: 4rem
@@ -21,7 +23,7 @@
   .navbar-burger
     display: flex
     margin-left: auto
-    margin-right: 1rem
+    //margin-right: 1rem
     color: white
     width: 4rem
     height: 4rem

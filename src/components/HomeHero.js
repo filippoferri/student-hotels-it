@@ -10,7 +10,7 @@ import expedia from "../img/agencies/expedia.png";
 import hotelsdotcom from "../img/agencies/hotelsdotcom.png";
 
 const HomeHero = ({ content }) => (
-  <section className="hero is-primary is-fullheight">
+  <section className="hero has-background-primary is-fullheight">
     <div className="hero-slides">
       <Img sizes={content.heroImage.childImageSharp.sizes}/>
     </div>
