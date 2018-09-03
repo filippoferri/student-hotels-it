@@ -9,7 +9,7 @@ class addDisqus extends React.Component {
   render() {
     const disqusShortname = 'studenthotels-it';
     const disqusConfig = {
-      url: 'studenthotels.it',
+      url: this.props.url,
       identifier: this.props.title,
       title: this.props.title,
     };

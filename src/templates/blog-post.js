@@ -13,6 +13,7 @@ import AnteFooter from "../components/AnteFooter";
 
 export const BlogPostTemplate = ({
     helmet,
+    slug,
     content,
     contentComponent,
     description,
@@ -25,7 +26,9 @@ export const BlogPostTemplate = ({
     prevSlug,
     newsletterImage
   }) => {
-  const PostContent = contentComponent || Content;
+
+  const path = 'https://studenthotels.it/' + {slug}
+   const PostContent = contentComponent || Content;
 
   return (
     <main className="blog-post">
@@ -74,7 +77,7 @@ export const BlogPostTemplate = ({
                   </div>
                 </div>
 
-                <AddDisqus title={title} />
+                <AddDisqus title={title} url={path} />
 
               </div>
 
@@ -167,6 +170,7 @@ const BlogPost = ({ data }) => {
 
   return (
     <BlogPostTemplate
+      slug={post.fields.slug}
       content={post.html}
       contentComponent={HTMLContent}
       description={post.frontmatter.description}
@@ -198,6 +202,9 @@ export const pageQuery = graphql`
   query BlogPostByID($id: String!, $next: String!, $prev: String!) {
     current: markdownRemark(id: { eq: $id }) {
       id
+      fields {
+        slug
+      }
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
