@@ -8,22 +8,25 @@ const Map = ({location}) => {
   const dataMap = {
     center: {
       lat: location.lat,
-      lon: location.lon
+      lng: location.lon
     },
-    zoom: 11
+    zoom: 18
   };
 
   return (
     // Important! Always set the container height explicitly
-    <div id="map" style={{ height: '30rem', width: '100%' }}>
+    <div style={{ height: '30rem', width: '100%' }}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: 'AIzaSyA3aVjnEO7SWO1FVO2vcKIWbGpMFO9kVRM' }}
+        bootstrapURLKeys={{
+          key: 'AIzaSyCeCjYsjoCTTbjsssaMJ8nNTBAOLatkS5M',
+          language: 'it',
+        }}
         defaultCenter={dataMap.center}
         defaultZoom= {dataMap.zoom}
       >
         <Marker
           lat={dataMap.center.lat}
-          lng={dataMap.center.lon}
+          lng={dataMap.center.lng}
         />
       </GoogleMapReact>
     </div>
