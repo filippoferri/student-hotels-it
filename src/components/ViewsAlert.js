@@ -43,7 +43,7 @@ class ViewsAlert extends React.Component {
   render() {
 
     return(
-      <div className="notification">
+      <div className="notification has-icon-right">
         {this.addMessage()}
       </div>
     )

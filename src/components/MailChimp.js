@@ -7,30 +7,29 @@ class SendToMailChimp extends React.Component {
     super();
     this.state = {
       email: "",
-      status: ""
+      status: "error"
     };
   }
 
-  isValidEmailAddress(e) {
-    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    return re.test(e);
+  validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
   }
 
-  _handleEmailChange = e => {
-      this.setState({
-        email: e.target.value
-      });
+  handleEmailChange = e => {
+    this.setState({
+      email: e.target.value
+    });
   };
 
-  _postEmailToMailchimp = (email, attributes) => {
+  postEmailToMailchimp = (email, attributes) => {
     addToMailchimp(email, attributes)
       .then(result => {
         // Mailchimp always returns a 200 response
         // So we check the result for MC errors & failures
         if (result.result !== "success") {
           this.setState({
-            status: `error`,
+            status: "error",
             msg: result.msg
           });
         } else {
@@ -50,7 +49,7 @@ class SendToMailChimp extends React.Component {
       });
   };
 
-  _handleFormSubmit = e => {
+  handleFormSubmit = e => {
     e.preventDefault();
     e.stopPropagation();
 
@@ -60,7 +59,7 @@ class SendToMailChimp extends React.Component {
         msg: null
       },
       // setState callback (subscribe email to MC)
-      this._postEmailToMailchimp(this.state.email, {
+      this.postEmailToMailchimp(this.state.email, {
         pathname: document.location.pathname
       })
     );
@@ -74,7 +73,10 @@ class SendToMailChimp extends React.Component {
       <div>
 
         {this.state.status === "success" ? (
-          <div className="has-text-centered"><span className="has-text-success has-text-weight-bold">{confirmMessage}</span></div>
+          <div className="sh-success-alert has-text-centered has-background-white">
+            <span
+              className="has-text-success has-text-weight-bold">{confirmMessage}</span>
+          </div>
         ) : (<div>
             <form method="post"
                   id="email-capture"
@@ -83,18 +85,23 @@ class SendToMailChimp extends React.Component {
               <input className="input is-large"
                      type="email"
                      placeholder="Indirizzo email"
-                     onChange={this._handleEmailChange}/>
-              {!this.state.email ? <span className="icon is-left">@</span> : null }
-              <button type="button"
-                      onChange={this._handleFormSubmit}
-                      className="button is-primary is-medium">Iscriviti
-              </button>
+                     onChange={this.handleEmailChange}/>
+              {!this.state.email ?
+                <span className="icon is-left at"></span>
+                : ( this.validateEmail(this.state.email ) ?
+                  <span className="icon is-left valid"></span> : <span className="icon is-left invalid"></span> ) }
+
+
+                  <button type="button"
+                          onClick={this.handleFormSubmit}
+                          disabled={!this.validateEmail(this.state.email)}
+                          className="button is-primary is-medium">Iscriviti</button>
+
               {this.state.status === "error" && (
                 <div className="sh-newsletter-error">
                   <div className="sh-newsletter-error has-text-weight-bold"
                        dangerouslySetInnerHTML={{ __html: this.state.msg }}
-                  />
-                </div>
+                  /></div>
               )}
 
             </form>
