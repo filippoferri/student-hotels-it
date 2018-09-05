@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import NetlifyForm from "react-netlify-form";
 
-import Hero from '../components/Hero';
-import Newsletter from '../components/Newsletter';
-import AnteFooter from '../components/AnteFooter';
+import Hero from "../components/Hero";
+import Newsletter from "../components/Newsletter";
+import AnteFooter from "../components/AnteFooter";
 import DefaultPage from "./default";
 import Helmet from "react-helmet";
 
@@ -20,7 +21,7 @@ export const ContactPageTemplate = ({
 
       {helmet || ""}
 
-      <Hero image={heroImage.childImageSharp.sizes} heading={heading} />
+      <Hero image={heroImage.childImageSharp.sizes} heading={heading}/>
 
       <section className="section">
 
@@ -32,52 +33,67 @@ export const ContactPageTemplate = ({
 
             <div className="column is-6-desktop is-offset-3-desktop">
 
-              <form name="contact" method="POST" netlify>
+              <NetlifyForm name='Contact Form'>
 
-                <div className="field-body">
-                  <div className="field">
-                    <div className="control">
-                      <input className="input is-large" type="text" name="name" placeholder="Nome"/>
-                    </div>
+                {({ loading, error, success }) => (
+                  <div>
+                    {loading &&
+                    <div>Sto inviando...</div>}
+                    {error &&
+                    <div>Spiacenti, il messaggio non è stato inviato. Ti preghiamo di riprovare.</div>}
+                    {success &&
+                    <div>Grazie per averci contattato!</div>}
+                    {!loading && !success &&
+                    <div>
+
+                      <div className="field-body">
+                        <div className="field">
+                          <div className="control">
+                            <input className="input is-large" type="text" name="name" placeholder="Nome" required/>
+                          </div>
+                        </div>
+
+                        <div className="field">
+                          <div className="control">
+                            <input className="input is-large" type="text" name="surname" placeholder="Cognome"
+                                   required/>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="field">
+                        <div className="control">
+                          <input className="input is-large" type="email" name="email" placeholder="Email" required/>
+                        </div>
+                      </div>
+
+                      <div className="field">
+                        <div className="control">
+                          <div className="select is-large">
+                            <select name="subject">
+                              <option>Informazioni Hotel</option>
+                              <option>Informazioni Spazi per studenti</option>
+                              <option>Altro</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="field">
+                        <div className="control">
+                          <textarea className="textarea is-large" name="message"
+                                    placeholder="Come possiamo aiutarti?" required></textarea>
+                        </div>
+                      </div>
+
+                      <div className="control has-text-right">
+                        <button type="submit" className="button is-primary is-large">Invia</button>
+                      </div>
+                    </div>}
                   </div>
+                )}
 
-                  <div className="field">
-                    <div className="control">
-                      <input className="input is-large" type="text" name="surname" placeholder="Cognome"/>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="field">
-                  <div className="control">
-                    <input className="input is-large" type="email" name="email" placeholder="Email"/>
-                  </div>
-                </div>
-
-                <div className="field">
-                <div className="control">
-                  <div className="select is-large">
-                    <select name="subject">
-                      <option>Informazioni Hotel</option>
-                      <option>Informazioni Spazi per studenti</option>
-                      <option>Altro</option>
-                    </select>
-                  </div>
-                </div>
-                </div>
-
-                <div className="field">
-                  <div className="control">
-                    <textarea className="textarea is-large" name="message" placeholder="Come possiamo aiutarti?"></textarea>
-                  </div>
-                </div>
-
-                <div data-netlify-recaptcha></div>
-
-                <div className="control is-grouped-right">
-                  <button type="submit" className="button is-primary is-large">Invia</button>
-                </div>
-              </form>
+              </NetlifyForm>
 
             </div>
 
@@ -86,9 +102,9 @@ export const ContactPageTemplate = ({
         </div>
       </section>
 
-      <Newsletter image={newsletterImage.childImageSharp.sizes} />
+      <Newsletter image={newsletterImage.childImageSharp.sizes}/>
 
-      <AnteFooter />
+      <AnteFooter/>
 
     </main>
   );
