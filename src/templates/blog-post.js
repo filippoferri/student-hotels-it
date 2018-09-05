@@ -77,11 +77,15 @@ export const BlogPostTemplate = ({
                   </div>
                 </div>
 
-                <AddDisqus title={title} url={path} />
-
               </div>
 
-
+            </div>
+          </div>
+          <div className="columns">
+            <div className="column is-8-desktop is-offset-2-desktop">
+              <div className="content">
+                <AddDisqus title={title} url={path} />
+              </div>
             </div>
           </div>
         </div>

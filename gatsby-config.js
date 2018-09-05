@@ -18,6 +18,12 @@ module.exports = {
         siteUrl: 'https://studenthotels.it',
       },
     },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        exclude: ["/tags/*"],
+      }
+    },
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-plugin-mailchimp',
