@@ -33,18 +33,22 @@ export const ContactPageTemplate = ({
 
             <div className="column is-6-desktop is-offset-3-desktop">
 
-              <NetlifyForm name='Contact Form'>
+              <NetlifyForm name='Contact Form'
+                           netlify-honeypot='bot-field'>
 
                 {({ loading, error, success }) => (
                   <div>
                     {loading &&
-                    <div>Sto inviando...</div>}
+                    <div className="has-text-centered has-text-weight-bold has-text-warning" style={{padding: 100}}>Sto inviando...</div>}
                     {error &&
-                    <div>Spiacenti, il messaggio non è stato inviato. Ti preghiamo di riprovare.</div>}
+                    <div className="has-text-centered has-text-weight-bold has-text-danger"style={{padding: 100}}>Spiacenti, il messaggio non è stato inviato. Ti preghiamo di riprovare.</div>}
                     {success &&
-                    <div>Grazie per averci contattato!</div>}
+                    <div className="has-text-centered has-text-weight-bold is-success" style={{padding: 100}}>Grazie per averci contattato!</div>}
                     {!loading && !success &&
                     <div>
+                      <p className="hidden" hidden>
+                        <label><input name="bot-field"/></label>
+                      </p>
 
                       <div className="field-body">
                         <div className="field">
