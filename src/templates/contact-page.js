@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import NetlifyForm from "react-netlify-form";
 
 import Hero from "../components/Hero";
 import Newsletter from "../components/Newsletter";
@@ -33,71 +32,59 @@ export const ContactPageTemplate = ({
 
             <div className="column is-6-desktop is-offset-3-desktop">
 
-              <NetlifyForm name='Contact Form'
-                           netlify-honeypot='bot-field'>
+              <form name='Contact Form'
+                    action="https://formspree.io/support@studenthotels.it"
+                    method="POST">
 
-                {({ loading, error, success }) => (
-                  <div>
-                    {loading &&
-                    <div className="has-text-centered has-text-weight-bold has-text-warning" style={{padding: 100}}>Sto inviando...</div>}
-                    {error &&
-                    <div className="has-text-centered has-text-weight-bold has-text-danger"style={{padding: 100}}>Spiacenti, il messaggio non è stato inviato. Ti preghiamo di riprovare.</div>}
-                    {success &&
-                    <div className="has-text-centered has-text-weight-bold is-success" style={{padding: 100}}>Grazie per averci contattato!</div>}
-                    {!loading && !success &&
-                    <div>
-                      <p className="hidden" hidden>
-                        <label><input name="bot-field"/></label>
-                      </p>
-
-                      <div className="field-body">
-                        <div className="field">
-                          <div className="control">
-                            <input className="input is-large" type="text" name="name" placeholder="Nome" required/>
-                          </div>
-                        </div>
-
-                        <div className="field">
-                          <div className="control">
-                            <input className="input is-large" type="text" name="surname" placeholder="Cognome"
-                                   required/>
-                          </div>
-                        </div>
+                  <div className="field-body">
+                    <div className="field">
+                      <div className="control">
+                        <input className="input is-large" type="text" name="name" placeholder="Nome" required/>
                       </div>
+                    </div>
 
-                      <div className="field">
-                        <div className="control">
-                          <input className="input is-large" type="email" name="email" placeholder="Email" required/>
-                        </div>
+                    <div className="field">
+                      <div className="control">
+                        <input className="input is-large" type="text" name="surname" placeholder="Cognome"
+                               required/>
                       </div>
+                    </div>
+                  </div>
 
-                      <div className="field">
-                        <div className="control">
-                          <div className="select is-large">
-                            <select name="subject">
-                              <option>Informazioni Hotel</option>
-                              <option>Informazioni Spazi per studenti</option>
-                              <option>Altro</option>
-                            </select>
-                          </div>
-                        </div>
+                  <div className="field">
+                    <div className="control">
+                      <input className="input is-large" type="email" name="_replyto" placeholder="Email" required/>
+                    </div>
+                  </div>
+
+                  <div className="field">
+                    <div className="control">
+                      <div className="select is-large">
+                        <select name="subject">
+                          <option>Informazioni Hotel</option>
+                          <option>Informazioni Spazi per studenti</option>
+                          <option>Altro</option>
+                        </select>
                       </div>
+                    </div>
+                  </div>
 
-                      <div className="field">
-                        <div className="control">
+                  <div className="field">
+                    <div className="control">
                           <textarea className="textarea is-large" name="message"
                                     placeholder="Come possiamo aiutarti?" required></textarea>
-                        </div>
-                      </div>
-
-                      <div className="control has-text-right">
-                        <button type="submit" className="button is-primary is-large">Invia</button>
-                      </div>
-                    </div>}
+                    </div>
                   </div>
-                )}
 
-              </NetlifyForm>
+                  <input type="hidden" name="_next" value="https://studenthotels.it" />
+                  <input type="hidden" name="_subject" value="Nuovo messaggio!" />
+                  <input type="hidden" name="_language" value="it" />
+
+                  <div className="control has-text-right">
+                    <button type="submit" className="button is-primary is-large">Invia</button>
+                  </div>
+
+              </form>
 
             </div>
 
