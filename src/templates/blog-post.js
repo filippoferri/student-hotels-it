@@ -27,8 +27,8 @@ export const BlogPostTemplate = ({
     newsletterImage
   }) => {
 
-  const path = 'https://studenthotels.it/' + {slug}
-   const PostContent = contentComponent || Content;
+  const path = "https://studenthotels.it/" + { slug };
+  const PostContent = contentComponent || Content;
 
   return (
     <main className="blog-post">
@@ -64,7 +64,10 @@ export const BlogPostTemplate = ({
                     <figure className="image is-96x96">
                       <img className="is-rounded" src="https://source.unsplash.com/vXQza9AUe40/300x300" alt=""/>
                     </figure>
-                    <div className="is-inline-block" style={{'flex': '1'}}><span className="has-text-weight-semi-bold">Scritto da Alexia Zanti</span><br/>Alexia è consulente Branding in StudentHotels. Ha ricevuto la nomination come miglior taglio di capelli in ufficio.</div>
+                    <div className="is-inline-block" style={{ "flex": "1" }}><span
+                      className="has-text-weight-semi-bold">Scritto da Alexia Zanti</span><br/>Alexia è consulente
+                      Branding in StudentHotels. Ha ricevuto la nomination come miglior taglio di capelli in ufficio.
+                    </div>
                   </div>
                 </div>
 
@@ -83,8 +86,9 @@ export const BlogPostTemplate = ({
           </div>
           <div className="columns">
             <div className="column is-8-desktop is-offset-2-desktop">
+
               <div className="content">
-                <AddDisqus title={title} url={path} />
+                <AddDisqus title={title} url={path}/>
               </div>
             </div>
           </div>
@@ -172,13 +176,20 @@ const BlogPost = ({ data }) => {
     { property: "og:site_name", content: "StudentHotels.it" }
   ];
 
+  const scripts = [
+    { "src": "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      "type": "text/javascript",
+     "async": "" },
+    { innerHTML: `(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-6075875758616092",enable_page_level_ads: true});` }
+  ];
+
   return (
     <BlogPostTemplate
       slug={post.fields.slug}
       content={post.html}
       contentComponent={HTMLContent}
       description={post.frontmatter.description}
-      helmet={<Helmet title={`${post.frontmatter.title} | Student Hotels`} meta={meta}/>}
+      helmet={<Helmet title={`${post.frontmatter.title} | Student Hotels`} meta={meta} script={scripts}/>}
       tags={post.frontmatter.tags}
       title={post.frontmatter.title}
       heroImage={post.frontmatter.heroImage}

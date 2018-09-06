@@ -89,7 +89,7 @@ class HotelPageTemplate extends React.Component {
 
                   {images ?
                     <div className="sh-hotel-gallery">
-                      <HotelImages data={images} hotelId={hotel.id}/>
+                      <HotelImages data={images} hotelId={hotel.id} hotelName={hotel.label}/>
                     </div>
                     : null}
 

@@ -1,8 +1,8 @@
 .sh-cookie-bar-container
-  right: 30px
-  bottom: 30px !important
-  width: 200px
-  padding: 10px
+  left: 10px
+  right: 10px
+  bottom: 10px !important
+  padding: 1rem
   font-size: 12px
   text-align: left
   font-weight: 300
@@ -13,6 +13,13 @@
   color: #777
   border-radius: 4px
   z-index: 999
+
+  @media ( min-width: $desktop )
+    width: 200px
+    left: auto
+    right: 30px
+    bottom: 30px !important
+    padding: 10px
 
 .sh-cookie-bar-close
   display: inline-block

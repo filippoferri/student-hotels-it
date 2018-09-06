@@ -54,7 +54,7 @@ class HotelImages extends React.Component {
               {images.map((image, index) => {
                 return (
                   <img key={index} data-id={index}
-                       src={"https://photo.hotellook.com/image_v2/limit/" + image + "/1000/520.auto"} alt=""/>
+                       src={"https://photo.hotellook.com/image_v2/limit/" + image + "/1000/520.auto"} alt={this.props.hotelName + " - Image " + index}/>
                 );
               })}
             </Carousel>

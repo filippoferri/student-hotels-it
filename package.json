@@ -37,6 +37,7 @@
     "nuka-carousel": "^4.3.6",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
+    "react-adsense": "0.0.6",
     "react-autosuggest": "^9.4.0",
     "react-axios": "^2.0.0",
     "react-body-classname": "^1.2.0",
