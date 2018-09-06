@@ -178,7 +178,6 @@ const BlogPost = ({ data }) => {
 
   const scripts = [
     { "src": "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
-      "type": "text/javascript",
      "async": "" },
     { innerHTML: `(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-6075875758616092",enable_page_level_ads: true});` }
   ];
