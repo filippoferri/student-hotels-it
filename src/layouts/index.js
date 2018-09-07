@@ -10,30 +10,31 @@ import "./all.sass";
 
 import Social from '../img/social_800x800.png';
 
+const socialImg = Social;
 
 const TemplateWrapper = ({ children }) => (
   <wrapper>
+
     <Helmet
-      title="Student Hotels Italia: hotel a misura di studente a prezzi economici"
+      title="Student Hotels: hotel a misura di studente a prezzi economici"
       meta={[
         { name: "description", content: "Student Hotels in Italia da 30€ ✓ Confronta i migliori prezzi ✓ Prenota con facilità ✓ Risparmia fino al 60%" },
 
-        { name: "twitter:site", content: "https://studenthotels.it" },
-        { name: "twitter:creator", content: "StudentHotels.it" },
+        { name: "twitter:card", content: "summary" },
+        { name: "twitter:site", content: "@studenthotels" },
         { name: "twitter:title", content: "Il motore di ricerca degli hotel a misura di studente" },
-        { name: "twitter:image", content: Social },
+        { name: "twitter:description", content: "Student Hotels in Italia da 30€ ✓ Confronta i migliori prezzi ✓ Prenota con facilità ✓ Risparmia fino al 60%" },
+        { name: "twitter:author", content:  "@studenthotels"  },
+        { name: "twitter:image", content:  socialImg },
 
-        { property: "og:title", content: "StudentHotels.it"},
-        { property: "og:site_name", content: "studenthotels.it" },
+        { property: "og:title", content: "Student Hotels: hotel a misura di studente a prezzi economici"},
+        { property: "og:type", content: "article" },
         { property: "og:url", content: "https://studenthotels.it" },
+        { property: "og:image", content: socialImg },
         { property: "og:description", content: "Student Hotels in Italia da 40€ ✓ Confronta i migliori prezzi ✓ Prenota con facilità ✓ Risparmia fino al 60%" },
-        { property: "og:image", content: Social },
-        { property: "og:type", content: "website" },
-      ]}
-      script={[
-        { "src": "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
-          "async": "" },
-        { innerHTML: `(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-6075875758616092",enable_page_level_ads: true});` }
+        { property: "og:site_name", content: "studenthotels.it" },
+        { property: "og:author", content: "https://www.facebook.com/studenthotels" },
+        { property: "fb:admins", content: "271106406768998" },
       ]}
     />
     <Navbar/>

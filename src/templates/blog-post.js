@@ -160,23 +160,20 @@ const BlogPost = ({ data }) => {
   const meta = [
     { name: "description", content: post.frontmatter.description },
 
-    { name: "twitter:creator", content: "StudentHotels.it" },
-    { name: "twitter:site", content: post.fields.slug },
+    { name: "twitter:card", content: "summary" },
+    { name: "twitter:site", content: "@studenthotels" },
     { name: "twitter:title", content: post.frontmatter.title },
+    { name: "twitter:author", content:  "@studenthotels"  },
     { name: "twitter:image", content: "https://studenthotels.it" + post.frontmatter.heroImage.childImageSharp.sizes.src },
 
-    { property: "og:site_name", content: "StudentHotels.it" },
+    { property: "og:type", content: "article" },
     { property: "og:url", content: post.fields.slug },
     { property: "og:title", content: post.fields.title },
     { property: "og:description", content: post.frontmatter.description },
     { property: "og:image", content: "https://studenthotels.it" + post.frontmatter.heroImage.childImageSharp.sizes.src },
-    { property: "og:type", content: "website" },
-  ];
-
-  const scripts = [
-    { "src": "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
-     "async": "" },
-    { innerHTML: `(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-6075875758616092",enable_page_level_ads: true});` }
+    { property: "og:site_name", content: "studenthotels.it" },
+    { property: "og:author", content: "https://www.facebook.com/studenthotels" },
+    { property: "fb:admins", content: "271106406768998" },
   ];
 
   return (
