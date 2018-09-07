@@ -87,10 +87,10 @@ class Navbar extends React.Component {
                 
                 <footer>
                   <div className="columns is-mobile">
-                    <div className="column is-one-third-mobile has-text-centered">
+                    <div className="column is-one-third-mobile">
                       <Link to="/note-legali/condizioni-generali" onClick={this.collapsedMenu}>Condizioni</Link>
                     </div>
-                    <div className="column is-one-third-mobile">
+                    <div className="column is-one-third-mobile has-text-centered">
                       <Link to="/note-legali/termini-utilizzo" onClick={this.collapsedMenu}>Utilizzo</Link>
                     </div>
                     <div className="column is-one-third-mobile has-text-right">

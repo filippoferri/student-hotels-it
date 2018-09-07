@@ -32,7 +32,7 @@ const LatestNews = ({ content,posts }) => {
       <div className="container">
 
         <div className="is-centered has-margin-bottom">
-          <h3 className="title has-text-weight-bold is-3">{content.posts.title}</h3>
+          <h3 className="title is-3">{content.posts.title}</h3>
           <p className="">{content.posts.subtitle}</p>
         </div>
 
