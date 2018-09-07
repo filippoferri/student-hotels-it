@@ -27,7 +27,7 @@ export const BlogPostTemplate = ({
     newsletterImage
   }) => {
 
-  const path = "https://studenthotels.it/" + { slug };
+  const path = "https://studenthotels.it/" +  slug;
   const PostContent = contentComponent || Content;
 
   return (
@@ -40,7 +40,7 @@ export const BlogPostTemplate = ({
       <section className="section">
         <div className="container">
           <div className="columns">
-            <div className="column is-6-desktop is-offset-3-desktop">
+            <div className="column is-8-desktop is-offset-2-desktop">
 
               <div className="content">
 
@@ -66,7 +66,7 @@ export const BlogPostTemplate = ({
                     </figure>
                     <div className="is-inline-block" style={{ "flex": "1" }}><span
                       className="has-text-weight-semi-bold">Scritto da Alexia Zanti</span><br/>Alexia è consulente
-                      Branding in StudentHotels. Ha ricevuto la nomination come miglior taglio di capelli in ufficio.
+                      Branding in StudentHotels. Ama viaggiare e dispensare consigli. Ha ricevuto la nomination come miglior taglio di capelli in ufficio.
                     </div>
                   </div>
                 </div>
@@ -75,7 +75,7 @@ export const BlogPostTemplate = ({
                   <div className="is-flex is-flex-center">
                     <div><span className="has-text-weight-semi-bold">Condividi:</span></div>
                     <div className="has-text-right">
-                      <SharePost shareUrl="/" title={title}/>
+                      <SharePost shareUrl={path} title={title} media={heroImage.childImageSharp.sizes.src}/>
                     </div>
                   </div>
                 </div>
@@ -160,20 +160,17 @@ const BlogPost = ({ data }) => {
   const meta = [
     { name: "description", content: post.frontmatter.description },
 
-    { name: "twitter:site", content: "studenthotels.it" },
     { name: "twitter:creator", content: "StudentHotels.it" },
+    { name: "twitter:site", content: post.fields.slug },
     { name: "twitter:title", content: post.frontmatter.title },
-    {
-      name: "twitter:image",
-      content: "https//studenthotels.it" + post.frontmatter.heroImage.childImageSharp.sizes.src
-    },
+    { name: "twitter:image", content: "https://studenthotels.it" + post.frontmatter.heroImage.childImageSharp.sizes.src },
 
-    { property: "og:title", content: post.frontmatter.title },
-    { property: "og:site_name", content: "studenthotels.it" },
-    { property: "og:type", content: "website" },
+    { property: "og:site_name", content: "StudentHotels.it" },
+    { property: "og:url", content: post.fields.slug },
+    { property: "og:title", content: post.fields.title },
     { property: "og:description", content: post.frontmatter.description },
-    { property: "og:image", content: "https//studenthotels.it" + post.frontmatter.heroImage.childImageSharp.sizes.src },
-    { property: "og:site_name", content: "StudentHotels.it" }
+    { property: "og:image", content: "https://studenthotels.it" + post.frontmatter.heroImage.childImageSharp.sizes.src },
+    { property: "og:type", content: "website" },
   ];
 
   const scripts = [

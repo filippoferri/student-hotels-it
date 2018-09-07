@@ -15,3 +15,7 @@
 
     &:focus
       outline: none
+
+    &:focus:not(:active),
+    &.is-focused:not(:active)
+      box-shadow: none

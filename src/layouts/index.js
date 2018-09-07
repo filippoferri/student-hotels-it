@@ -8,25 +8,32 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./all.sass";
 
+import Social from '../img/social_800x800.png';
+
+
 const TemplateWrapper = ({ children }) => (
   <wrapper>
     <Helmet
-      title="Student Hotels Italia: hotel a misura di studente a prezzi convenienti"
+      title="Student Hotels Italia: hotel a misura di studente a prezzi economici"
       meta={[
-        { name: "description", content: "Student Hotels - Il motore di ricerca per strutture alberghiere con tutti i comfort per studenti" },
+        { name: "description", content: "Student Hotels in Italia da 30€ ✓ Confronta i migliori prezzi ✓ Prenota con facilità ✓ Risparmia fino al 60%" },
 
-        { name: "twitter:site", content: "studenthotels.it" },
+        { name: "twitter:site", content: "https://studenthotels.it" },
         { name: "twitter:creator", content: "StudentHotels.it" },
-        { name: "twitter:title", content: "Student Hotels Italia: il motore di ricerca degli hotel a misura di studente" },
-        { name: "twitter:image", content: "https://studenthotels.it/static/logo-footer.73a0979d.svg" },
+        { name: "twitter:title", content: "Il motore di ricerca degli hotel a misura di studente" },
+        { name: "twitter:image", content: Social },
 
-        { property: "og:title", content: "Student Hotels Italia: il motore di ricerca degli hotel a misura di studente"
-        },
+        { property: "og:title", content: "StudentHotels.it"},
         { property: "og:site_name", content: "studenthotels.it" },
+        { property: "og:url", content: "https://studenthotels.it" },
+        { property: "og:description", content: "Student Hotels in Italia da 40€ ✓ Confronta i migliori prezzi ✓ Prenota con facilità ✓ Risparmia fino al 60%" },
+        { property: "og:image", content: Social },
         { property: "og:type", content: "website" },
-        { property: "og:description", content: "Student Hotels - Il motore di ricerca per strutture alberghiere con tutti i comfort per studenti" },
-        { property: "og:image", content: "https://studenthotels.it/static/logo-footer.73a0979d.svg" },
-        { property: "og:site_name", content: "StudentHotels.it" }
+      ]}
+      script={[
+        { "src": "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+          "async": "" },
+        { innerHTML: `(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-6075875758616092",enable_page_level_ads: true});` }
       ]}
     />
     <Navbar/>
