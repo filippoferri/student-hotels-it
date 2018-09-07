@@ -173,7 +173,7 @@ const BlogPost = ({ data }) => {
     { property: "og:image", content: "https://studenthotels.it" + post.frontmatter.heroImage.childImageSharp.sizes.src },
     { property: "og:site_name", content: "studenthotels.it" },
     { property: "og:author", content: "https://www.facebook.com/studenthotels" },
-    { property: "fb:admins", content: "271106406768998" },
+    { property: "fb:admins", content: "271106406768998" }
   ];
 
   return (
@@ -182,7 +182,7 @@ const BlogPost = ({ data }) => {
       content={post.html}
       contentComponent={HTMLContent}
       description={post.frontmatter.description}
-      helmet={<Helmet title={`${post.frontmatter.title} | Student Hotels`} meta={meta} script={scripts}/>}
+      helmet={<Helmet title={`${post.frontmatter.title} | Student Hotels`} meta={meta}/>}
       tags={post.frontmatter.tags}
       title={post.frontmatter.title}
       heroImage={post.frontmatter.heroImage}

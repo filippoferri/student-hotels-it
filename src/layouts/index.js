@@ -34,7 +34,7 @@ const TemplateWrapper = ({ children }) => (
         { property: "og:description", content: "Student Hotels in Italia da 40€ ✓ Confronta i migliori prezzi ✓ Prenota con facilità ✓ Risparmia fino al 60%" },
         { property: "og:site_name", content: "studenthotels.it" },
         { property: "og:author", content: "https://www.facebook.com/studenthotels" },
-        { property: "fb:admins", content: "271106406768998" },
+        { property: "fb:admins", content: "271106406768998" }
       ]}
     />
     <Navbar/>
