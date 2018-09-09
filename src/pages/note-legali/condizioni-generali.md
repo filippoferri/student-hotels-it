@@ -89,7 +89,7 @@ Avvertimento all'utente;
 
 ### 8. Garanzia, prescrizione e responsabilità
 
-8.1. Problemi nel servizio di intermediazione devono essere comunicati dall'utente a StudentHotels.it entro un mese. Holidu ha il compito di porre rimedio, per quanto possibile. Il periodo decorre dalla fine contrattualmente prevista del servizio di intermediazione, ma non prima che l'utente venga a conoscenza delle circostanze che hanno dato luogo alle rivendicazioni nei confronti di StudentHotels.it.
+8.1. Problemi nel servizio di intermediazione devono essere comunicati dall'utente a StudentHotels.it entro un mese. StudentHotels.it ha il compito di porre rimedio, per quanto possibile. Il periodo decorre dalla fine contrattualmente prevista del servizio di intermediazione, ma non prima che l'utente venga a conoscenza delle circostanze che hanno dato luogo alle rivendicazioni nei confronti di StudentHotels.it.
 
 Il cliente è pregato di notare che StudentHotels.it non ha diritto e non è obbligato ad accettare segnalazioni di difetti se queste si riferiscono all'esecuzione del contratto da parte del terzo. Tali segnalazioni di problemi o reclami devono essere risolti direttamente in loco con il terzo ovvero dei suoi responsabili e sono soggetti a disposizioni legali o contrattuali specifiche.
 
@@ -101,7 +101,7 @@ Il cliente è pregato di notare che StudentHotels.it non ha diritto e non è obb
 
 8.5. La responsabilità di StudentHotels.it, ai sensi della legge sulla responsabilità del prodotto e di altre norme a essa relative, non risente delle limitazioni ed esclusioni di cui sopra.
 
-8.6. Qualora la responsabilità di StudentHotels.it venga esclusa o limitata, ciò vale anche per la responsabilità di impiegati, dipendenti, collaboratori, rappresentanti e agenti di Holidu.
+8.6. Qualora la responsabilità di StudentHotels.it venga esclusa o limitata, ciò vale anche per la responsabilità di impiegati, dipendenti, collaboratori, rappresentanti e agenti di StudentHotels.it.
 
 8.7. Le immagini, le mappe e i dati di localizzazione mostrati sul sito web servono esclusivamente all'individuazione della posizione esatta del rispettivo alloggio. Decisive per il contratto sono esclusivamente le informazioni contenute durante il procedimento di prenotazione sul sito web del terzo o nelle sue relative conferme.
 

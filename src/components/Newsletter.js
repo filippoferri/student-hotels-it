@@ -13,7 +13,7 @@ const Newsletter = ({image}) => (
 
     <div className="container">
       <div className="column is-three-fifths is-offset-one-fifth is-centered">
-        <h3 className="title is-3 is-spaced has-text-centered">Rimani in contatto</h3>
+        <h4 className="title is-3 is-spaced has-text-centered">Rimani in contatto</h4>
         <div className="field">
           <div className="control has-icons-left has-button-right">
             <SendToMailChimp/>

@@ -28,7 +28,7 @@ class HotelHero extends React.Component {
     return (
 
       <section>
-          <div className="hero is-medium is-primary">
+          <div className="hero is-medium has-background-primary">
 
             { location ?
               <div className="is-image-wrapper has-position-absolute"><img src={hero} /></div>
