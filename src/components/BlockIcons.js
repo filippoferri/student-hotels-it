@@ -19,19 +19,16 @@ const BlockIcons = () => {
             <div className="columns">
               <div className="column  has-text-centered">
                 <div className="sh-block-icon"><img src={IconSearch} alt="trova location"/></div>
-                <span className="is-uppercase has-text-weight-semibold">Cerca</span>
                 <h5 className="title is-5">Trova la location desiderata</h5>
                 <p>Con il nostro portale puoi scoprire la struttura perfetta per le tue esigenze cercando tra una vasta selezione di hotel per studenti in Italia e all'estero.</p>
               </div>
               <div className="column has-text-centered">
                 <div className="sh-block-icon"><img src={IconCompare} alt="compara i prezzi"/></div>
-                <span className="is-uppercase has-text-weight-semibold">Confronta</span>
                 <h5 className="title is-5">Compara le migliori offerte</h5>
                 <p>Esamina le strutture a cui sei interessato, controlla le recensioni degli utenti, segui le migliori raccomandazioni, consulta le mappe per evitare sorprese.</p>
               </div>
               <div className="column has-text-centered">
                 <div className="sh-block-icon"><img src={IconSave} alt="prenota student hotel"/></div>
-                <span className="is-uppercase has-text-weight-semibold">Risparmia</span>
                 <h5 className="title is-5">Prenota al prezzo più basso</h5>
                 <p>Consultando i prezzi tra i vari offerenti nel web (tra cui: Booking.com, Expedia, Agodà, Hotels.com) puoi risparmiare fino al 60% su ogni prenotazione.</p>
               </div>

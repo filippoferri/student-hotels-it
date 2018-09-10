@@ -166,6 +166,16 @@ class HotelPageTemplate extends React.Component {
 
           </section>
 
+          <section className="section is-small has-margin-bottom">
+            <div className="container">
+              <div className="columns">
+                <div className="column is-8-desktop is-offset-2-desktop">
+                  <span className="has-text-small">Nota: StudentHotels non è responsabile per l'inaccuratezza delle foto pubblicate. Le offerte e i prezzi pubblicati in questo sito sono soggetti a variazione, a seguito della verifica di disponibilità del periodo selezionato e della tipologia di camera richiesta che compongono la prenotazione. La variazione può avvenire nella fase di comparazione dei prezzi e nella fase di accesso a siti terzi di prenotazioni online.</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <Newsletter image={this.props.newsletterImage.childImageSharp.sizes}/>
 
           <AnteFooter/>
