@@ -11,7 +11,7 @@ const BlockIcons = () => {
 
         <div className="is-centered has-margin-bottom">
           <h3 className="title is-3">Risparmia sui migliori Student Hotel</h3>
-          <p className="">La forza del nostro team e delle nostre sofisticate tecnlogie</p>
+          <p className="">La forza del nostro team e delle nostre sofisticate tecnologie</p>
         </div>
 
         <div className="columns">
