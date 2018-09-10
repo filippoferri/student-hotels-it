@@ -17,7 +17,7 @@ const TagsPage = ({
   }) => (
   <main id="blog">
 
-    <Helmet title={`Tags | ${title}`}/>
+    <Helmet title={`Tags | ${title}`}><html lang="it" /></Helmet>
 
     <Hero image={frontmatter.heroImage.childImageSharp.sizes} heading=""/>
 

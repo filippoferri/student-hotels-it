@@ -14,8 +14,8 @@ const FeaturedHotels = () => (
 
         <div className="tile is-parent is-8">
             <article className="tile is-child notification is-paddingless">
-              <div className="is-image-wrapper"><img src={bgHotel} alt=""/></div>
-              <p className="tile-title title is-4 is-uppercase">Firenze</p>
+              <div className="is-image-wrapper"><img src={bgHotel} alt="Student Hotels a Firenze"/></div>
+              <p className="tile-title title is-4 is-uppercase has-background-secondary">Firenze</p>
               <Link className="tile-link" to="/camere/tsh-florence-lavagnini"></Link>
             </article>
         </div>

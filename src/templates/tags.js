@@ -46,7 +46,7 @@ class TagRoute extends React.Component {
     return (
       <main id="blog">
 
-        <Helmet title={`${tag} | ${title}`}/>
+        <Helmet title={`${tag} | ${title}`}><html lang="it" /></Helmet>
 
         <Hero image={heroImage.childImageSharp.sizes} heading={tagHeader}/>
 

@@ -15,7 +15,7 @@ const Tile = ({ post, style, hasbg }) => {
       <article
         className={"tile is-child notification has-min-height" + (style ? " " + style : "") + (hasbg ? " has-background" : " is-animated")}>
         {hasbg ?
-          <div className="is-image-wrapper has-position-absolute"><Img sizes={img}/></div>
+          <div className="is-image-wrapper has-position-absolute"><Img sizes={img} alt={title}/></div>
           : null}
         <p className="tile-title title is-4">{title}</p>
         <Link className="tile-link" to={url}></Link>
@@ -28,7 +28,7 @@ const Tile = ({ post, style, hasbg }) => {
 const LatestNews = ({ content,posts }) => {
 
   return (
-    <section id="latest-news" className="section has-margin-bottom">
+    <section id="latest-news" className="section">
       <div className="container">
 
         <div className="is-centered has-margin-bottom">

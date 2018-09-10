@@ -182,7 +182,7 @@ const BlogPost = ({ data }) => {
       content={post.html}
       contentComponent={HTMLContent}
       description={post.frontmatter.description}
-      helmet={<Helmet title={`${post.frontmatter.title} | Student Hotels`} meta={meta}/>}
+      helmet={<Helmet title={`${post.frontmatter.title} | Student Hotels`} meta={meta}><html lang="it" /></Helmet>}
       tags={post.frontmatter.tags}
       title={post.frontmatter.title}
       heroImage={post.frontmatter.heroImage}

@@ -60,7 +60,7 @@ const DefaultPage = ({ data }) => {
 
   return (
     <DefaultPageTemplate
-      helmet={<Helmet title={`${page.frontmatter.title} | Student Hotels`}/>}
+      helmet={<Helmet title={`${page.frontmatter.title} | Student Hotels`}><html lang="it" /></Helmet>}
       title={page.frontmatter.title}
       heroImage={page.frontmatter.heroImage}
       content={page.html}

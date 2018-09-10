@@ -88,7 +88,7 @@ const CareersPage = ({ data }) => {
 
   return (
     <CareersPageTemplate
-      helmet={<Helmet title={`${post.frontmatter.title} | Student Hotels`}/>}
+      helmet={<Helmet title={`${post.frontmatter.title} | Student Hotels`}><html lang="it" /></Helmet>}
       title={post.frontmatter.title}
       heroImage={post.frontmatter.heroImage}
       heading={post.frontmatter.heading}

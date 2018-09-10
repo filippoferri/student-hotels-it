@@ -36,7 +36,7 @@ const TemplateWrapper = ({ children }) => (
         { property: "og:author", content: "https://www.facebook.com/studenthotels" },
         { property: "fb:admins", content: "271106406768998" }
       ]}
-    />
+    ><html lang="it" /></Helmet>
     <Navbar/>
     {children()}
     <Footer/>
@@ -54,8 +54,8 @@ const TemplateWrapper = ({ children }) => (
 
       buttonText="×"
       extraCookieOptions={{domain: '//studenthotels.it'}}
-      debug={true}>
-      Questo sito utilizza i cookie. Per maggiori informazioni, clicca <Link to="note-legali/informativa-privacy">qui</Link>. Se per te va bene, continua a navigare.
+      debug={false}>
+      Questo sito utilizza i cookie. Per maggiori informazioni, clicca <Link to="note-legali/informativa-privacy">qui</Link>. Se per te va bene, continua a navigare StudentHotels.
     </CookieConsent>
   </wrapper>
 );

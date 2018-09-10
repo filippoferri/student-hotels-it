@@ -32,8 +32,7 @@ class DestinationRoute extends React.Component {
     return (
       <main>
 
-        <Helmet title={`${destination} | ${title}`}/>
-
+        <Helmet title={`${destination} | ${title}`}><html lang="it" /></Helmet>
 
         <Hero destination={destination} heading={destination}/>
 

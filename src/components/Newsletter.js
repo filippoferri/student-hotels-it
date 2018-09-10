@@ -9,7 +9,7 @@ import imageAlt from '../img/newsletter-studenthotels.jpg';
 const Newsletter = ({image}) => (
   <section className="section newsletter is-small is-primary">
 
-    <div className="is-image-wrapper has-position-absolute"><Img sizes={image ? image : imageAlt}/></div>
+    <div className="is-image-wrapper has-position-absolute"><Img sizes={image ? image : imageAlt} alt="Iscriviti alla Newsletter di StudentHotels.it"/></div>
 
     <div className="container">
       <div className="column is-three-fifths is-offset-one-fifth is-centered">

@@ -82,7 +82,7 @@ const FaqPage = ({ data }) => {
 
   return (
     <FaqPageTemplate
-      helmet={<Helmet title={`${frontmatter.title} | Student Hotels`}/>}
+      helmet={<Helmet title={`${frontmatter.title} | Student Hotels`}><html lang="it" /></Helmet>}
       title={frontmatter.title}
       heroImage={frontmatter.heroImage}
       heading={frontmatter.heading}

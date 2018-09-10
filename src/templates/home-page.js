@@ -5,6 +5,7 @@ import HomeHero from "../components/HomeHero";
 import HomeMosaic from "../components/HomeMosaic";
 import FeaturedHotels from "../components/FeaturedHotels";
 import LatestNews from "../components/LatestNews";
+import BlockIcon from "../components/BlockIcons";
 import Newsletter from "../components/Newsletter";
 import AnteFooter from "../components/AnteFooter";
 
@@ -25,6 +26,8 @@ export default class IndexPage extends React.Component {
         <HomeMosaic content={home.frontmatter} api={api.instagramAPI}/>
 
         <LatestNews content={home.frontmatter} posts={posts.edges}/>
+
+        <BlockIcon/>
 
         <Newsletter image={home.frontmatter.newsletterImage.childImageSharp.sizes}/>
 

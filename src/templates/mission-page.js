@@ -80,7 +80,7 @@ const MissionPage = ({ data }) => {
 
   return (
     <MissionPageTemplate
-      helmet={<Helmet title={`${frontmatter.title} | Student Hotels`}/>}
+      helmet={<Helmet title={`${frontmatter.title} | Student Hotels`}><html lang="it" /></Helmet>}
       title={frontmatter.title}
       image={frontmatter.heroImage}
       heading={frontmatter.heading}

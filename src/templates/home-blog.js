@@ -48,7 +48,7 @@ export default class BlogPage extends React.Component {
     return (
       <main id="blog">
 
-        <Helmet title={`Blog | Student Hotels`}/>
+        <Helmet title={`Blog | Student Hotels`}><html lang="it" /></Helmet>
 
         <Hero image={homeblog.frontmatter.heroImage.childImageSharp.sizes} heading={homeblog.frontmatter.title}/>
 

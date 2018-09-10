@@ -204,7 +204,7 @@ const HotelDetails = ({ data }) => {
     <HotelPageTemplate
       content={hotel.html}
       contentComponent={HTMLContent}
-      helmet={<Helmet title={`${hotel.frontmatter.title} | Student Hotels`}/>}
+      helmet={<Helmet title={`${hotel.frontmatter.title} | Student Hotels`}><html lang="it" /></Helmet>}
       destinations={hotel.frontmatter.destination}
       facilities={hotel.frontmatter.facilities}
       title={hotel.frontmatter.title}

@@ -12,7 +12,7 @@ import hotelsdotcom from "../img/agencies/hotelsdotcom.png";
 const HomeHero = ({ content }) => (
   <section className="hero has-background-primary is-fullheight">
     <div className="hero-slides">
-      <Img sizes={content.heroImage.childImageSharp.sizes}/>
+      <Img sizes={content.heroImage.childImageSharp.sizes} alt={content.title}/>
     </div>
     <div className="hero-body is-home-hero">
       <div className="container is-centered">
@@ -34,10 +34,10 @@ const HomeHero = ({ content }) => (
     <div className="hero-partners has-text-centered is-hidden-touch">
       <span>Confronta i prezzi fra le principali agenzie di viaggio</span>
       <div className="level is-flex-center">
-        <div className="level-item has-small-padding"><img src={agoda} alt=""/></div>
-        <div className="level-item has-small-padding"><img src={bookingcom} alt=""/></div>
-        <div className="level-item has-small-padding"><img src={expedia} alt=""/></div>
-        <div className="level-item has-small-padding"><img src={hotelsdotcom} alt=""/></div>
+        <div className="level-item has-small-padding"><img src={agoda} alt="Agodà"/></div>
+        <div className="level-item has-small-padding"><img src={bookingcom} alt="Booking.com"/></div>
+        <div className="level-item has-small-padding"><img src={expedia} alt="Expedia"/></div>
+        <div className="level-item has-small-padding"><img src={hotelsdotcom} alt="Hotels.com"/></div>
       </div>
     </div>
 
