@@ -5,7 +5,7 @@
   left: 0
   right: 0
 
-  @media (min-width: 65rem)
+  @media (min-width: $desktop)
     background: transparent
     position: absolute
 
@@ -13,11 +13,14 @@
 .navbar-brand
   width: 100%
 
+  @media (min-width: $desktop)
+    width: auto
+
   img.logo
     width: 2rem
     margin-left: .5rem
 
-    @media (min-width: 65rem)
+    @media (min-width: $desktop)
       width: 4rem
 
   .navbar-burger
@@ -27,6 +30,9 @@
     color: white
     width: 4rem
     height: 4rem
+
+    @media (min-width: $desktop)
+      display: none
 
 .sh-modal
   position: fixed
@@ -97,7 +103,7 @@
     &::before
       opacity: 1
 
-    @media (min-width: 65rem)
+    @media (min-width: $desktop)
       .sh-off-menu
         width: calc(100vw - 32rem)
 
@@ -106,7 +112,7 @@
       transform: translate3d(0, 0, 0)
       width: 100vw
 
-      @media (min-width: 65rem)
+      @media (min-width: $desktop)
         width: 28rem
 
   .sh-nav-wrapper
@@ -135,7 +141,7 @@
         display: block
         color: $black
 
-        @media (min-width: 65rem)
+        @media (min-width: $desktop)
           margin-bottom: 1.5rem
 
     .sh-nav-copy

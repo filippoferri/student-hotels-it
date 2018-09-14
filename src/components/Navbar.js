@@ -55,6 +55,13 @@ class Navbar extends React.Component {
               <span aria-hidden="true"></span>
             </a>
           </div>
+          <div className="navbar-menu navbar-end">
+
+            <Link to="/mission" className="navbar-item">Mission</Link>
+            <Link to="/blog" className="navbar-item">Blog</Link>
+            <Link to="/faq" className="navbar-item">Faq</Link>
+
+          </div>
         </div>
 
         {expandedMenu}
