@@ -100,6 +100,17 @@ a,
 .has-background-gradient-secondary
   background-image: linear-gradient(-45deg, #6A82E7 0%, #10E8D7 100%)
 
+.button.is-violet
+  background-color: #6A82E7
+  color: white
+  border-color: #6A82E7
+  transition: all .2s ease-in-out
+
+  &:hover,
+  &:focus
+    color: white
+    background-color: darken(#ED3BC0, 10%)
+
 // Helper Classes
 .is-centered
   text-align: center
@@ -227,6 +238,9 @@ a,
 
 .notification.has-icon-right
   padding-right: 4rem
+
+.button.is-large.has-text-medium
+  font-size: 1.3rem
 
 // content
 .content

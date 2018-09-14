@@ -37,7 +37,7 @@ class Navbar extends React.Component {
 
   render() {
     var expandedMenu = this.getMenuDiv();
-    const isActive = this.state.active
+    const isActive = this.state.active;
 
     return (
       <nav className="navbar is-transparent">
