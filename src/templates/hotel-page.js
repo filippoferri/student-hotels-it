@@ -73,7 +73,7 @@ class HotelPageTemplate extends React.Component {
 
           {this.props.helmet || ""}
 
-          <HotelHero locationId={hotel.locationId} heading={this.props.heading}/>
+          <HotelHero locationId={this.props.details[0].cityid} heading={this.props.heading}/>
 
           <section className="section">
             <div className="container">
@@ -128,7 +128,8 @@ class HotelPageTemplate extends React.Component {
                                hotelName={hotel.label}
                                hotelId={hotel.id}
                                checkIn={this.state.checkIn}
-                               checkOut={this.state.checkOut}/>
+                               checkOut={this.state.checkOut}
+                               pricefrom={this.props.details[0].pricefrom}/>
 
                   <div className="has-text-left">
 
@@ -180,12 +181,9 @@ class HotelPageTemplate extends React.Component {
 
           <AnteFooter/>
 
-        </main> : <main className="is-loader-wrapper has-text-black">
-          <div className="cont">
-            <div className="dot" id="dot-1"></div>
-            <div className="dot" id="dot-2"></div>
-            <div className="dot" id="dot-3"></div>
-          </div>
+        </main> :
+        <main className="is-loader-wrapper has-text-black">
+          <div className="hexagon is-accent"></div>
         </main>
     );
   }
@@ -202,6 +200,7 @@ HotelPageTemplate.propTypes = {
   helmet: PropTypes.object,
   hotel: PropTypes.object,
   images: PropTypes.object,
+  details: PropTypes.array
 };
 
 const HotelDetails = ({ data }) => {
@@ -221,6 +220,7 @@ const HotelDetails = ({ data }) => {
       hotelId={hotel.frontmatter.hotelId}
       address={hotel.frontmatter.address}
       heading={hotel.frontmatter.heading}
+      details={hotel.frontmatter.details}
       newsletterImage={image.frontmatter.newsletterImage}
     />
   );
@@ -246,6 +246,13 @@ export const pageQuery = graphql`
         address
         facilities
         destinations
+        details {
+          cityid
+          stars
+          pricefrom
+          rating
+          distance
+        }
       }
     }
     newsletter: allMarkdownRemark(

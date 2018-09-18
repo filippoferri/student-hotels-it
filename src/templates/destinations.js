@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 
+import _ from 'lodash'
 import Hero from "../components/DestinationHero";
 import Newsletter from "../components/Newsletter";
 import AnteFooter from "../components/AnteFooter";
@@ -12,8 +13,8 @@ class DestinationRoute extends React.Component {
     let stars = [];
     _.times(num, (i) => {
       stars.push(<i key={i}></i>);
-    })
-    return stars
+    });
+    return stars;
   }
 
   render() {
@@ -32,7 +33,9 @@ class DestinationRoute extends React.Component {
     return (
       <main>
 
-        <Helmet title={`${destination} | ${title}`}><html lang="it" /></Helmet>
+        <Helmet title={`${destination} | ${title}`}>
+          <html lang="it"/>
+        </Helmet>
 
         <Hero destination={destination} heading={destination}/>
 
@@ -61,7 +64,8 @@ class DestinationRoute extends React.Component {
                         </div>
                         <Link className="sh-blog-link" to={hotel.node.fields.slug}><span
                           className="title is-5">{hotel.node.frontmatter.title}</span></Link>
-                        <div className="has-text-small"><span>Da {hotel.node.frontmatter.details[0].pricefrom}&euro; a notte</span></div>
+                        <div className="has-text-small"><span>Da {hotel.node.frontmatter.details[0].pricefrom}&euro; a notte</span>
+                        </div>
                       </div>
                     </div>
                   </div>

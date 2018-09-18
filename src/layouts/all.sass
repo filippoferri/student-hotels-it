@@ -40,7 +40,7 @@
 
 // General
 html
-  overflow: auto
+  overflow-y: auto !important
 
 body.has-overflow-hidden
   overflow: hidden
@@ -118,6 +118,9 @@ a,
 .has-margin-bottom
   margin-bottom: 3rem
 
+.has-margin-top
+  margin-top: 3rem
+
 .is-primary-gradient
   background: linear-gradient(-45deg, #C53364 0%, #622774 100%)
 
@@ -192,26 +195,44 @@ a,
   align-items: center
   justify-content: center
 
-  .cont
+  .hexagon
+    width: 100px
+    height: 55px
+    position: relative
+    display: inline-block
+    animation: fade 3s linear infinite
+    -webkit-animation: fade 3s linear infinite
 
-    .dot
-      width: 10px
-      height: 10px
-      background-color: $primary
-      border-radius: 10px
-      margin: 9px
+    &:before
+      content: ""
+      position: absolute
+      top: -25px
+      left: 0
+      width: 0
+      height: 0
+      border-left: 50px solid transparent
+      border-right: 50px solid transparent
 
-    #dot-1
-      animation: loading 4s cubic-bezier(.1,1,1,.1) infinite
-      animation-delay: 2s
+    &.hexagon:after
+      content: ""
+      position: absolute
+      bottom: -25px
+      left: 0
+      width: 0
+      height: 0
+      border-left: 50px solid transparent
+      border-right: 50px solid transparent
 
-    #dot-2
-      animation: loading 4s cubic-bezier(.1,1,1,.1) infinite
-      animation-delay: 2.3s
+    &.is-accent
+      background: $accent
+      top: 25px
+      left: 50px
 
-    #dot-3
-      animation: loading 4s cubic-bezier(.1,1,1,.1) infinite
-      animation-delay: 2.6s
+      &:before
+        border-bottom: 25px solid $accent
+
+      &:after
+        border-top: 25px solid $accent
 
 
 .is-fill

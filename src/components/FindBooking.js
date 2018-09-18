@@ -27,7 +27,7 @@ class FindBooking extends React.Component {
   render() {
 
     const { prices } = this.state;
-    const priceFrom = prices ? prices.priceFrom : 88;
+    const priceFrom = prices ? prices.priceFrom : this.props.pricefrom;
     const goTo = "http://booking.studenthotels.it/hotels/?hotelId=" + this.props.hotelId + "&language=it";
 
     return (
