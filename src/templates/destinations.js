@@ -42,11 +42,11 @@ class DestinationRoute extends React.Component {
         <section className="section">
           <div className="container has-margin-bottom has-margin-top">
             <div className="sh-list-header"><span className="title is-4">{totalCount} Student Hotel</span></div>
-            <div className="columns is-variable is-6 is-multiline">
+            <div className="columns is-variable is-multiline">
 
               {hotels.map((hotel, i) =>
-                <div className="column is-4">
-                  <div className="sh-hotel-list-item" key={i}>
+                <div className="column is-4-desktop" key={i}>
+                  <div className="sh-hotel-list-item">
                     <div className="img-container">
                       <div className="is-image-wrapper">
                         <Link className="sh-blog-link" to={hotel.node.fields.slug}>

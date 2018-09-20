@@ -5,14 +5,20 @@
   margin-bottom: 1.5rem
 
   .img-container
-    height: 15rem
+    height: 10rem
+
+    @media (min-width: $desktop)
+      height: 15rem
 
     img
       border-radius: 4px
 
   .sh-second-block
     position: relative
-    padding: 1rem 1rem 0 1rem
+    padding: 1rem 0 0 0
+
+    @media (min-width: $desktop)
+      padding: 1rem 1rem 0 1rem
 
     .sh-hotel-rating
       display: inline-block
