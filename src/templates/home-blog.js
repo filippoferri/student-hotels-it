@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import Link from "gatsby-link";
+import Img from "gatsby-image";
 
 import Hero from "../components/Hero";
 import Newsletter from "../components/Newsletter";
@@ -15,26 +16,27 @@ export default class BlogPage extends React.Component {
 
   addClass() {
     var newclass;
-    const num = this.variation(1,8);
+    const num = this.variation(1, 4);
 
-    switch(num) {
+    switch (num) {
       case 1:
-        newclass = " is-primary";
-        break;
-      case 2:
         newclass = " is-secondary";
         break;
-      case 3:
+      case 2:
         newclass = " is-greenish";
         break;
-      case 4:
+      case 3:
         newclass = " is-sunset";
         break;
       default:
-        newclass = "";
+        newclass = " is-primary";
     }
 
-    return newclass
+    return newclass;
+  }
+
+  findImage(image, title) {
+    return <div className="is-image-wrapper has-position-absolute"><Img sizes={image} alt={title} /></div>
   }
 
   render() {
@@ -48,7 +50,9 @@ export default class BlogPage extends React.Component {
     return (
       <main id="blog">
 
-        <Helmet title={`Blog | Student Hotels`}><html lang="it" /></Helmet>
+        <Helmet title={`Blog | Student Hotels`}>
+          <html lang="it"/>
+        </Helmet>
 
         <Hero image={homeblog.frontmatter.heroImage.childImageSharp.sizes} heading={homeblog.frontmatter.title}/>
 
@@ -61,19 +65,11 @@ export default class BlogPage extends React.Component {
                     className="column is-6-tablet is-4-desktop"
                     key={i}
                   >
-                    <article
-                      className={"notification" + this.addClass()}>
+                    <article>
+                      <Link to={post.fields.slug} className={"notification is-paddingless" + this.addClass()}>{this.findImage(post.frontmatter.heroImage.childImageSharp.sizes, post.frontmatter.title)}</Link>
                       <div className="sh-blog-content">
-                        <span className="title is-3">{post.frontmatter.title}</span>
-
-                        <div className="sh-blog-date">
-                          <small>{post.frontmatter.date}</small>
-                        </div>
-                        <p>
-                          {post.excerpt}
-                        </p>
+                        <Link to={post.fields.slug} className="title is-5">{post.frontmatter.title}</Link>
                       </div>
-                      <Link className="sh-blog-link" to={post.fields.slug}></Link>
                     </article>
                   </div>
                 ))}
@@ -106,7 +102,6 @@ export const blogPageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 200)
           id
           fields {
             slug
@@ -115,6 +110,13 @@ export const blogPageQuery = graphql`
             title
             templateKey
             date(formatString: "DD MMMM, YYYY", locale: "it")
+            heroImage {
+              childImageSharp{
+                sizes(maxWidth: 600) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
         }
       }

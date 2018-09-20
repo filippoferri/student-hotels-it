@@ -55,7 +55,7 @@ const TemplateWrapper = ({ children }) => (
       buttonText="×"
       extraCookieOptions={{domain: '//studenthotels.it'}}
       debug={false}>
-      Questo sito utilizza i cookie. Per maggiori informazioni, clicca <Link to="note-legali/informativa-privacy">qui</Link>. Se per te va bene, continua a navigare StudentHotels.
+      Questo sito utilizza i cookie. Per maggiori informazioni, clicca <Link to="/note-legali/informativa-privacy">qui</Link>. Se per te va bene, continua a navigare StudentHotels.
     </CookieConsent>
   </wrapper>
 );

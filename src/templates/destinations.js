@@ -64,7 +64,7 @@ class DestinationRoute extends React.Component {
                         </div>
                         <Link className="sh-blog-link" to={hotel.node.fields.slug}><span
                           className="title is-5">{hotel.node.frontmatter.title}</span></Link>
-                        <div className="has-text-small"><span>Da {hotel.node.frontmatter.details[0].pricefrom}&euro; a notte</span>
+                        <div className="has-text-small"><span>Da {hotel.node.frontmatter.details[0].pricefrom} &euro; a notte</span>
                         </div>
                       </div>
                     </div>

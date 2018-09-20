@@ -10,61 +10,31 @@
   .has-margin-bottom
     margin-bottom: 3rem
 
-  article.notification
+  article
+    display: block
     position: relative
-    padding: 2rem
-    overflow: hidden
+    margin-bottom: 3rem
 
-    @media (min-width: 769px)
-      height: 30rem
-      padding: 1.25rem 2.5rem 1.25rem 1.5rem
-
-      .title
-        text-transform: uppercase
-
-    .title.is-3
-      font-size: 1.6rem
-
-      @media (min-width: $fullhd)
-        font-size: 2rem
-
-    .sh-blog-date
-      margin: 1rem 0
-
-    @media (min-width: $desktop)
-      &:after
-        content: ''
-        width: 0
-        height: 100%
-        position: absolute
-        top: 0
-        right: 0
-        bottom: 0
-        left: 0
-        background: $black
-        transition: width .4s cubic-bezier(.77,0,.175,1),opacity 50ms linear .4s
-        z-index: 1
-
-      &.is-black:after
-        background: $primary
-
-      &:hover:after
-        width: 100%
-
-      &:hover
-        color: white
-
-    .sh-blog-content
-      position: relative
-      z-index: 2
-
-    .sh-blog-link
+    .notification
       display: block
-      width: 100%
-      height: 100%
-      position: absolute
-      top: 0
-      right: 0
-      bottom: 0
-      left: 0
-      z-index: 3
+      height: 200px
+      overflow: hidden
+
+      .gatsby-image-wrapper,
+      .gatsby-image-outer-wrapper
+        height: 100%
+        transition: transform .2s ease-in-out
+
+      img
+        mix-blend-mode: overlay
+        transition: all .2s ease-in-out
+
+    .title
+      display: block
+      line-height: 1.3
+      padding: 0 1rem
+      opacity: 1
+      transition: all .1s ease-in-out
+
+    &:hover .title
+      opacity: .7

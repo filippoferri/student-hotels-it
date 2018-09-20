@@ -9,7 +9,7 @@ class HotelHero extends React.Component {
   render() {
 
     const location = this.props.destination;
-    const hero = "//bit.ly/shxyz-" + location;
+    const hero = "//bit.ly/shxyz-" + location + "-studenthotels";
 
     return (
       <section>
