@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 
-import _ from 'lodash'
+import _ from "lodash";
 import Hero from "../components/DestinationHero";
 import Newsletter from "../components/Newsletter";
 import AnteFooter from "../components/AnteFooter";
@@ -42,11 +42,10 @@ class DestinationRoute extends React.Component {
         <section className="section">
           <div className="container has-margin-bottom has-margin-top">
             <div className="sh-list-header"><span className="title is-4">{totalCount} Student Hotel</span></div>
-            <div className="columns is-multiline">
+            <div className="columns is-variable is-6 is-multiline">
 
-              <div className="column is-4">
-
-                {hotels.map((hotel, i) =>
+              {hotels.map((hotel, i) =>
+                <div className="column is-4">
                   <div className="sh-hotel-list-item" key={i}>
                     <div className="img-container">
                       <div className="is-image-wrapper">
@@ -69,9 +68,8 @@ class DestinationRoute extends React.Component {
                       </div>
                     </div>
                   </div>
-                )}
-
-              </div>
+                </div>
+              )}
 
             </div>
           </div>

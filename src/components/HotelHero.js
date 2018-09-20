@@ -23,7 +23,6 @@ class HotelHero extends React.Component {
   render() {
 
     const {location} = this.state;
-    console.log({location})
     const hero = location ? "Https://photo.hotellook.com/static/cities/1200x720/" + location.iata[0] + ".jpg" : ""
 
     return (

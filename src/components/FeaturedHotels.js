@@ -18,7 +18,7 @@ const FeaturedHotels = () => (
           <article className="tile is-child notification is-paddingless">
             <div className="is-image-wrapper"><img src={bgFlorence} alt="Student Hotels a Firenze"/></div>
             <p className="tile-title title is-4 is-uppercase has-background-secondary">Firenze</p>
-            <Link className="tile-link" to="/camere/tsh-florence-lavagnini"></Link>
+            <Link className="tile-link" to="/camere/firenze/tsh-florence-lavagnini"></Link>
           </article>
         </div>
 
@@ -43,7 +43,7 @@ const FeaturedHotels = () => (
           <article className="tile is-child notification is-paddingless">
             <div className="is-image-wrapper"><img src={bgAmsterdam} alt="Student Hotels ad Amsterdam"/></div>
             <p className="tile-title title is-4 is-uppercase has-background-secondary">Amsterdam</p>
-            <Link className="tile-link" to="/camere/the-student-hotel-amsterdam-city"></Link>
+            <Link className="tile-link" to="/camere/amsterdam"></Link>
           </article>
         </div>
 
@@ -51,7 +51,7 @@ const FeaturedHotels = () => (
           <article className="tile is-child notification is-paddingless">
             <div className="is-image-wrapper"><img src={bgParis} alt="Student Hotels ad Parigi"/></div>
             <p className="tile-title title is-4 is-uppercase has-background-secondary">Parigi</p>
-            <Link className="tile-link" to="/camere/the-student-hotel-paris-la-defense"></Link>
+            <Link className="tile-link" to="/camere/parigi/the-student-hotel-paris-la-defense"></Link>
           </article>
         </div>
       </div>

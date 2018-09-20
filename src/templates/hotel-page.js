@@ -209,11 +209,27 @@ const HotelDetails = ({ data }) => {
   const { newsletter: newsletter } = data;
   const image = newsletter.edges[0].node;
 
+  const meta = [
+    { name: "description", content: hotel.frontmatter.details },
+
+    { name: "twitter:card", content: "summary" },
+    { name: "twitter:site", content: "@studenthotels" },
+    { name: "twitter:title", content: hotel.frontmatter.title },
+    { name: "twitter:author", content: "@studenthotels" },
+
+    { property: "og:type", content: "article" },
+    { property: "og:title", content: hotel.frontmatter.title },
+
+    { property: "og:site_name", content: "studenthotels.it" },
+    { property: "og:author", content: "https://www.facebook.com/studenthotels" },
+    { property: "fb:admins", content: "271106406768998" }
+  ];
+
   return (
     <HotelPageTemplate
       content={hotel.html}
       contentComponent={HTMLContent}
-      helmet={<Helmet title={`${hotel.frontmatter.title} | Student Hotels`}><html lang="it" /></Helmet>}
+      helmet={<Helmet title={`${hotel.frontmatter.title} | Student Hotels`} meta={meta}><html lang="it" /></Helmet>}
       destinations={hotel.frontmatter.destination}
       facilities={hotel.frontmatter.facilities}
       title={hotel.frontmatter.title}

@@ -29,7 +29,7 @@ class HomeSearch extends React.Component {
 
   handleOpen() {
     //this.setState({ popupVisible: false });
-    const slug = "tsh-florence-lavagnini"
+    const slug = "firenze/tsh-florence-lavagnini"
     window.location = '/camere/'+ slug;
   }
 
