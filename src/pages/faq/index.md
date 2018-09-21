@@ -19,7 +19,7 @@ faq:
         StudentHotels.it è stata create da Filippo Ferri che ne è l'attuale CEO. StudentHotels.it collabora solo con siti web affidabili nella qualità e nel servizio. Per parlare con uno dei nostri collaboratori personalmente basta inviare una e-mail. Il nostro team sarà felice di aiutarti.
     - question: Come posso controllare se c'è disponibilità in un hotel?
       answer: >
-        Dalla pagina del singolo hotel clicca su 'compara prezzi' posto a destra. Inserisci le date della tua vacanza utilizzando il calendario presente nel riquadro relativo alla ricerca. In questo modo saprai subito se la struttura è ancora disponibile nelle date selezionate.
+        Dalla pagina del singolo hotel clicca su 'verifica disponibilità' posto a destra. Inserisci le date della tua vacanza utilizzando il calendario presente nel riquadro relativo alla ricerca. In questo modo saprai subito se la struttura è ancora disponibile nelle date selezionate.
     - question: Perché i prezzi di uno stesso hotel sono così diversi tra loro?
       answer: >
         StudentHotels.it trova il prezzo migliore per lo stesso hotel nel periodo desiderato. Poiché i vari siti di prenotazioni propongono ognuno delle offerte diverse, ci può essere una convenienza di prezzo fino al 60%. StudentHotels.it mostra, con trasparenza, tutti i prezzi dandoti la possibilità di scegliere l'offerta migliore da prenotare. Il prezzo è soggetto a variazione sia in fase di verifica della disponibilità sia quando si viene reinidirizzati sul sito di prenotazione corrispondente par le votalità dei prezzi non dipendente da noi.

@@ -10,6 +10,9 @@ facilities:
   - Bar-Ristorante
   - WiFi gratuito
   - TV a schermo piatto
+  - Cassaforte per computer portatile
+  - Piano di lavoro
+  - Scrivania
   - Disponibilità di camere familiari
   - Palestra
   - Aria condizionata

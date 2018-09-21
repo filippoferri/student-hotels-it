@@ -80,6 +80,14 @@ collections:
           - {label: Heading, name: heading, widget: string}
           - {label: faq, name: faq, widget: list, fields: [{label: Question, name: question, widget: string}, {label: Answer, name: answer, widget: text}]}
 
+      - file: "src/pages/newsletter/grazie.md"
+          label: "Thank You"
+          name: "thankyou"
+          fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "thankyou-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+
   - name: "hotels"
     label: "Hotels"
     folder: "src/pages/camere"

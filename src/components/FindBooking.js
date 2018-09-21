@@ -37,7 +37,7 @@ class FindBooking extends React.Component {
         <div className="sh-price-from has-text-left is-flex is-flex-end is-hidden-mobile">
           <div>
               <p className="heading">Hotel da</p>
-              <p className="title">€ {priceFrom}</p>
+              <p className="title">{priceFrom} €</p>
           </div>
           <div className="has-text-small has-text-grey">
             <div>A notte per persona</div>
@@ -45,8 +45,7 @@ class FindBooking extends React.Component {
         </div>
 
         <a className="sh-booking" href={`${goTo}`} target="_blank">
-          <button type="button" className="button is-medium is-primary is-fullwidth">Compara prezzi
-          </button>
+          <button type="button" className="button is-medium is-primary is-fullwidth">Verifica disponibilità</button>
         </a>
 
         <div className="sh-compare-price has-text-left is-hidden-mobile">
