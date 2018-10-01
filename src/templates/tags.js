@@ -5,8 +5,39 @@ import Link from "gatsby-link";
 import Hero from "../components/Hero";
 import Newsletter from "../components/Newsletter";
 import AnteFooter from "../components/AnteFooter";
+import Img from "gatsby-image";
 
 class TagRoute extends React.Component {
+
+  variation(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  addClass() {
+    var newclass;
+    const num = this.variation(1, 4);
+
+    switch (num) {
+      case 1:
+        newclass = " is-secondary";
+        break;
+      case 2:
+        newclass = " is-greenish";
+        break;
+      case 3:
+        newclass = " is-sunset";
+        break;
+      default:
+        newclass = " is-primary";
+    }
+
+    return newclass;
+  }
+
+  findImage(image, title) {
+    return <div className="is-image-wrapper has-position-absolute"><Img sizes={image} alt={title} /></div>
+  }
+
   render() {
     const { data } = this.props;
     const posts = data.posts.edges;
@@ -15,22 +46,14 @@ class TagRoute extends React.Component {
 
     const postLinks = posts.map(post => (
       <div
-        className="column is-one-third"
+        className="column is-6-tablet is-4-desktop"
         key={post.node.fields.slug}
       >
-        <article
-          className="notification">
+        <article>
+          <Link to={post.node.fields.slug} className={"notification is-paddingless" + this.addClass()}>{this.findImage(post.node.frontmatter.heroImage.childImageSharp.sizes, post.node.frontmatter.title)}</Link>
           <div className="sh-blog-content">
-            <span className="title is-uppercase is-3">{post.node.frontmatter.title}</span>
-
-            <div className="sh-blog-date">
-              <small>{post.node.frontmatter.date}</small>
-            </div>
-            <p>
-              {post.node.excerpt}
-            </p>
+            <Link to={post.node.fields.slug} className="title is-5">{post.node.frontmatter.title}</Link>
           </div>
-          <Link className="sh-blog-link" to={post.node.fields.slug}></Link>
         </article>
       </div>
     ));
@@ -86,12 +109,18 @@ export const tagPageQuery = graphql`
       totalCount
       edges {
         node {
-          excerpt(pruneLength: 200)
-          fields {
+            fields {
             slug
           }
           frontmatter {
             title
+            heroImage {
+              childImageSharp{
+                sizes(maxWidth: 600) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
         }
       }
