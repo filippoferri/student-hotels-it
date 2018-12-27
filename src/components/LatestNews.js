@@ -6,7 +6,6 @@ import Img from "gatsby-image";
 const Tile = ({ post, style, hasbg }) => {
 
   const title = post.node.frontmatter.title;
-  const date = post.node.frontmatter.date;
   const url = post.node.fields.slug;
   const img = post.node.frontmatter.heroImage.childImageSharp.sizes;
 
