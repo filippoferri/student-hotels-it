@@ -67,7 +67,7 @@ const HomeMosaic = ( {content, api} ) => (
 
             <span className="sh-icon-social instagram" href="/"></span>
 
-            <a className="sh-overlay-link" href='https://www.instagram.com/student_hotels/' target='_blank'></a>
+            <a className="sh-overlay-link" href='https://www.instagram.com/student.hotels/' target='_blank'></a>
 
           </article>
 
