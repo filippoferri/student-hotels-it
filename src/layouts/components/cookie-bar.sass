@@ -17,12 +17,17 @@
   a
     color: white
     text-decoration: underline
+    font-weight: 600
+
+    &:hover
+      color: white
 
   @media ( min-width: $desktop )
     width: 300px
     left: 30px
     right: auto
     bottom: 30px !important
+    line-height: 1.4em
 
 .sh-cookie-bar-close
   display: inline-block
@@ -34,8 +39,8 @@
   background: transparent
   font-size: 1.5rem
   cursor: pointer
-  color: black
-  opacity: .2
+  color: white
+  opacity: .6
   transition: all .2s ease-in-out
 
   &:hover
